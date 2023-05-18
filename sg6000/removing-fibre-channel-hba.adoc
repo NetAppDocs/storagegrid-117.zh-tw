@@ -1,0 +1,56 @@
+---
+permalink: sg6000/removing-fibre-channel-hba.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, sg6000-cn, hba, host bus adapter, fibre channel, fiber channel, remove, removing, removal 
+summary: 如果SG6000-CN-控制器無法以最佳方式運作、或發生故障、您可能需要更換光纖通道主機匯流排介面卡（HBA\）。 
+---
+= 移除Fibre Channel HBA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果SG6000-CN-控制器無法正常運作或發生故障、您可能需要更換光纖通道主機匯流排介面卡（HBA）。
+
+.開始之前
+* 您擁有正確的備用Fibre Channel HBA。
+* 您有 link:verifying-fibre-channel-hba-to-replace.html["已確定哪個 SG6000-CN 控制器包含要更換的光纖通道 HBA"]。
+* 您有 link:locating-controller-in-data-center.html["實體放置 SG6000-CN 控制器"] 在資料中心。
+* 您有 link:shutting-down-sg6000-cn-controller.html["關閉 SG6000-CN 控制器"]。
++
+
+CAUTION: 從機架中移除控制器之前、必須先進行管制關機。
+
+* 您有 link:removing-sg6000-cn-controller-from-cabinet-or-rack.html["已從機櫃或機架中卸下控制器"]。
+* 您有 link:removing-sg6000-cn-controller-cover.html["已卸下控制器護蓋"]。
+
+
+.關於這項工作
+若要避免服務中斷、請在開始更換光纖通道HBA之前、確認所有其他儲存節點均已連接至網格、或在正常預期服務中斷期間、於排程維護期間更換介面卡。請參閱相關資訊 link:../monitor/monitoring-system-health.html#monitor-node-connection-states["監控節點連線狀態"]。
+
+
+IMPORTANT: 如果您曾經使用過僅建立物件複本的ILM規則、則必須在排程維護期間更換光纖通道HBA。否則、在此程序期間、您可能會暫時失去對這些物件的存取權。+ 查看相關資訊 link:../ilm/why-you-should-not-use-single-copy-replication.html["為何不應使用單一複本複寫"]。
+
+.步驟
+. 將防靜電腕帶的綁帶末端包覆在您的腕帶上、並將扣夾末端固定在金屬接地上、以避免產生靜電。
+. 找到位於包含光纖通道HBA的控制器背面的擴充卡組件。
++
+image::../media/sg6060_riser_assembly_location.jpg[SG6060擴充卡組件位置]
+
+. 抓住提昇部件的藍色標記孔、然後小心地將其向上提起。當您提起擴充卡組件時、請將其朝機箱正面移動、以便安裝的介面卡中的外部連接器能夠清除機箱。
+. 將擴充卡放在防靜態平面上、金屬框架面朝下、以便存取介面卡。
++
+image::../media/sg6060_fc_hba_location.jpg[SG6060 Fibre Channel HBA（位於提升板組件中）]
+
++
+提升板組件中有兩個介面卡：一個光纖通道HBA和一個乙太網路介面卡。如圖所示、光纖通道HBA。
+
+. 打開藍色介面卡鎖（圈起的）、然後小心地從擴充卡組件中移除光纖通道HBA。稍微搖一下介面卡、以協助將介面卡從其連接器中移除。請勿過度施力。
+. 將介面卡放在一個平坦的防靜態表面上。
+
+
+.完成後
+link:reinstalling-fibre-channel-hba.html["安裝替換的 Fibre Channel HBA"]。
+
+更換零件後、請將故障零件歸還給NetApp、如套件隨附的RMA指示所述。請參閱 https://["產品退貨安培；更換"^] 頁面以取得更多資訊。

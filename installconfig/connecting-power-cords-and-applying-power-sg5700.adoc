@@ -1,0 +1,33 @@
+---
+permalink: installconfig/connecting-power-cords-and-applying-power-sg5700.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5700, storage node, storage appliance, wire, wiring, cabling, cable, Connecting, connect, power cords, power, applying power, apply power, turn on, power up, ac, ac power 
+summary: 當您為應用裝置供電時、兩個控制器都會開機。 
+---
+= 連接電源線並接上電源（SG5700）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您為應用裝置供電時、兩個控制器都會開機。
+
+.開始之前
+連接電源之前、必須先關閉兩個應用裝置的電源開關。
+
+
+CAUTION: *電擊風險*：在連接電源線之前、請先確定產品上的兩個電源開關已關閉。
+
+.步驟
+. 確認產品上的兩個電源開關已關閉。
+. 將兩根電源線連接至產品。
+. 將兩條電源線連接至機櫃或機架中的不同電力分配單元（PDU）。
+. 開啟產品上的兩個電源開關。
++
+** 請勿在開機程序期間關閉電源開關。
+** 風扇在初次啟動時聲音非常大。開機期間的大聲雜訊是正常現象。
+
+
+. 控制器開機後、請檢查其七段顯示器。
+

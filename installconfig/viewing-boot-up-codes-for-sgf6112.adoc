@@ -1,0 +1,150 @@
+---
+permalink: installconfig/viewing-boot-up-codes-for-sgf6112.html 
+sidebar: sidebar 
+keywords: storagegrid, sgf6112, sg6100, boot codes, boot-up codes, start codes, codes, boot, start, bmc 
+summary: 當您為應用裝置供電時、BMC會記錄一系列開機代碼。您可以在連接至BMC管理連接埠的圖形化主控台上檢視這些代碼。 
+---
+= 檢視開機代碼（ SGF6112 ）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您為應用裝置供電時、BMC會記錄一系列開機代碼。您可以在連接至BMC管理連接埠的圖形化主控台上檢視這些代碼。
+
+.開始之前
+* 您知道如何存取BMC儀表板。
+* 如果您想要使用LAN上序列（SOL）、就有使用IPMI SOL主控台應用程式的經驗。
+
+
+.步驟
+. 請選擇下列其中一種方法來檢視應用裝置控制器的開機代碼、並收集所需的設備。
++
+[cols="1a,2a"]
+|===
+| 方法 | 必要設備 
+
+
+ a| 
+VGA主控台
+ a| 
+** 支援VGA的監視器
+** VGA纜線
+
+
+
+
+ a| 
+KVM
+ a| 
+** RJ-45纜線
+
+
+
+
+ a| 
+序列連接埠
+ a| 
+** DB-9序列纜線
+** 虛擬序列終端機
+
+
+
+
+ a| 
+解決方案
+ a| 
+** 虛擬序列終端機
+
+
+|===
+. 如果您使用的是VGA主控台、請執行下列步驟：
++
+.. 將具備VGA功能的監視器連接至設備背面的VGA連接埠。
+.. 檢視監視器上顯示的代碼。
+
+
+. 如果您使用的是BMC KVM、請執行下列步驟：
++
+.. 連線至 BMC 管理連接埠、然後登入 BMC Web 介面。
+.. 選擇*遠端控制*。
+.. 啟動KVM。
+.. 檢視虛擬監視器上的代碼。
+
+
+. 如果您使用的是序列連接埠和終端機、請執行下列步驟：
++
+.. 連接至裝置背面的序列 USB 連接埠。
+.. 使用設定 `115200 8-N-1`。
+.. 檢視列印在序列終端機上的代碼。
+
+
+. 如果您使用的是SOL、請執行下列步驟：
++
+.. 使用BMC IP位址和登入認證連線至IPMI SOL。
++
+`ipmitool -I lanplus -H _BMC_Port_IP_ -U root -P _Password_ sol activate`
+
+.. 檢視虛擬序列終端機上的代碼。
+
+
+. 請使用表格查詢產品的代碼。
++
+[cols="1a,3a"]
+|===
+| 程式碼 | 表示 
+
+
+ a| 
+嗨
+ a| 
+主開機指令碼已啟動。
+
+
+
+ a| 
+HP
+ a| 
+系統正在檢查網路介面卡（NIC）韌體是否需要更新。
+
+
+
+ a| 
+經常預算
+ a| 
+套用韌體更新後、系統正在重新開機。
+
+
+
+ a| 
+FP
+ a| 
+硬體子系統韌體更新檢查已完成。控制器之間的通訊服務正在啟動。
+
+
+
+ a| 
+硬拷貝
+ a| 
+系統正在檢查現有StorageGRID 的安裝資料。
+
+
+
+ a| 
+好
+ a| 
+此產品正在執行中。StorageGRID
+
+
+
+ a| 
+HA
+ a| 
+執行中。StorageGRID
+
+|===
+
+
+.相關資訊
+link:accessing-bmc-interface.html["存取BMC介面"]

@@ -1,0 +1,245 @@
+---
+permalink: upgrade/whats-new.html 
+sidebar: sidebar 
+keywords: what is new in StorageGRID 11.7 
+summary: 本版StorageGRID 的《產品介紹》介紹下列功能。 
+---
+= StorageGRID 11.7 的新功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此 StorageGRID 版本引進下列功能和功能變更。
+
+
+
+== 新功能
+
+
+
+=== 網格同盟
+
+您可以在兩個 StorageGRID 系統之間設定網格聯合連線、以複製租戶帳戶資訊、並在網格之間複寫貯體物件以進行災難恢復。請參閱 link:../admin/grid-federation-overview.html["什麼是網格同盟？"]、 link:../admin/grid-federation-what-is-account-clone.html["什麼是帳戶複製"]和 link:../admin/grid-federation-what-is-cross-grid-replication.html["什麼是跨網格複寫"]。
+
+
+
+=== 提升讀取可用度
+
+新寫入後讀取（預設）一致性控制功能已改善、可提供更多可用性。每個站台最多可離線一個儲存節點、就能成功取得不存在物件的取得 / 取得請求。不再需要將貯體設定為此案例的可用一致性控制。例如、在建立前檢查物件是否存在的應用程式、即使在軟體升級期間、只要有一個儲存節點離線、仍可在新寫入後讀取時正常運作。
+
+
+
+=== 重新命名網格、站台和節點
+
+新的維護程序可讓您變更顯示在 Grid Manager 中的顯示名稱。您可以在需要時安全地更新顯示名稱。請參閱 link:../maintain/rename-grid-site-node-overview.html["重新命名網格、站台和節點"]。
+
+
+
+=== FabricPool 和 S3 設定精靈
+
+FabricPool 和 S3 安裝精靈會引導您完成設定 StorageGRID 以搭配 ONTAP FabricPool 或其他 S3 用戶端應用程式使用的每個步驟、並產生一個檔案、您可以在其他應用程式中輸入所需的值時使用。請參閱 link:../fabricpool/use-fabricpool-setup-wizard.html["使用 FabricPool 設定精靈"] 和 link:../admin/use-s3-setup-wizard.html["使用 S3 設定精靈"]。
+
+與此變更相關、儀表板上現在會顯示橫幅、提醒新使用者進行設定 link:../admin/configuring-s3-api-endpoint-domain-names.html["S3 端點網域名稱"] 適用於 S3 虛擬託管式要求和設定 link:../monitor/email-alert-notifications.html["警示的電子郵件通知"]。
+
+
+
+=== 防火牆控制
+
+「防火牆控制」頁面可讓您管理網格中節點上連接埠的外部存取、並定義允許存取封閉連接埠的主機位址和 IP 子網路。新頁面也包含「不受信任的用戶端網路」設定、可讓您選取在設定不受信任的用戶端網路時要開啟的其他連接埠。請參閱 link:../admin/configure-firewall-controls.html["設定內部防火牆"]。
+
+
+
+=== 增強的安全性原則
+
+您現在可以決定使用哪些通訊協定和加密程式來與用戶端應用程式建立安全的 TLS 連線、以及安全的 SSH 連線至內部 StorageGRID 服務。請參閱 link:../admin/manage-tls-ssh-policy.html["管理 TLS 和 SSH 原則"]。
+
+
+
+=== 負載平衡器端點變更
+
+何時 link:../admin/configuring-load-balancer-endpoints.html["設定負載平衡器端點"]、您現在可以：
+
+* 允許所有租戶存取端點（預設）、或指定允許或封鎖租戶的清單、以在租戶與其端點之間提供更好的安全隔離。
+* 使用 * 節點類型 * 繫結模式、根據您選取的節點類型、要求用戶端使用任何管理節點的 IP 位址（或對應的 FQDN ）或任何閘道節點的 IP 位址。
+
+
+
+
+== SGF6112 All Flash 應用裝置
+
+全新的 StorageGRID SGF6112 儲存設備採用精巧設計、並將運算控制器和儲存控制器整合至 1U 機箱中。此應用裝置支援 12 個 SSD NVMe 磁碟機、每個磁碟機的儲存容量最高可達 15.3 TB 。SSD 磁碟機位於 RAID 中、可提供彈性的物件儲存設備。請參閱 link:../installconfig/hardware-description-sg6100.html["SGF6112 應用裝置：綜覽"]。
+
+
+
+== 其他Grid Manager增強功能
+
+
+
+=== ILM 增強功能
+
+改良的 ILM 精靈可讓您更輕鬆地指定篩選條件、輸入時間週期和放置位置、以及檢視保留圖表。當您選取儲存池和 EC 配置進行放置時、會自動建立銷毀編碼設定檔。對於新的 StorageGRID 11.7 安裝（非升級）、系統會自動為每個站台建立儲存池、而新的「每個站台 1 個複本」預設規則可確保新的多站台安裝預設會有站台遺失保護。請參閱 link:../ilm/index.html["使用ILM管理物件"]。
+
+
+
+=== 可自訂的儀表板
+
+您現在可以為 Grid Manager 設定自訂儀表板。請參閱 link:../monitor/viewing-dashboard.html["檢視及管理儀表板"]。
+
+
+
+=== Volume 還原 UI
+
+儲存磁碟區還原可讓您在儲存磁碟區失敗時還原物件資料。對於 StorageGRID 11.7 、除了手動輸入命令的現有方法之外、您也可以從 Grid Manager 開始磁碟區還原。現在、使用 Grid Manager 是還原物件資料的首選方法。請參閱 link:../maintain/restoring-volume.html["使用 Grid Manager 還原物件資料"]。
+
+
+
+=== 升級與 Hotfix UI
+
+升級至 StorageGRID 11.7 時、您可以同時套用最新的 11.7 Hotfix 。StorageGRID 升級頁面會顯示建議的升級路徑、並直接連結至正確的下載頁面。請參閱 link:performing-upgrade.html["執行升級"]。
+
+
+
+=== 儲存值的單位
+
+您現在可以針對 Grid Manager 和 Tenant Manager 中顯示的儲存值、選取基礎 10 或基礎 2 單位。選取 Grid Manager 或 Tenant Manager 右上角的使用者下拉式清單、然後選取 * 使用者偏好 * 。
+
+
+
+=== 從 Grid Manager 存取 MIB
+
+您現在可以使用 SNMP 代理程式頁面、從 Grid Manager 存取 SNMP 相容的 MIB 檔案。請參閱 link:../monitor/access-snmp-mib.html["存取 MIB 檔案"]。
+
+
+
+=== 新節點的自訂儲存等級
+
+當您執行擴充以新增站台或新儲存節點時、現在可以為每個新節點指派自訂儲存等級。請參閱 link:../expand/performing-expansion.html["執行擴充"]。
+
+
+
+== 租戶管理程式更新
+
+
+
+=== 跨網格複寫
+
+具有使用權限的租戶帳戶 <<grid-federation,網格同盟連線>> 可將租戶群組、使用者和 S3 金鑰從一個網格複製到另一個網格、並使用跨網格複寫在兩個網格之間複寫貯體物件。請參閱 link:../tenant/grid-federation-account-clone.html["複製租戶群組和使用者"] 和 link:../tenant/grid-federation-manage-cross-grid-replication.html["管理跨網格複寫"]。
+
+
+
+=== 刪除貯體中的所有物件
+
+租戶管理器使用者現在可以刪除貯體中的所有物件、以便刪除該貯體。請參閱 link:../tenant/deleting-s3-bucket-objects.html["刪除貯體中的物件"]。
+
+
+
+=== S3 物件鎖定預設保留
+
+租戶管理程式使用者現在可以在建立 S3 物件鎖定貯體時啟用和設定預設保留。請參閱 link:../tenant/creating-s3-bucket.html["建立S3儲存區"]。
+
+
+
+== S3 更新
+
+
+
+=== S3 物件鎖定治理模式
+
+指定物件的 S3 物件鎖定設定或儲存區的預設保留設定時、您現在可以使用監管模式。此保留模式可讓具有特殊權限的使用者略過特定保留設定。請參閱 link:../tenant/using-s3-object-lock.html["使用 S3 物件鎖定來保留物件"] 和 link:../s3/use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 物件鎖定"]。
+
+
+
+=== S3 群組原則、用於緩解勒索軟體
+
+將 S3 租戶帳戶新增為群組原則時、範例原則有助於減輕勒索軟體攻擊。它可防止永久刪除舊物件版本。請參閱 link:../tenant/creating-groups-for-s3-tenant.html["為S3租戶建立群組"]。
+
+
+
+=== S3 儲存區的 NewerNoncurrentVerions 臨界值
+
+。 `NewerNoncurrentVersions` 貯體生命週期組態中的動作會指定保留在版本化 S3 儲存區中的非目前版本數。此臨界值會覆寫 ILM 所提供的生命週期規則。請參閱 link:../ilm/how-objects-are-deleted.html["如何刪除物件"]。
+
+
+
+=== S3 選取更新
+
+S3 SelectObjectContent 現在支援 Parquet 物件。此外、您現在可以使用 S3 Select 搭配 Admin 和 Gateway 負載平衡器端點、這些端點是執行核心且啟用 cgroup v2 的裸機節點。請參閱 link:../s3/select-object-content.html["S3 SelectObjectContent"]。
+
+
+
+== 其他增強功能
+
+
+
+=== 憑證主體為選用項目
+
+憑證主體欄位現在為選用欄位。如果此欄位留白、則產生的憑證會使用第一個網域名稱或 IP 位址做為主體一般名稱（ CN ）。請參閱 link:../admin/using-storagegrid-security-certificates.html["管理安全性憑證"]。
+
+
+
+=== ILM 稽核訊息類別和新訊息
+
+已為 ILM 作業新增稽核訊息類別、包括 idel 、 LKCU 和 ORLM 訊息。此新類別設定為 * 正常 * 。請參閱 link:../audit/ilm-audit-messages.html["ILM 作業稽核訊息"]。
+
+此外、新增的稽核訊息可支援新的 11.7 功能：
+
+* link:../audit/bror-bucket-read-only-request.html["BROR ：貯體唯讀要求"]
+* link:../audit/cgrr-cross-grid-replication-request.html["CGRR ：跨網格複寫要求"]
+* link:../audit/ebdl-empty-bucket-delete.html["EBDL ：清空庫位刪除"]
+* link:../audit/ebkr-empty-bucket-request.html["EBKR ：清空庫位要求"]
+* link:../audit/s3-select-request.html["S3SL ： S3 Select Request"]
+
+
+
+
+=== 新警示
+
+StorageGRID 11.7 新增了下列警示：
+
+* 偵測到設備 DAS 磁碟機故障
+* 設備 DAS 磁碟機重建
+* 偵測到應用裝置風扇故障
+* 偵測到應用裝置 NIC 故障
+* 應用裝置 SSD 嚴重警告
+* AutoSupport 訊息無法傳送
+* Cassandra 超大寫入錯誤
+* 跨網格複寫永久要求失敗
+* 無法使用跨網格複寫資源
+* 偵錯效能影響
+* Grid Federation 憑證過期
+* FabricPool 貯體具有不受支援的貯體一致性設定
+* 防火牆組態失敗
+* Grid Federation 連線失敗
+* 偵測到儲存設備風扇故障
+* 儲存節點未處於所需的儲存狀態
+* 儲存磁碟區需要注意
+* 儲存磁碟區需要還原
+* 儲存磁碟區離線
+* 追蹤組態已啟用
+* Volume 還原無法開始複寫資料修復
+
+
+
+
+=== 文件變更
+
+* 新的快速參考摘要說明 StorageGRID 如何支援 Amazon Simple Storage Service （ S3 ） API 。請參閱 link:../s3/quick-reference-support-for-aws-apis.html["快速參考：支援的 S3 API 要求"]。
+* 全新 link:../primer/quick-start.html["StorageGRID 快速入門"] 列出設定和使用 StorageGRID 系統的高階步驟、並提供相關指示的連結。
+* 為了方便使用、我們結合並整合了應用裝置硬體安裝說明。新增快速入門作為硬體安裝的高階指南。請參閱link:../installconfig/index.html["硬體安裝快速入門"]。
+* 所有應用裝置機型通用的維護指示均已合併、整合、並移至文件網站的維護區段。請參閱 link:../commonhardware/index.html["一般節點維護：總覽"]。
+* 每種產品機型的維護指示也會移至「維護」一節：
++
+link:../sg6100/index.html["維護 SGF6112 硬體"]
+
++
+link:../sg6000/index.html["維護 SG6000 硬體"]
+
++
+link:../sg5700/index.html["維護 SG5700 硬體"]
+
++
+link:../sg100-1000/index.html["維護 SG100 和 SG1000 硬體"]
+
+

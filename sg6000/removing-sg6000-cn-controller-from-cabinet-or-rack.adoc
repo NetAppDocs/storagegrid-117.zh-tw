@@ -1,0 +1,54 @@
+---
+permalink: sg6000/removing-sg6000-cn-controller-from-cabinet-or-rack.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, remove, removing, removal, cabinet, rack, controller, sg6000-cn 
+summary: 從機櫃或機架上卸下SG6000-CN-控制器、以存取頂蓋或將控制器移至不同位置。 
+---
+= 從機櫃或機架上卸下SG6000-CN.控制器
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從機櫃或機架上卸下SG6000-CN-控制器、以存取頂蓋或將控制器移至不同位置。
+
+.開始之前
+* 您可以使用標籤來識別連接至SG6000-CN-控制器的每條纜線。
+* 您已實際找到SG6000-CN-控制器、以便在資料中心執行維護作業。
++
+link:locating-controller-in-data-center.html["在資料中心找到控制器"]
+
+* 您已關閉SG6000-CN.控制器。
++
+link:shutting-down-sg6000-cn-controller.html["關閉SG6000-CN.控制器"]
+
++
+
+CAUTION: 請勿使用電源開關關閉控制器。
+
+
+
+.步驟
+. 標示控制器電源線、然後拔下。
+. 將防靜電腕帶的綁帶末端包覆在您的腕帶上、並將扣夾末端固定在金屬接地上、以避免產生靜電。
+. 標示控制器資料纜線及任何SFP+或SFP28收發器、然後拔下。
++
+
+IMPORTANT: 為避免效能降低、請勿在纜線上扭轉、摺疊、夾住或踩踏。
+
+. 鬆開控制器前面板上的兩顆緊固螺絲。
++
+image::../media/sg6060_rack_retaining_screws.png[SG6060機架固定螺絲]
+
+. 將SG6000-CN-控制器向前滑出機架、直到安裝軌道完全展開、您會聽到兩側的栓鎖發出「喀」一聲。
++
+控制器頂蓋可供存取。
+
+. 選用：如果您要從機櫃或機架中完全移除控制器、請依照滑軌套件的指示、將控制器從滑軌中移除。
+
+
+更換零件後、請將故障零件歸還給NetApp、如套件隨附的RMA指示所述。請參閱 https://["產品退貨安培；更換"^] 頁面以取得更多資訊。
+
+.相關資訊
+link:removing-sg6000-cn-controller-cover.html["取下SG6000-CN-控制器護蓋"]

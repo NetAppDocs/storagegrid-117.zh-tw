@@ -1,0 +1,79 @@
+---
+permalink: tenant/tenant-management-api-versioning.html 
+sidebar: sidebar 
+keywords: tenant management api version 
+summary: 租戶管理API使用版本管理來支援不中斷營運的升級。 
+---
+= 租戶管理API版本管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+租戶管理API使用版本管理來支援不中斷營運的升級。
+
+例如、此Request URL會指定API版本3。
+
+`https://_hostname_or_ip_address_/api/v3/authorize`
+
+當進行與舊版不相容的變更時、會增加租戶管理 API 的主要版本。當進行與舊版相容的變更時、會增加租戶管理 API 的次要版本。相容的變更包括新增端點或新屬性。下列範例說明如何根據所做的變更類型來提高API版本。
+
+[cols="2a,1a,1a"]
+|===
+| API變更類型 | 舊版本 | 新版本 
+
+
+ a| 
+與舊版相容
+ a| 
+2.1
+ a| 
+2.2
+
+
+
+ a| 
+與舊版不相容
+ a| 
+2.1
+ a| 
+3.0
+
+|===
+第一次安裝時、只會啟用最新版本的租戶管理API。StorageGRID不過StorageGRID 、當將支援功能升級至新功能版本時、您仍可繼續存取舊版的API、以取得至少一個StorageGRID 版本的支援功能。
+
+過時的要求會以下列方式標示為已過時：
+
+* 回應標頭為「deprecated：true」
+* Json回應本文包含「deprecated」：true
+
+
+
+
+== 判斷目前版本支援哪些API版本
+
+使用下列API要求傳回支援的API主要版本清單：
+
+[listing]
+----
+GET https://{{IP-Address}}/api/versions
+{
+  "responseTime": "2019-01-10T20:41:00.845Z",
+  "status": "success",
+  "apiVersion": "3.0",
+  "data": [
+    2,
+    3
+  ]
+}
+----
+
+
+== 指定要申請的API版本
+
+您可以使用路徑參數來指定API版本 (`/api/v3`）或標頭 (`Api-Version: 3`）。如果您同時提供這兩個值、則標頭值會覆寫路徑值。
+
+`curl \https://<IP-Address>/api/v3/grid/accounts`
+
+`curl -H "Api-Version: 3" \https://<IP-Address>/api/grid/accounts`

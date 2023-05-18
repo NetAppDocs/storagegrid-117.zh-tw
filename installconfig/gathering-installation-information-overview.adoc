@@ -1,0 +1,24 @@
+---
+permalink: installconfig/gathering-installation-information-overview.html 
+sidebar: sidebar 
+keywords: install, information, site, pre-install, preparing, prepare, preinstall, info, preparation 
+summary: 在安裝和設定 StorageGRID 應用裝置時、您會做出決策、並收集有關乙太網路交換器連接埠、 IP 位址、連接埠和網路連結模式的資訊。 
+---
+= 收集安裝資訊：總覽
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在安裝和設定 StorageGRID 應用裝置時、您會做出決策、並收集有關乙太網路交換器連接埠、 IP 位址、連接埠和網路連結模式的資訊。
+
+請參閱產品說明、以判斷您需要哪些資訊：
+
+* link:gathering-installation-information-sg6100.html["SGF6112"]
+* link:gathering-installation-information-sg6000.html["SG6000"]
+* link:gathering-installation-information-sg5700.html["SG5700"]
+* link:gathering-installation-information-sg100-and-sg1000.html["SG100 與 SG1000"]
+
+
+或者、您也可以與 NetApp 專業服務顧問合作、使用 NetApp ConfigBuilder 工具來簡化和自動化組態步驟。請參閱 link:automating-appliance-installation-and-configuration.html["自動化應用裝置的安裝與組態"]。

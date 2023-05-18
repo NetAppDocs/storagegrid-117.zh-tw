@@ -1,0 +1,75 @@
+---
+permalink: sg6100/powering-on-sgf6112-and-verifying-operation.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6100, sgf6112,storage node, storage appliance, power on, turn on, start 
+summary: 完成維護後、請開啟產品電源。 
+---
+= 開啟 SGF6112 並驗證作業
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+完成維護後、開啟控制器電源。
+
+.開始之前
+* 您已將控制器安裝在機櫃或機架中、並已連接資料和電源線。
++
+link:reinstalling-sgf6112-into-cabinet-or-rack.html["將 SGF6112 控制器重新安裝到機櫃或機架中"]
+
+* 您已在資料中心實際找到控制器。
++
+link:locating-sgf6112-in-data-center.html["在資料中心找到 SGF6112 應用裝置"]
+
+
+
+.步驟
+. 開啟產品電源。
++
+您可能必須卸下擋板才能使用電源開關；如果是、請記得在之後重新安裝。
+
+. 使用下列其中一種方法來監控控制器 LED 和開機代碼：
++
+** 按下控制器正面的電源開關。
+** 使用控制器BMC介面：
++
+... 存取控制器BMC介面。
++
+link:../installconfig/accessing-bmc-interface.html["存取BMC介面"]
+
+... 選擇*電源控制*。
+... 選取 * 開機 * 、然後選取 * 執行動作 * 。
++
+image::../media/sgf6112_power_on_from_bmc.png[從 BMC 開啟應用裝置電源]
+
++
+使用BMC介面來監控啟動狀態。
+
+
+
+
+
+. 確認應用裝置控制器顯示在Grid Manager中、且沒有警示。
++
+控制器可能需要20分鐘才能在Grid Manager中顯示。
+
++
+
+CAUTION: 除非此應用裝置有綠色圖示、否則請勿將其他應用裝置節點離線。
+
+. 使用 Putty 或其他 ssh 用戶端登入網格節點、確認新應用裝置完全正常運作：
++
+.. 輸入下列命令： `ssh _Appliance_IP_`
+.. 輸入中所列的密碼 `Passwords.txt` 檔案：
+.. 輸入下列命令以切換至root： `su -`
+.. 輸入中所列的密碼 `Passwords.txt` 檔案：
++
+當您以root登入時、提示會從變更 `$` 至 `#`。
+
+
+
+
+
+.相關資訊
+link:../installconfig/viewing-status-indicators.html["檢視狀態指標"]

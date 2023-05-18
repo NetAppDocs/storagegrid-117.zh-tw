@@ -1,0 +1,49 @@
+---
+permalink: tenant/use-s3-console.html 
+sidebar: sidebar 
+keywords: how to use s3 console 
+summary: 您可以使用S3主控台檢視S3儲存區中的物件。 
+---
+= 使用實驗性S3主控台
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用S3主控台檢視S3儲存區中的物件。
+
+您也可以使用S3主控台執行下列動作：
+
+* 新增及刪除物件、物件版本及資料夾
+* 重新命名物件
+* 在儲存區和資料夾之間移動和複製物件
+* 管理物件標記
+* 檢視物件中繼資料
+* 下載物件
+
+
+
+NOTE: S3 Console 標示為「實驗性」、因為尚未完成或核准用於正式作業環境。租戶只能在執行少量物件的功能時使用S3主控台、例如上傳物件以模擬新的ILM原則、疑難排解擷取問題、或使用概念驗證或非正式作業網格時。
+
+.開始之前
+* 您將使用登入租戶管理程式 link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您屬於具有「根目錄」存取權限的使用者群組、或是擁有「使用 S3 主控台管理所有儲存區」和「管理物件」的使用者群組 link:tenant-management-permissions.html["權限"]。
++
+
+NOTE: 擁有「管理具有 S3 主控台權限的物件」、但沒有「管理所有儲存區」權限的使用者、仍可直接瀏覽至實驗 S3 主控台。
+
+* 您已經建立了一個儲存庫。
+* 已為使用者設定 S3 群組或儲存區原則。
+* 您知道使用者的存取金鑰ID和秘密存取金鑰。或者、您也可以選擇 `.csv` 包含此資訊的檔案。請參閱 link:creating-your-own-s3-access-keys.html["建立存取金鑰的說明"]。
+
+
+.步驟
+. 選擇*桶*。
+. 選取 image:../media/s3_console_link.png["S3主控台連結"]。您也可以從「庫位詳細資料」頁面存取此連結。
+. 在「實驗S3主控台登入」頁面上、將存取金鑰ID和秘密存取金鑰貼到欄位中。否則、請選取 * 上傳存取金鑰 * 、然後選取您的 `.csv` 檔案：
+. 選擇*登入*。
+. 視需要管理物件。
+
+
+image::../media/s3_console_example.png[S3主控台範例]

@@ -1,0 +1,114 @@
+---
+permalink: ilm/lifecycle-of-cloud-storage-pool-object.html 
+sidebar: sidebar 
+keywords: lifecycle of cloud storage pool object 
+summary: 在實作雲端儲存資源池之前、請先檢閱儲存在每種類型雲端儲存資源池中的物件生命週期。 
+---
+= Cloud Storage Pool物件的生命週期
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在實作雲端儲存資源池之前、請先檢閱儲存在每種類型雲端儲存資源池中的物件生命週期。
+
+* <<S3：Cloud Storage Pool物件的生命週期>>
+* <<Azure：Cloud Storage Pool物件的生命週期>>
+
+
+
+
+== S3：Cloud Storage Pool物件的生命週期
+
+圖中顯示儲存在S3 Cloud Storage Pool中物件的生命週期階段。
+
+
+NOTE: 在圖中和說明中、「Glacier」是指Glacier儲存等級和Glacier Deep Archive儲存等級、但有一項例外：Glacier Deep Archive儲存等級不支援快速還原層。僅支援大量或標準擷取。
+
+
+NOTE: Google Cloud Platform（GCP）可支援從長期儲存設備擷取物件、而不需執行還原後作業。
+
+image::../media/cloud_storage_pool_object_life_cycle.png[Cloud Storage Pool物件的生命週期]
+
+. *物件儲存在StorageGRID S編*中
++
+若要開始生命週期、用戶端應用程式會將物件儲存在StorageGRID
+
+. *物件移至S3雲端儲存池*
++
+** 如果物件與使用S3 Cloud Storage Pool做為放置位置的ILM規則相符、StorageGRID 則會將物件移至Cloud Storage Pool指定的外部S3儲存區。
+** 物件移至S3雲端儲存資源池時、用戶端應用程式可以使用StorageGRID 來自S3的S3 Get Object要求來擷取物件、除非物件已移轉至Glacier儲存設備。
+
+
+. *物件移轉至Glacier（無法擷取的狀態）*
++
+** 也可以將物件移轉至Glacier儲存設備。例如、外部S3儲存區可能會使用生命週期組態、立即或在數天後將物件移轉至Glacier儲存設備。
++
+
+NOTE: 如果您想要轉換物件、必須為外部S3儲存區建立生命週期組態、而且必須使用可實作Glacier儲存類別並支援S3 POST物件還原API的儲存解決方案。
+
++
+
+NOTE: 請勿將 Cloud Storage Pool 用於 Swift 用戶端擷取的物件。Swift不支援物件後還原要求、StorageGRID 因此無法擷取任何已轉換至S3 Glacier儲存設備的Swift物件。發出Swift Get物件要求以擷取這些物件將會失敗（「403 Forbidbid禁 用」）。
+
+** 在轉換期間、用戶端應用程式可以使用S3頭物件要求來監控物件的狀態。
+
+
+. *從Glacier儲存設備還原物件*
++
+如果物件已轉換至Glacier儲存設備、用戶端應用程式可發出S3物件後還原要求、將可擷取的複本還原至S3雲端儲存池。此要求會指定在雲端儲存資源池和資料存取層中可供複本使用的天數、以供還原作業使用（加速、標準或大量）。當達到可擷取複本的到期日時、複本會自動返回無法擷取的狀態。
+
++
+
+NOTE: 如果StorageGRID 物件的一個或多個複本也存在於位於整個過程的儲存節點上、就不需要透過發出物件後還原要求、從Glacier還原物件。相反地、您可以使用「取得物件」要求、直接擷取本機複本。
+
+. *物件已擷取*
++
+物件還原之後、用戶端應用程式就可以發出「Get Object」（取得物件）要求、以擷取還原的物件。
+
+
+
+
+
+== Azure：Cloud Storage Pool物件的生命週期
+
+圖中顯示儲存在Azure Cloud Storage Pool中物件的生命週期階段。
+
+image::../media/cloud_storage_pool_object_life_cycle_azure.png[Azure Cloud Storage Pool物件的生命週期]
+
+. *物件儲存在StorageGRID S編*中
++
+若要開始生命週期、用戶端應用程式會將物件儲存在StorageGRID
+
+. *物件移至Azure Cloud Storage Pool*
++
+如果物件與使用Azure Cloud Storage Pool做為放置位置的ILM規則相符、StorageGRID 則會將物件移至Cloud Storage Pool指定的外部Azure Blob儲存容器
+
++
+
+NOTE: 請勿將 Cloud Storage Pool 用於 Swift 用戶端擷取的物件。Swift不支援物件後還原要求、StorageGRID 因此無法擷取任何已轉換至Azure Blob儲存歸檔層的Swift物件。發出Swift Get物件要求以擷取這些物件將會失敗（「403 Forbidbid禁 用」）。
+
+. *物件移轉至歸檔層（無法擷取的狀態）*
++
+將物件移至Azure Cloud Storage Pool之後StorageGRID 、立即將物件自動移轉至Azure Blob儲存歸檔層。
+
+. *物件從歸檔層還原*
++
+如果物件已轉換至歸檔層、用戶端應用程式就可以發出S3物件後還原要求、將可擷取的複本還原至Azure Cloud Storage Pool。
+
++
+當收到物件還原後、它會將物件暫時移轉至Azure Blob儲存冷卻層。StorageGRID一旦達到物件還原後要求的到期日、StorageGRID 即可將物件轉換回歸檔層。
+
++
+
+NOTE: 如果StorageGRID 物件的一個或多個複本也存在於位於整個過程的儲存節點上、就不需要透過發出物件後還原要求、從歸檔存取層還原物件。相反地、您可以使用「取得物件」要求、直接擷取本機複本。
+
+. *物件已擷取*
++
+物件還原至Azure Cloud Storage Pool之後、用戶端應用程式就能發出Get Object要求、以擷取還原的物件。
+
+
+
+.相關資訊
+link:../s3/index.html["使用S3 REST API"]

@@ -1,0 +1,395 @@
+---
+permalink: s3/operations-on-buckets.html 
+sidebar: sidebar 
+keywords: bucket, buckets, operations on buckets 
+summary: 這個系統最多可為每個S3租戶帳戶支援1、000個貯體。StorageGRID 
+---
+= 在貯體上作業
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+這個系統最多可為每個S3租戶帳戶支援1、000個貯體。StorageGRID
+
+貯體名稱限制遵循 AWS 美國標準地區限制、但您應進一步將它們限制在 DNS 命名慣例、以支援 S3 虛擬託管式要求。
+
+如需詳細資訊、請參閱下列內容：
+
+* https://["Amazon Web Services（AWS）文件：儲存區限制與限制"^]
+* link:../admin/configuring-s3-api-endpoint-domain-names.html["設定 S3 端點網域名稱"]
+
+
+Get Bucket（列出物件）和Get Bucket版本作業支援StorageGRID 一致性控管。
+
+您可以檢查是否為個別的儲存區啟用或停用上次存取時間的更新。
+
+下表說明StorageGRID 了為什麼由Ss哪些 人執行S3 REST API貯體作業。若要執行上述任何作業、必須為帳戶提供必要的存取認證資料。
+
+[cols="1a,3a"]
+|===
+| 營運 | 實作 
+
+
+ a| 
+刪除時段
+ a| 
+此作業會刪除貯體。
+
+
+
+ a| 
+刪除庫位檢查
+ a| 
+此作業會刪除儲存區的CORS組態。
+
+
+
+ a| 
+刪除時段加密
+ a| 
+此作業會從儲存區刪除預設加密。現有的加密物件會保持加密狀態、但新增至儲存庫的任何新物件都不會加密。
+
+
+
+ a| 
+刪除時段生命週期
+ a| 
+此作業會從儲存庫中刪除生命週期組態。請參閱 link:create-s3-lifecycle-configuration.html["建立S3生命週期組態"]。
+
+
+
+ a| 
+刪除庫位原則
+ a| 
+此作業會刪除附加至儲存貯體的原則。
+
+
+
+ a| 
+刪除時段複寫
+ a| 
+此作業會刪除附加至儲存區的複寫組態。
+
+
+
+ a| 
+刪除庫位標記
+ a| 
+此作業使用 `tagging` SubResource可移除庫位中的所有標記。
+
+
+
+ a| 
+取得 Bucket
+
+（ ListObjects ）
+
+（ ListObjectsV2 ）
+ a| 
+此作業會傳回某個儲存區中的部分或全部（最多1、000個）物件。物件的儲存類別可以有兩個值之一、即使物件是使用擷取的 `REDUCED_REDUNDANCY` 儲存類別選項：
+
+* `STANDARD`（表示物件儲存在儲存節點所組成的儲存資源池中）。
+* `GLACIER`、表示物件已移至Cloud Storage Pool指定的外部儲存區。
+
+
+如果儲存區包含大量具有相同前置碼的刪除金鑰、回應可能會包含部分金鑰 `CommonPrefixes` 不包含金鑰。
+
+
+
+ a| 
+取得Bucket物件版本
+
+（ ListObjectVerions ）
+ a| 
+此作業可透過鏟斗的讀取存取權限 `versions` 子資源會列出儲存區中所有物件版本的中繼資料。
+
+
+
+ a| 
+取得Bucket ACL
+ a| 
+此作業會傳回正面回應、並傳回貯體擁有者的ID、顯示名稱和權限、表示擁有者對該貯體具有完整存取權。
+
+
+
+ a| 
+獲取庫位檢查器
+ a| 
+此作業會傳回 `cors` 鏟斗組態。
+
+
+
+ a| 
+取得Bucket加密
+ a| 
+此作業會傳回儲存區的預設加密組態。
+
+
+
+ a| 
+取得生命週期
+
+（ GetBucketLifecycleConfiguration ）
+ a| 
+此作業會傳回該儲存庫的生命週期組態。請參閱 link:create-s3-lifecycle-configuration.html["建立S3生命週期組態"]。
+
+
+
+ a| 
+取得理想位置
+ a| 
+此作業會傳回使用設定的區域 `LocationConstraint` 置入庫位要求中的元素。如果庫位所在的區域是 `us-east-1`，則會傳回區域的空白字串。
+
+
+
+ a| 
+取得庫存箱通知
+
+（ GetBucketNotificationConfiguration ）
+ a| 
+此作業會傳回附加至儲存貯體的通知組態。
+
+
+
+ a| 
+取得庫存管理政策
+ a| 
+此作業會傳回附加至庫位的原則。
+
+
+
+ a| 
+取得庫位複寫
+ a| 
+此作業會傳回附加至儲存區的複寫組態。
+
+
+
+ a| 
+取得庫位標記
+ a| 
+此作業使用 `tagging` SubResource可傳回某個儲存區的所有標記。
+
+
+
+ a| 
+取得版本管理
+ a| 
+此實作使用 `versioning` SubResource可傳回儲存區的版本管理狀態。
+
+* _blank_：從未啟用版本管理（儲存庫為「未版本管理」）
+* 已啟用：已啟用版本管理
+* 已暫停：先前已啟用版本管理、並已暫停
+
+
+
+
+ a| 
+取得物件鎖定組態
+ a| 
+此作業會傳回儲存區預設保留模式和預設保留期間（若已設定）。
+
+請參閱 link:../s3/use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 物件鎖定"]。
+
+
+
+ a| 
+鏟斗
+ a| 
+此作業會判斷儲存區是否存在、且您是否有權存取它。
+
+此作業會傳回：
+
+* `x-ntap-sg-bucket-id`： UUID 格式的儲存區 UUID 。
+* `x-ntap-sg-trace-id`：關聯請求的唯一跟蹤 ID 。
+
+
+
+
+ a| 
+放入鏟斗
+ a| 
+此作業會建立新的儲存桶。建立貯體後、您就成為了貯體的擁有者。
+
+* 庫位名稱必須符合下列規則：
++
+** 必須在各個StorageGRID 方面都是獨一無二的（不只是租戶帳戶內的獨特功能）。
+** 必須符合DNS規範。
+** 必須包含至少3個字元、且不得超過63個字元。
+** 可以是一或多個標籤的系列、相鄰的標籤以句點分隔。每個標籤都必須以英文字母或數字開頭和結尾、而且只能使用英文字母、數字和連字號。
+** 不得看起來像是文字格式的IP位址。
+** 不應在虛擬託管樣式要求中使用期間。期間會導致伺服器萬用字元憑證驗證發生問題。
+
+
+* 根據預設、會在中建立儲存區 `us-east-1` 區域；不過、您可以使用 `LocationConstraint` 要求主體中的要求元素、以指定不同的區域。使用時 `LocationConstraint` 元素、您必須指定已使用Grid Manager或Grid Management API定義的區域確切名稱。如果您不知道應該使用的地區名稱、請聯絡您的系統管理員。
++
+*附註*：如果您的Pet Bucket要求使用StorageGRID 未在功能區中定義的區域、就會發生錯誤。
+
+* 您可以加入 `x-amz-bucket-object-lock-enabled` 要求標頭以建立啟用S3物件鎖定的儲存區。請參閱 link:../s3/use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 物件鎖定"]。
++
+建立儲存區時、您必須啟用S3物件鎖定。建立貯體後、您無法新增或停用 S3 物件鎖定。S3物件鎖定需要儲存區版本管理、這會在您建立儲存區時自動啟用。
+
+
+
+
+
+ a| 
+放入庫位
+ a| 
+此作業會設定儲存區的CORS組態、以便儲存區能夠處理跨來源要求。跨來源資源共用（CORS）是一種安全機制、可讓單一網域中的用戶端Web應用程式存取不同網域中的資源。例如、假設您使用名為的S3儲存區 `images` 儲存圖形。設定的CORS組態 `images` 儲存庫、您可以讓該儲存庫中的影像顯示在網站上 `+http://www.example.com+`。
+
+
+
+ a| 
+使用資源桶加密
+ a| 
+此作業會設定現有儲存區的預設加密狀態。啟用桶層級加密時、任何新增至桶的新物件都會加密。StorageGRID支援使用StorageGRID管理的金鑰進行伺服器端加密。指定伺服器端加密組態規則時、請設定 `SSEAlgorithm` 參數至 `AES256`、請勿使用 `KMSMasterKeyID` 參數。
+
+如果物件上傳要求已指定加密（亦即、如果要求包含、則會忽略儲存區預設加密組態 `x-amz-server-side-encryption-*` 要求標頭）。
+
+
+
+ a| 
+放入鏟斗生命週期
+
+（ PuttBucketLifecycleConfiguration ）
+ a| 
+此作業會為儲存庫建立新的生命週期組態、或取代現有的生命週期組態。在生命週期組態中、支援多達1、000個生命週期規則。StorageGRID每個規則可包含下列XML元素：
+
+* 到期日（天數、日期）
+* 非目前版本過期（非目前日期）
+* 篩選器（前置、標記）
+* 狀態
+* ID
+
+
+不支援下列動作：StorageGRID
+
+* AbortIncompleteMultiPart上 傳
+* ExpiredObjectDelete標記
+* 移轉
+
+
+請參閱 link:create-s3-lifecycle-configuration.html["建立S3生命週期組態"]。若要瞭解貯體生命週期中的到期動作如何與 ILM 放置指示互動、請參閱 link:../ilm/how-ilm-operates-throughout-objects-life.html["ILM如何在整個物件生命週期內運作"]。
+
+*附註*：鏟斗生命週期組態可搭配已啟用S3物件鎖定的鏟斗使用、但舊型符合標準的鏟斗不支援鏟斗生命週期組態。
+
+
+
+ a| 
+放置時段通知
+
+（ PuttBucketNotificationConfiguration ）
+ a| 
+此作業會使用要求內文所含的通知組態XML來設定儲存區的通知。您應該瞭解下列實作詳細資料：
+
+* 支援簡單通知服務（SNS）主題作為目的地。StorageGRID不支援 Simple Queue Service （ SQS ）或 Amazon Lambda 端點。
+* 通知的目的地必須指定為StorageGRID 一個端點的URN。端點可以使用租戶管理程式或租戶管理API來建立。
++
+端點必須存在、通知組態才能成功。如果端點不存在、則為 `400 Bad Request` 程式碼傳回錯誤 `InvalidArgument`。
+
+* 您無法設定下列事件類型的通知。這些事件類型*不支援*。
++
+** `s3:ReducedRedundancyLostObject`
+** `s3:ObjectRestore:Completed`
+
+
+* 從 StorageGRID 傳送的事件通知使用標準 JSON 格式、但不包含某些金鑰、也不為其他金鑰使用特定值、如下表所示：
++
+** *事件來源*
++
+`sgws:s3`
+
+** * awsRegion *
++
+不含
+
+** * X-amz-id-2*
++
+不含
+
+** * arn*
++
+`urn:sgws:s3:::bucket_name`
+
+
+
+
+
+
+
+ a| 
+資源桶政策
+ a| 
+此作業會設定附加至庫位的原則。
+
+
+
+ a| 
+放入資源桶複寫
+ a| 
+此作業會進行設定 link:../tenant/understanding-cloudmirror-replication-service.html["StorageGRID CloudMirror 複寫"] 適用於要求主體中所提供的複寫組態 XML 的貯體。對於CloudMirror複寫、您應該瞭解下列實作詳細資料：
+
+* 僅支援複寫組態的V1。StorageGRID這表示StorageGRID 、不支援使用 `Filter` 規則元素、並遵循刪除物件版本的V1慣例。如需詳細資訊、請參閱 https://["有關複寫組態的Amazon S3文件"^]。
+* 儲存區複寫可在版本控制或未版本控制的儲存區上進行設定。
+* 您可以在複寫組態XML的每個規則中指定不同的目的地儲存區。來源儲存區可複寫至多個目的地儲存區。
+* 目的地貯體必須指定為StorageGRID 租戶管理程式或租戶管理API中指定的非功能性端點的URN。請參閱 link:../tenant/configuring-cloudmirror-replication.html["設定CloudMirror複寫"]。
++
+複寫組態必須存在端點才能成功。如果端點不存在、則要求會以的形式失敗 `400 Bad Request`。錯誤訊息指出： `Unable to save the replication policy. The specified endpoint URN does not exist: _URN_.`
+
+* 您不需要指定 `Role` 在組態XML中。此值不供StorageGRID Some使用、如果提交、將會忽略此值。
+* 如果您從組態XML中省略儲存類別、StorageGRID 則無法使用 `STANDARD` 預設為儲存類別。
+* 如果您從來源儲存區刪除物件、或是刪除來源儲存區本身、跨區域複寫行為如下：
++
+** 如果您在物件或貯體複寫之前刪除該物件或貯體、則不會複寫該物件 / 貯體、也不會通知您。
+** 如果您在複寫物件或儲存區之後將其刪除、StorageGRID 則針對跨區域複寫的V1、執行標準Amazon S3刪除行為。
+
+
+
+
+
+
+ a| 
+置入庫位標記
+ a| 
+此作業使用 `tagging` 子資源：新增或更新一組庫位的標記。新增庫位標記時、請注意下列限制：
+
+* 支援每個儲存區最多50個標籤的支援功能包括：StorageGRID
+* 與庫位關聯的標記必須具有唯一的標記金鑰。標籤金鑰長度最多可達128個UNICODE字元。
+* 標記值長度最多可達256個UNICODE字元。
+* 金鑰和值區分大小寫。
+
+
+
+
+ a| 
+放入資源桶版本管理
+ a| 
+此實作使用 `versioning` SubResource可設定現有儲存區的版本管理狀態。您可以使用下列其中一個值來設定版本設定狀態：
+
+* 已啟用：啟用儲存區中物件的版本管理。新增至儲存庫的所有物件都會收到唯一的版本ID。
+* 暫停：停用儲存區中物件的版本設定。新增至儲存庫的所有物件都會收到版本ID `null`。
+
+
+
+
+ a| 
+放置物件鎖定組態
+ a| 
+此作業會設定或移除庫位預設保留模式和預設保留期間。
+
+如果修改了預設保留期間、現有物件版本的保留截止日期將維持不變、且不會使用新的預設保留期間重新計算。
+
+請參閱 link:../s3/use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 物件鎖定"] 以取得詳細資訊。
+
+|===
+.相關資訊
+link:consistency-controls.html["一致性控管"]
+
+link:get-bucket-last-access-time-request.html["取得時段上次存取時間"]
+
+link:bucket-and-group-access-policies.html["使用貯體和群組存取原則"]
+
+link:s3-operations-tracked-in-audit-logs.html["在稽核記錄中追蹤S3作業"]

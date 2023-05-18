@@ -1,0 +1,136 @@
+---
+permalink: swift/monitoring-and-auditing-operations.html 
+sidebar: sidebar 
+keywords: monitor operations, audit operations 
+summary: 您可以檢視整個網格或特定節點的交易趨勢、來監控用戶端作業的工作負載和效率。您可以使用稽核訊息來監控用戶端作業和交易。 
+---
+= 監控與稽核作業
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視整個網格或特定節點的交易趨勢、來監控用戶端作業的工作負載和效率。您可以使用稽核訊息來監控用戶端作業和交易。
+
+
+
+== 監控物件擷取和擷取速率
+
+您可以監控物件擷取和擷取速率、以及物件計數、查詢和驗證的度量。您可以檢視用戶端應用程式在StorageGRID 讀取、寫入及修改物件時、成功和失敗的嘗試次數。
+
+.步驟
+. 使用登入Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+. 在儀表板上、選取 * 效能 * > * S3 作業 * 或 * 效能 * > * Swift 作業 * 。
++
+本節概述StorageGRID 您的一套系統執行的用戶端作業數量。在過去兩分鐘內平均傳輸協定速率。
+
+. 選擇*節點*。
+. 在節點首頁（部署層級）中、按一下*負載平衡器*索引標籤。
++
+這些圖表顯示了導向至網格內負載平衡器端點的所有用戶端流量趨勢。您可以選擇以小時、天、週、月或年為單位的時間間隔、 您也可以套用自訂時間間隔。
+
+. 在節點首頁（部署層級）中、按一下*物件*索引標籤。
++
+此圖表以StorageGRID 每秒位元組數和總位元組數顯示整個系統的擷取和擷取速率。您可以選擇以小時、天、週、月或年為單位的時間間隔、 您也可以套用自訂時間間隔。
+
+. 若要查看特定儲存節點的資訊、請從左側清單中選取節點、然後按一下「*物件*」索引標籤。
++
+此圖表顯示此儲存節點的物件擷取和擷取速率。此索引標籤也包含物件計數、查詢和驗證的度量。您可以按一下標籤來查看這些度量的定義。
+
++
+image::../media/nodes_storage_node_objects_help.png[節點>_Storage Nod_>物件>屬性說明的快照]
+
+. 如果您想要更詳細的資料：
++
+.. 選取*支援*>*工具*>*網格拓撲*。
+.. 選擇*站台_*>*總覽*>*主選項*。
++
+「API作業」區段會顯示整個網格的摘要資訊。
+
+.. 選擇「*儲存節點_*」>「*最大*」>「*用戶端應用程式_*」>「*總覽*」>「*主要*」
++
+「作業」區段會顯示所選儲存節點的摘要資訊。
+
+
+
+
+
+
+
+== 存取及檢閱稽核記錄
+
+稽核訊息是StorageGRID 由支援服務產生、並儲存在文字記錄檔中。稽核日誌中的API專屬稽核訊息可提供關鍵的安全性、作業和效能監控資料、協助您評估系統的健全狀況。
+
+.開始之前
+* 您必須擁有特定的存取權限。
+* 您必須擁有 `Passwords.txt` 檔案：
+* 您必須知道管理節點的IP位址。
+
+
+.關於這項工作
+。 link:../audit/audit-message-flow-and-retention.html["作用中稽核記錄檔"] 名稱 `audit.log`和儲存在管理節點上。
+
+一天只要儲存一次作用中的audit.log檔案、就會啟動新的audit.log檔案。儲存檔案的名稱會以格式指出儲存時間 `yyyy-mm-dd.txt`。
+
+一天後、儲存的檔案會以壓縮格式重新命名 `yyyy-mm-dd.txt.gz`，保留原始日期。
+
+此範例顯示使用中的audit.log檔案、前一天的檔案（2018-04-15.TXT）、以及前一天的壓縮檔案 (`2018-04-14.txt.gz`）。
+
+[listing]
+----
+audit.log
+2018-04-15.txt
+2018-04-14.txt.gz
+----
+.步驟
+. 登入管理節點：
++
+.. 輸入下列命令： `ssh admin@_primary_Admin_Node_IP_`
+.. 輸入中所列的密碼 `Passwords.txt` 檔案：
+.. 輸入下列命令以切換至root： `su -`
+.. 輸入中所列的密碼 `Passwords.txt` 檔案：
++
+當您以root登入時、提示會從變更 `$` 至 `#`。
+
+
+
+. 移至包含稽核記錄檔的目錄：``cd /var/local/audit/export``
+. 視需要檢視目前或已儲存的稽核記錄檔。
+
+
+
+
+=== 在稽核記錄中追蹤的Swift作業
+
+所有成功的儲存刪除、取得、主管、張貼和放置作業都會在中追蹤 link:../audit/audit-messages-main.html["StorageGRID 稽核記錄"]。不會記錄故障、也不會記錄資訊、驗證或選項要求。
+
+系統會追蹤下列 Swift 作業的資訊。
+
+
+
+==== 帳戶營運
+
+* link:account-operations.html["取得帳戶"]
+* link:account-operations.html["總公司帳戶"]
+
+
+
+
+==== 容器作業
+
+* link:container-operations.html["刪除容器"]
+* link:container-operations.html["取得Container"]
+* link:container-operations.html["頭端容器"]
+* link:container-operations.html["放入容器"]
+
+
+
+
+==== 物件作業
+
+* link:object-operations.html["刪除物件"]
+* link:object-operations.html["Get物件"]
+* link:object-operations.html["標頭物件"]
+* link:object-operations.html["放置物件"]
+

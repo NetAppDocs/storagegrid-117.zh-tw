@@ -1,0 +1,123 @@
+---
+permalink: installconfig/port-bond-modes-for-sg6000-cn-controller.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, port bond, port bonding, port bond mode, port-bond mode, Network bond, Network bonding, Network bond mode, Network-bond mode, independent, active-backup, active backup, 1-gbe, 1 gbe, 10/25-gbe, 10/25 gbe,  sg6000-cn 
+summary: 在設定SG6000-CN*的網路連結時、您可以使用連接埠連結連接至Grid Network和選用用戶端網路的10/25-GbE連接埠、以及連接至選用管理網路的1-GbE管理連接埠。連接埠連結功能可在StorageGRID 各個解決方案之間提供備援路徑、協助您保護資料。 
+---
+= 連接埠連結模式（ SG6000-CN 控制器）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+何時 link:configuring-network-links.html["設定網路連結"] 對於 SG6000-CN 控制器、您可以使用連接埠連結連接至網格網路和選用用戶端網路的 10/25-GbE 連接埠、以及連接至選用管理網路的 1-GbE 管理連接埠。連接埠連結功能可在StorageGRID 各個解決方案之間提供備援路徑、協助您保護資料。
+
+
+
+== 10/25-GbE連接埠的網路連結模式
+
+SG6000-CN-控制器上的10/25-GbE網路連接埠支援Grid Network和Client Network連線的固定連接埠連結模式或Aggregate連接埠連結模式。
+
+
+
+=== 固定連接埠連結模式
+
+固定模式是10/25-GbE網路連接埠的預設組態。
+
+image::../media/sg6000_cn_fixed_port.gif[固定連接埠綁定模式]
+
+[cols="1a,3a"]
+|===
+| 標註 | 連結哪些連接埠 
+
+
+ a| 
+c
+ a| 
+如果使用此網路、用戶端網路的連接埠1和3會連結在一起。
+
+
+
+ a| 
+G
+ a| 
+連接埠2和4會連結至Grid Network。
+
+|===
+使用固定連接埠連結模式時、可使用主動備份模式或連結集合控制傳輸協定模式（LACP 802.3ad）連結連接埠。
+
+* 在主動備份模式（預設）中、一次只有一個連接埠處於作用中狀態。如果作用中連接埠故障、其備份連接埠會自動提供容錯移轉連線。連接埠4提供連接埠2（Grid Network）的備份路徑、連接埠3則提供連接埠1（用戶端網路）的備份路徑。
+* 在LACP模式中、每對連接埠會形成控制器與網路之間的邏輯通道、以提高處理量。如果一個連接埠故障、另一個連接埠會繼續提供該通道。處理量減少、但連線能力不受影響。
+
+
+
+NOTE: 如果您不需要備援連線、則每個網路只能使用一個連接埠。不過、請注意StorageGRID 、安裝完功能表之後、Grid Manager會觸發警示、表示連結已關閉。由於此連接埠的目的是中斷連線、因此您可以安全地停用此警示。
+
+從Grid Manager中選擇* Alert *>* Rules *、選取規則、然後按一下* Edit rule *。然後，取消選中 *Enabled* 複選框。
+
+
+
+=== Aggregate連接埠連結模式
+
+Aggregate連接埠連結模式可大幅增加每StorageGRID 個支援網的整體效能、並提供額外的容錯移轉路徑。
+
+image::../media/sg6000_cn_aggregate_port.gif[Aggregate連接埠綁定模式]
+
+[cols="1a,3a"]
+|===
+| 標註 | 連結哪些連接埠 
+
+
+ a| 
+1.
+ a| 
+所有連接的連接埠都集中在單一LACP連結中、允許所有連接埠用於Grid Network和Client Network流量。
+
+|===
+如果您打算使用Aggregate連接埠連結模式：
+
+* 您必須使用LACP網路連結模式。
+* 您必須為每個網路指定唯一的VLAN標記。此VLAN標記將新增至每個網路封包、以確保網路流量路由傳送至正確的網路。
+* 連接埠必須連接至可支援VLAN和LACP的交換器。如果有多個交換器參與LACP連結、交換器必須支援多機箱連結集合群組（MLAG）或等效群組。
+* 您將瞭解如何設定交換器以使用 VLAN 、 LACP 和 MLAG 或同等功能。
+
+
+如果您不想使用全部四個 10/25-GbE 連接埠、可以使用一個、兩個或三個連接埠。使用一個以上的連接埠、可大幅提高當10/25-GbE連接埠故障時、部分網路連線仍可繼續使用的機率。
+
+
+NOTE: 如果您選擇使用少於四個連接埠、請注意StorageGRID 、安裝完效益分析之後、Grid Manager會發出一或多個警示、表示纜線已拔下。您可以安全地確認警報以清除警報。
+
+
+
+== 1 GbE管理連接埠的網路連結模式
+
+對於SG6000-CN-控制器上的兩個1-GbE管理連接埠、您可以選擇「獨立網路連結模式」或「主動備份網路連結模式」來連線至選用的管理網路。
+
+在獨立模式中、只有左側的管理連接埠會連線至管理網路。此模式不提供備援路徑。右側的管理連接埠未連線、可用於暫用本機連線（使用IP位址169.254.0.1）
+
+在主動備份模式中、兩個管理連接埠都會連線至管理網路。一次只有一個連接埠處於作用中狀態。如果作用中連接埠故障、其備份連接埠會自動提供容錯移轉連線。將這兩個實體連接埠結合成一個邏輯管理連接埠、可提供通往管理網路的備援路徑。
+
+
+NOTE: 如果您需要在將1-GbE管理連接埠設定為「主動備份」模式時、暫時將SG6000-CN-控制器連線至本機、請從兩個管理連接埠拔下纜線、將暫時纜線插入右側的管理連接埠、然後使用IP位址169.254.0.1存取應用裝置。
+
+image::../media/sg6000_cn_bonded_managemente_ports.png[1-GbE連接埠]
+
+[cols="1a,3a"]
+|===
+| 標註 | 網路連結模式 
+
+
+ a| 
+答
+ a| 
+這兩個管理連接埠都連結至連接至管理網路的一個邏輯管理連接埠。
+
+
+
+ a| 
+我
+ a| 
+左側連接埠已連線至管理網路。右側連接埠可用於暫用本機連線（IP位址169.254.0.1）。
+
+|===

@@ -1,0 +1,25 @@
+---
+permalink: rhel/deployment-tools.html 
+sidebar: sidebar 
+keywords: red hat linux deployment tools, how to automate installation 
+summary: 您可能會受益於自動化StorageGRID 整個或部分的安裝。 
+---
+= 部署工具
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可能會受益於自動化StorageGRID 整個或部分的安裝。
+
+在下列任一情況下、自動化部署可能會很有用：
+
+* 您已經使用標準協調架構（例如Ansible、Puppet或Chef）來部署及設定實體或虛擬主機。
+* 您打算部署多StorageGRID 個實例。
+* 您正在部署一個龐大且複雜StorageGRID 的實體執行個體。
+
+
+這個支援服務是由套件安裝、並由組態檔案驅動、可在手動安裝期間互動建立、或是預先準備（或以程式設計方式）、以使用標準協調架構進行自動化安裝。StorageGRID提供選用的Python指令碼、可自動設定各種不完整的功能、以及整個支援系統（「GRID」）StorageGRID StorageGRID StorageGRID 。您可以直接使用這些指令碼、也可以檢查這些指令碼、瞭解如何使用 link:overview-of-installation-rest-api.html["安裝REST API StorageGRID"] 在網格部署和組態工具中、您可以自行開發。
+
+如果您有興趣將StorageGRID 整個或部分的非重點部署自動化、請檢閱 link:automating-installation.html["自動化安裝"] 開始安裝程序之前。

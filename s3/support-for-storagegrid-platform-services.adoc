@@ -1,0 +1,63 @@
+---
+permalink: s3/support-for-storagegrid-platform-services.html 
+sidebar: sidebar 
+keywords: platform services, cloudmirror replication, notifications, search integration 
+summary: 透過支援此平台的服務、無法利用外部服務、例如遠端S3儲存區、簡易通知服務（SNS）端點或彈性搜尋叢集、來延伸網格所提供的服務。StorageGRID StorageGRID 
+---
+= 支援StorageGRID 支援功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+透過支援此平台的服務、非重租戶帳戶可利用遠端S3儲存區、簡易通知服務（SNS）端點或彈性搜尋叢集等外部服務來擴充網格所提供的服務。StorageGRID StorageGRID
+
+下表摘要說明可用的平台服務和用來設定的S3 API。
+
+[cols="1a,2a,1a"]
+|===
+| 平台服務 | 目的 | 用來設定服務的S3 API 
+
+
+ a| 
+CloudMirror複寫
+ a| 
+將物件從來源StorageGRID 的靜止庫複寫到設定的遠端S3庫位。
+ a| 
+Put Bucket 複寫（請參閱 link:operations-on-buckets.html["在貯體上作業"]）
+
+
+
+ a| 
+通知
+ a| 
+將來源StorageGRID 資訊庫中的事件通知傳送至設定的簡易通知服務（SNS）端點。
+ a| 
+Put Bucket 通知（請參閱 link:operations-on-buckets.html["在貯體上作業"]）
+
+
+
+ a| 
+搜尋整合
+ a| 
+將StorageGRID 儲存在物件庫的物件中繼資料傳送至已設定的彈性搜尋索引。
+ a| 
+link:put-bucket-metadata-notification-configuration-request.html["放置時段中繼資料通知組態"]
+
+*附註：*這是StorageGRID 一套由人自訂的S3 API。
+
+|===
+網格管理員必須先啟用租戶帳戶的平台服務、才能使用這些服務。請參閱 link:../admin/index.html["管理StorageGRID"]。然後、租戶管理員必須在租戶帳戶中建立代表遠端服務的端點。必須先執行此步驟、才能設定服務。請參閱 link:../tenant/index.html["使用租戶帳戶"]。
+
+
+
+== 使用平台服務的建議
+
+在使用平台服務之前、您必須瞭解下列建議：
+
+* NetApp建議您允許不超過100個主動租戶、且S3要求需要CloudMirror複寫、通知及搜尋整合。擁有超過100個作用中租戶可能會導致S3用戶端效能變慢。
+* 如果 StorageGRID 系統中的 S3 儲存區同時啟用版本設定和 CloudMirror 複寫功能、 NetApp 建議目的地端點也啟用 S3 儲存區版本設定功能。這可讓CloudMirror複寫在端點上產生類似的物件版本。
+* 如果來源儲存區已啟用S3物件鎖定、則不支援CloudMirror複寫。
+* 如果目的地儲存區已啟用舊版法規遵循、CloudMirror複寫將會失敗並顯示「AccessDenied」錯誤。
+

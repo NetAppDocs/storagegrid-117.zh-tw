@@ -1,0 +1,62 @@
+---
+permalink: s3/how-storagegrid-ilm-rules-manage-objects.html 
+sidebar: sidebar 
+keywords: ilm manage object rules 
+summary: 網格管理員會建立資訊生命週期管理（ILM）規則、以管理StorageGRID 從S3 REST API用戶端應用程式擷取到整個系統的物件資料。然後將這些規則新增至ILM原則、以決定物件資料的儲存方式和位置。 
+---
+= 如何利用ILM規則來管理物件StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+網格管理員會建立資訊生命週期管理（ILM）規則、以管理StorageGRID 從S3 REST API用戶端應用程式擷取到整個系統的物件資料。然後將這些規則新增至ILM原則、以決定物件資料的儲存方式和位置。
+
+ILM設定決定物件的下列層面：
+
+* *地理*
++
+物件資料的位置、無論是StorageGRID 在更新系統（儲存資源池）或雲端儲存資源池中。
+
+* *儲存等級*
++
+用於儲存物件資料的儲存類型：例如Flash或旋轉式磁碟。
+
+* *損失保護*
++
+製作了多少份複本、以及建立的複本類型：複寫、銷毀編碼或兩者。
+
+* *保留*
++
+物件資料的管理方式、儲存位置、以及保護資料不受遺失的方式、都會隨時間而改變。
+
+* *擷取期間的保護*
++
+用於在擷取期間保護物件資料的方法：同步放置（使用擷取行為的平衡或嚴格選項）、或製作過渡複本（使用雙重提交選項）。
+
+
+
+ILM規則可篩選及選取物件。對於使用S3擷取的物件、ILM規則可根據下列中繼資料來篩選物件：
+
+* 租戶帳戶
+* 儲存區名稱
+* 擷取時間
+* 金鑰
+* 上次存取時間
++
+
+NOTE: 根據預設、所有S3儲存區的上次存取時間更新都會停用。如果您的 StorageGRID 系統包含使用上次存取時間選項的 ILM 規則、則必須針對該規則中指定的 S3 儲存區、啟用更新、使其能在最後存取時間內完成。請使用「放置庫位上次存取時間」要求、租戶管理程式（請參閱 link:../tenant/enabling-or-disabling-last-access-time-updates.html["啟用或停用上次存取時間更新"]）、或租戶管理 API 。啟用上次存取時間更新時、請注意StorageGRID 、可能會降低不佳效能、尤其是在使用小型物件的系統中。
+
+* 位置限制
+* 物件大小
+* 使用者中繼資料
+* 物件標籤
+
+
+.相關資訊
+link:../tenant/index.html["使用租戶帳戶"]
+
+link:../ilm/index.html["使用ILM管理物件"]
+
+link:put-bucket-last-access-time-request.html["將資源桶放在最後存取時間"]

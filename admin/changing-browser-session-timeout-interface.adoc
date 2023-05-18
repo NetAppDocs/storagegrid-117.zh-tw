@@ -1,0 +1,46 @@
+---
+permalink: admin/changing-browser-session-timeout-interface.html 
+sidebar: sidebar 
+keywords: browser inactivity timeout, inactive users 
+summary: 您可以控制Grid Manager和Tenant Manager使用者是否在超過一定時間內處於非作用中狀態時登出。 
+---
+= 變更瀏覽器閒置逾時
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以控制Grid Manager和Tenant Manager使用者是否在超過一定時間內處於非作用中狀態時登出。
+
+.開始之前
+* 您將使用登入Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您擁有root存取權限。
+
+
+.關於這項工作
+瀏覽器閒置逾時預設為 15 分鐘。如果使用者的瀏覽器在這段時間內未啟用、則使用者會登出。
+
+視需要、您可以設定 * 在 * 之後登出非使用中的使用者選項、以增加或縮短逾時時間。
+
+瀏覽器閒置逾時也由下列項目控制：
+
+* 另有一個不可設定StorageGRID 的獨立式計時功能、可用於系統安全性。根據預設、每個使用者的驗證權杖會在使用者登入後16小時過期。當使用者的驗證過期時、該使用者會自動登出、即使瀏覽器閒置逾時已停用、或瀏覽器逾時的值尚未達到。若要續約權杖、使用者必須重新登入。
+* 假設 StorageGRID 已啟用單一登入（ SSO ）、則身分識別提供者的逾時設定。
++
+如果啟用 SSO 且使用者的瀏覽器逾時、使用者必須重新輸入其 SSO 認證、才能再次存取 StorageGRID 。請參閱 link:configuring-sso.html["設定單一登入"]。
+
+
+
+.步驟
+. 選擇 * 組態 * > * 安全性 * > * 安全性設定 * 。
+. 選擇 * 瀏覽器閒置逾時 * 標籤。
+. 在 * 在 * 之後登出非使用中的使用者 * 欄位中、指定介於 60 秒到 7 天之間的瀏覽器逾時期間。
++
+您可以指定瀏覽器的逾時期間、以秒、分鐘、小時或天為單位。
+
+. 選擇*保存*。如果瀏覽器在指定的時間內處於非使用中狀態、則使用者會登出 Grid Manager 或 Tenant Manager 。
++
+新設定不會影響目前登入的使用者。使用者必須重新登入或重新整理瀏覽器、新的逾時設定才會生效。
+
+

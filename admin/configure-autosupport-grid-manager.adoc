@@ -1,0 +1,195 @@
+---
+permalink: admin/configure-autosupport-grid-manager.html 
+sidebar: sidebar 
+keywords: how to configure autosupport, what is autosupport-on-demand 
+summary: 您可以在AutoSupport 第一次安裝時啟用「支援」功能和個別AutoSupport 的「支援」選項StorageGRID 、也可以稍後啟用。 
+---
+= 設定AutoSupport 功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在AutoSupport 第一次安裝時啟用「支援」功能和個別AutoSupport 的「支援」選項StorageGRID 、也可以稍後啟用。
+
+.開始之前
+* 您將使用登入Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您具有根存取權限或其他網格組態權限。
+* 如果您將使用 HTTPS 傳送 AutoSupport 訊息、表示您已直接或提供主要管理節點的輸出網際網路存取 link:configuring-admin-proxy-settings.html["使用 Proxy 伺服器"] （不需要輸入連線）。
+* 如果在 StorageGRID AutoSupport 頁面上選取 HTTP 、表示您已設定 Proxy 伺服器、將 AutoSupport 訊息轉寄為 HTTPS 。NetApp 的 AutoSupport 伺服器將拒絕使用 HTTP 傳送的訊息。
+* 如果您將使用SMTP做AutoSupport 為中繼訊息的傳輸協定、則表示您已設定了一個SMTP郵件伺服器。相同的郵件伺服器組態用於警示電子郵件通知（舊系統）。
+
+
+
+
+== 指定AutoSupport 訊息的傳輸協定
+
+您可以使用下列任一種通訊協定來傳送AutoSupport 不包含任何資訊的訊息：
+
+* * HTTPS *：這是新安裝的預設及建議設定。此通訊協定使用連接埠 443 。如果您想要 <<啟用AutoSupport 隨需功能,啟用 AutoSupport on Demand 功能>>，您必須使用 HTTPS 。
+* *HTTP* ：如果您選取 HTTP 、則必須設定 Proxy 伺服器、才能將 AutoSupport 訊息轉寄為 HTTPS 。NetApp 的 AutoSupport 伺服器拒絕使用 HTTP 傳送的訊息。此通訊協定使用連接埠 80 。
+* * SMTP*：如果您想AutoSupport 要以電子郵件寄送不一樣的訊息、請使用此選項。如果您使用SMTP做為AutoSupport 不實訊息的傳輸協定、則必須在「舊版電子郵件設定」頁面（*支援*>*警示（舊版）*>*舊版電子郵件設定*）上設定一個SMTP郵件伺服器。
++
+
+NOTE: 在AutoSupport 發佈版更新版的過程中、只有使用SMTP作為唯一的傳輸協定、才能接收到有關消息的資訊。StorageGRID如果StorageGRID 您一開始安裝的是舊版的版本的、則可能是選取的傳輸協定。
+
+
+
+您設定的傳輸協定用於傳送所有類型AutoSupport 的資訊。
+
+.步驟
+. 選取*支援*>*工具*>* AutoSupport 參考*。
++
+畫面會出現「the S還原」頁面、並選取「* Settings*」索引標籤。AutoSupport
+
++
+image::../media/autosupport_settings_tab.png[包含「設定」索引標籤的頁面selected.png AutoSupport]
+
+. 選取您要用來傳送AutoSupport 資訊提示訊息的傳輸協定。
+. 如果您選取* HTTPS *、請選取是否要使用TLS憑證來保護與NetApp支援伺服器的連線安全。
++
+** *使用NetApp支援證書*（預設）：憑證驗證可確保AutoSupport 傳輸不間斷的資訊安全無虞。NetApp支援證書已隨StorageGRID 支援軟體一起安裝。
+** *不驗證憑證*：只有在有充分理由不使用憑證驗證時（例如憑證暫時有問題時）、才選取此選項。
+
+
+. 選擇*保存*。
++
+所有每週、使用者觸發和事件觸發的訊息都會使用選取的傳輸協定來傳送。
+
+
+
+
+
+== 停用每週AutoSupport 更新訊息
+
+根據預設StorageGRID 、將支援系統設定為每AutoSupport 週傳送一次消息給NetApp Support。
+
+若要判斷何時AutoSupport 傳送每週更新訊息、請前往* AutoSupport 《*》>*《結果*》索引標籤。在「*每週AutoSupport 資料*」區段中、查看*下一個排程時間*的值。
+
+image::../media/autosupport_weekly_next_scheduled_time.png[每週AutoSupport 更新排程時間]
+
+您可以隨時停用自動傳送每週AutoSupport 更新訊息。
+
+.步驟
+. 選取*支援*>*工具*>* AutoSupport 參考*。
+. 清除 * 啟用每週 AutoSupport * 核取方塊。
+. 選擇*保存*。
+
+
+
+
+== 停用事件觸發AutoSupport 的功能性訊息
+
+根據預設、StorageGRID 當AutoSupport 發生重要警示或其他重大系統事件時、將會將此功能設定為傳送不必要訊息給NetApp支援部門。
+
+您可以AutoSupport 隨時停用事件觸發的資訊技術訊息。
+
+.步驟
+. 選取*支援*>*工具*>* AutoSupport 參考*。
+. 清除 * 啟用事件觸發的 AutoSupport * 核取方塊。
+. 選擇*保存*。
+
+
+
+
+== 啟用AutoSupport 隨需功能
+
+根據需求提供支援、協助您解決技術支援部門正在積極處理的問題。AutoSupport
+
+根據預設、AutoSupport 會停用隨需功能。啟用此功能可讓技術支援人員要求StorageGRID 您的支援系統AutoSupport 自動傳送各種資訊。技術支援部門也可以設定AutoSupport 「根據需求進行查詢」的輪詢時間間隔。
+
+技術支援無法啟用或停用 AutoSupport on Demand 。
+
+.步驟
+. 選取*支援*>*工具*>* AutoSupport 參考*。
+. 選取* HTTPS *作為傳輸協定。
+. 選中 *Enable Weekly AutoSupport （每週啓用） * 複選框。
+. 選中 *Enable AutoSupport on Demand* 複選框。
+. 選擇*保存*。
++
+支援隨需提供支援、技術支援人員可將「根據需求提出的要求」傳送至AutoSupport AutoSupport StorageGRID
+
+
+
+
+
+== 停用軟體更新檢查
+
+根據預設、StorageGRID 此功能會聯絡NetApp以判斷您的系統是否有可用的軟體更新。如果StorageGRID 有可用的更新版本或更新版本、則StorageGRID 更新版本會顯示在「更新版」頁面上。
+
+視需要、您可以選擇停用軟體更新檢查。例如、如果您的系統沒有WAN存取、您應該停用檢查、以避免下載錯誤。
+
+.步驟
+. 選取*支援*>*工具*>* AutoSupport 參考*。
+. 清除 * 檢查軟體更新 * 核取方塊。
+. 選擇*保存*。
+
+
+
+
+== 新增AutoSupport 其他的目的地
+
+當您啟用 AutoSupport 時、 heath 和 status 訊息會傳送至 NetApp 支援部門。您可以為所有AutoSupport 的資訊提供額外的目的地。
+
+若要驗證或變更用來傳送AutoSupport 資訊提示訊息的傳輸協定、請參閱的指示 <<指定AutoSupport 訊息的傳輸協定>>。
+
+
+NOTE: 您無法使用 SMTP 傳輸協定將 AutoSupport 訊息傳送至其他目的地。
+
+.步驟
+. 選取*支援*>*工具*>* AutoSupport 參考*。
+. 選取 * 啟用其他 AutoSupport 目的地 * 。
+. 指定下列項目：
++
+[cols="1a,2a"]
+|===
+| 欄位 | 說明 
+
+
+ a| 
+主機名稱
+ a| 
+其他 AutoSupport 目的地伺服器的伺服器主機名稱或 IP 位址。
+
+* 注意 * ：您只能輸入一個額外的目的地。
+
+
+
+ a| 
+連接埠
+ a| 
+用於連接至其他 AutoSupport 目的地伺服器的連接埠。預設為 HTTP 連接埠 80 或 HTTPS 連接埠 443 。
+
+
+
+ a| 
+認證驗證
+ a| 
+是否使用 TLS 憑證來保護連線至其他目的地的安全。
+
+** 選取 * 不驗證憑證 * 、即可在沒有憑證驗證的情況下傳送 AutoSupport 訊息。
++
+只有當您有充分理由不使用憑證驗證時（例如憑證暫時有問題時）、才選取此選項。
+
+** 選取 * 使用自訂 CA 套裝組合 * 以使用憑證驗證。
+
+
+|===
+. 如果您選取 * 使用自訂 CA 套裝組合 * 、請執行下列其中一項：
++
+** 選取*瀏覽*、瀏覽至內含憑證的檔案、然後選取*開啟*上傳檔案。
+** 使用編輯工具、將每個 PEM 編碼 CA 憑證檔案的所有內容複製並貼到 * CA Bundle * 欄位、並依憑證鏈結順序串聯。
++
+您必須包含 `----BEGIN CERTIFICATE----` 和 `----END CERTIFICATE----` 在您的選擇中。
+
++
+image::../media/autosupport_certificate.png[認證AutoSupport]
+
+
+
+. 選擇*保存*。
++
+所有未來每週、事件觸發及使用者觸發AutoSupport 的消息都會傳送至其他目的地。
+
+

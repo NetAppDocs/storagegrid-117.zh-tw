@@ -1,0 +1,22 @@
+---
+permalink: maintain/considerations-for-decommissioning-admin-or-gateway-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, decommission admin node, decommission gateway node 
+summary: 在解除委任管理節點或閘道節點之前、請先檢閱下列考量事項。 
+---
+= 管理節點或閘道節點取消委任的考量
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在解除委任管理節點或閘道節點之前、請先檢閱下列考量事項。
+
+* 取消委任程序需要專屬存取部分系統資源、因此您必須確認沒有執行其他維護程序。
+* 您無法取消委任主要管理節點。
+* 如果其中一個網路介面是高可用度（ HA ）群組的一部分、則無法取消委任管理節點或閘道節點。您必須先從HA群組移除網路介面。請參閱的說明 link:../admin/managing-high-availability-groups.html["管理 HA 群組"]。
+* 視需要、您可以在解除委任閘道節點或管理節點的同時、安全地變更ILM原則。
+* 如果您取消委任管理節點、並啟用StorageGRID 單一登入（SSO）來啟用您的支援、您必須記得從Active Directory Federation Services（AD FS）移除節點的信賴方信任。
+* 如果您使用 link:../admin/grid-federation-overview.html["網格同盟"]、請確定您要停用之節點的 IP 位址未指定給網格同盟連線。
+

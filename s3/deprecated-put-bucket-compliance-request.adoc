@@ -1,0 +1,111 @@
+---
+permalink: s3/deprecated-put-bucket-compliance-request.html 
+sidebar: sidebar 
+keywords: S3 REST API, S3 operations, PUT deprecated compliance requests 
+summary: 「放入時段」法規遵循要求已過時。不過、您可以繼續使用此要求來修改現有舊版相容桶的法規遵循設定。 
+---
+= 已過時：提出資源桶法規遵循要求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「放入時段」法規遵循要求已過時。不過、您可以繼續使用此要求來修改現有舊版相容桶的法規遵循設定。例如、您可以將現有的貯體置於合法持有狀態、或是延長保留期間。
+
+
+IMPORTANT: 先前版本的不支援《支援不符合要求》功能、現已由S3物件鎖定取代。StorageGRID StorageGRID
+
+link:../s3/use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 物件鎖定"]
+
+link:../ilm/index.html["使用ILM管理物件"]
+
+https://["NetApp知識庫：如何管理StorageGRID 支援老舊的知識庫、請參閱《知識庫文章"^]
+
+您有S3：PuttBucketCompliance權限、或是帳戶root、才能完成此作業。
+
+在發出「放入庫位」法規遵循要求時、您必須為法規遵循設定的每個欄位指定一個值。
+
+
+
+== 申請範例
+
+此範例要求會修改名為的儲存區的規範設定 `mybucket`。在此範例中、物件位於 `mybucket` 現在將保留兩年（1、051、200分鐘）、而非一年、從物件進入網格開始算起。此庫位沒有合法持有。每個物件將在兩年後自動刪除。
+
+[listing, subs="specialcharacters,quotes"]
+----
+PUT /mybucket/?x-ntap-sg-compliance HTTP/1.1
+Date: _date_
+Authorization: _authorization name_
+Host: _host_
+Content-Length: 152
+
+<SGCompliance>
+  <RetentionPeriodMinutes>1051200</RetentionPeriodMinutes>
+  <LegalHold>false</LegalHold>
+  <AutoDelete>true</AutoDelete>
+</SGCompliance>
+----
+[cols="1a,2a"]
+|===
+| 名稱 | 說明 
+
+
+ a| 
+RetentionPeriodMinutes
+ a| 
+新增至此儲存區之物件的保留期間長度（以分鐘為單位）。保留期間是從物件擷取至網格時開始。
+
+* 重要 * 為 RetentionPeriodMinutes 指定新值時、您必須指定一個值、該值等於或大於該貯體目前的保留期間。設定貯體保留期間之後、您就無法減少該值、只能增加該值。
+
+
+
+ a| 
+LegalHold
+ a| 
+* 是：此儲存庫目前處於合法持有狀態。除非取消合法保留、否則無法刪除此貯體中的物件、即使保留期間已過期。
+* 假：此庫位目前未合法持有。此儲存區中的物件可在保留期間到期時刪除。
+
+
+
+
+ a| 
+自動刪除
+ a| 
+* 是：此儲存區中的物件會在保留期間到期時自動刪除、除非儲存區處於合法持有狀態。
+* 否：保留期間到期時、此儲存區中的物件不會自動刪除。如果需要刪除這些物件、您必須手動刪除這些物件。
+
+
+|===
+
+
+== 法規遵循設定的一致性層級
+
+當您更新S3儲存區的法規遵循設定、並提出「置放儲存區法規遵循」要求時StorageGRID 、即可嘗試更新整個網格的儲存區中繼資料。根據預設、StorageGRID 支援使用*強式全域*一致性層級、以保證所有資料中心站台及包含儲存庫中繼資料的所有儲存節點、在變更的法規遵循設定中、具有寫入後讀取一致性。
+
+如果 StorageGRID 無法達到 * 強式全域 * 一致性層級、因為某個站台的資料中心站台或多個儲存節點無法使用、則回應的 HTTP 狀態代碼為 `503 Service Unavailable.`
+
+如果您收到此回應、則必須聯絡網格管理員、以確保所需的儲存服務能夠儘快提供。如果網格管理員無法在每個站台上提供足夠的儲存節點、技術支援可能會強制*強站台*一致性層級、引導您重試失敗的要求。
+
+
+IMPORTANT: 除非您是技術支援人員的指示、而且您不瞭解使用此層級可能造成的後果、否則請勿強迫*強站台*一致性層級以符合放置桶規範。
+
+當一致性層級降至*強站台*時StorageGRID 、更新的法規遵循設定只有在站台內的用戶端要求才具有寫入後讀取一致性。這表示StorageGRID 在所有站台和儲存節點都可用之前、此儲存區的設定可能會暫時有多個不一致的設定。不一致的設定可能會導致非預期和非預期的行為。例如、如果您將儲存庫置於合法持有之下、而強制降低一致性層級、則儲存庫先前的法規遵循設定（即合法暫停）可能會繼續在某些資料中心站台上生效。因此、您認為合法保留的物件、可能會在保留期間到期時遭到刪除、使用者或自動刪除（如果已啟用）。
+
+若要強制使用*強站台*一致性層級、請重新發出「Put Bucket Compliance」（放入儲存庫）要求、並附上 `Consistency-Control` HTTP要求標頭、如下所示：
+
+[listing]
+----
+PUT /mybucket/?x-ntap-sg-compliance HTTP/1.1
+Consistency-Control: strong-site
+----
+
+
+== 錯誤回應
+
+* 如果儲存區建立不符合法規要求、則回應的HTTP狀態代碼為 `404 Not Found`。
+* 如果 `RetentionPeriodMinutes` 在要求中、HTTP狀態代碼小於儲存區目前的保留期間 `400 Bad Request`。
+
+
+.相關資訊
+link:deprecated-put-bucket-request-modifications-for-compliance.html["已過時：將資源桶要求修改以符合法規要求"]

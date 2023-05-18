@@ -1,0 +1,37 @@
+---
+permalink: upgrade/changes-to-grid-management-api.html 
+sidebar: sidebar 
+keywords: grid management api, api, api version, swagger, rest api 
+summary: StorageGRID 11.7 使用 Grid Management API 的第 3 版。第3版取代第2版、但仍支援第1版和第2版。 
+---
+= 網格管理API的變更
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID 11.7 使用 Grid Management API 的第 3 版。第3版取代第2版、但仍支援第1版和第2版。
+
+
+IMPORTANT: 您可以繼續使用 StorageGRID 11.7 的管理 API 第 1 版和第 2 版、但在未來的 StorageGRID 版本中、將會移除對這些 API 版本的支援。升級至 StorageGRID 11.7 之後、可以使用停用的 v1 和 v2 API `PUT /grid/config/management` API：
+
+若要深入瞭解、請前往 link:../admin/using-grid-management-api.html["使用Grid Management API"]。
+
+
+
+== 現在顯示回應節點健全狀況要求時所包含的名稱
+
+與新的相關 link:../maintain/rename-grid-site-node-overview.html["重新命名網格、站台和節點程序"]在您重新命名站台或節點之後、項目的名稱（其系統名稱）及其顯示名稱都會由 *node-health * API 傳回。
+
+
+
+== 可為新的 S3 租戶建立貯體和存取金鑰
+
+新功能 `s3Bucket` 和 `s3AccessKey` 選項已新增至 * 帳戶 * API 。使用 Grid Management API 建立 S3 租戶帳戶時、您可以選擇性地為該租戶建立貯體、以及租戶根使用者的存取金鑰 ID 和秘密金鑰。
+
+
+
+== 可變更儲存節點的儲存狀態
+
+您可以使用新的 * 節點儲存狀態 * API 端點來判斷及變更儲存節點中的儲存狀態（線上、離線、唯讀）。

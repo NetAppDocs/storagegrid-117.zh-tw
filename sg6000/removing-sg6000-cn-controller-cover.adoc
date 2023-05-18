@@ -1,0 +1,36 @@
+---
+permalink: sg6000/removing-sg6000-cn-controller-cover.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, sg6000-cn, controller, cover, remove, removing, removal 
+summary: 取下控制器護蓋、以存取內部元件進行維護。 
+---
+= 取下SG6000-CN-控制器護蓋
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+取下控制器護蓋、以存取內部元件進行維護。
+
+.開始之前
+從機櫃或機架中取出控制器、以存取頂蓋。
+
+link:removing-sg6000-cn-controller-from-cabinet-or-rack.html["從機櫃或機架上卸下SG6000-CN.控制器"]
+
+.步驟
+. 請確定SG6000-CN-控制器護蓋栓鎖未鎖定。如有必要、請將藍色的塑膠栓鎖鎖朝解除鎖定方向轉動四分之一圈、如鎖銷鎖上所示。
+. 將栓鎖朝SG6000-CN-控制器機箱的背面向上和向後旋轉、直到卡住為止、然後小心地從機箱中提起機箱蓋、並將其放在一邊。
++
+image::../media/sg6060_cover_latch_open.jpg[SG6060護蓋栓鎖開啟]
+
++
+
+IMPORTANT: 將ESD腕帶末端包覆在您的腕帶上、並將扣夾末端固定在金屬接地上、以避免在SG6000-CN-控制器內部工作時產生靜電釋放。
+
+
+
+更換零件後、請將故障零件歸還給NetApp、如套件隨附的RMA指示所述。請參閱 https://["產品退貨安培；更換"^] 頁面以取得更多資訊。
+
+.相關資訊
+link:removing-fibre-channel-hba.html["移除Fibre Channel HBA"]

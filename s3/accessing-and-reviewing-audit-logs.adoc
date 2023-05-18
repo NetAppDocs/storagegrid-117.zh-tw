@@ -1,0 +1,54 @@
+---
+permalink: s3/accessing-and-reviewing-audit-logs.html 
+sidebar: sidebar 
+keywords: access audit logs, review audit logs, view audit logs 
+summary: 稽核訊息是StorageGRID 由支援服務產生、並儲存在文字記錄檔中。稽核日誌中的API專屬稽核訊息可提供關鍵的安全性、作業和效能監控資料、協助您評估系統的健全狀況。 
+---
+= 存取及檢閱稽核記錄
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+稽核訊息是StorageGRID 由支援服務產生、並儲存在文字記錄檔中。稽核日誌中的API專屬稽核訊息可提供關鍵的安全性、作業和效能監控資料、協助您評估系統的健全狀況。
+
+.開始之前
+* 您擁有特定的存取權限。
+* 您擁有 `Passwords.txt` 檔案：
+* 您知道管理節點的IP位址。
+
+
+.關於這項工作
+作用中的稽核記錄檔會命名為 `audit.log`和儲存在管理節點上。
+
+一天只要儲存一次作用中的audit.log檔案、就會儲存一個新檔案 `audit.log` 檔案已啟動。儲存檔案的名稱會以格式指出儲存時間 `_yyyy-mm-dd.txt_`。
+
+一天後、儲存的檔案會以壓縮格式重新命名 `_yyyy-mm-dd.txt.gz_`，保留原始日期。
+
+此範例顯示使用中的 `audit.log` 檔案、前一天的檔案 (`2018-04-15.txt`）、以及前一天的壓縮檔案 (`2018-04-14.txt.gz`）。
+
+[listing]
+----
+audit.log
+2018-04-15.txt
+2018-04-14.txt.gz
+----
+.步驟
+. 登入管理節點：
++
+.. 輸入下列命令： `ssh admin@_primary_Admin_Node_IP_`
+.. 輸入中所列的密碼 `Passwords.txt` 檔案：
+.. 輸入下列命令以切換至root： `su -`
+.. 輸入中所列的密碼 `Passwords.txt` 檔案：
++
+當您以root登入時、提示會從變更 `$` 至 `#`。
+
+
+
+. 移至包含稽核記錄檔的目錄：
++
+`cd /var/local/audit/export`
+
+. 視需要檢視目前或已儲存的稽核記錄檔。
+

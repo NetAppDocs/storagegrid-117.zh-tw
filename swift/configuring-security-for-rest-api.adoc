@@ -1,0 +1,110 @@
+---
+permalink: swift/configuring-security-for-rest-api.html 
+sidebar: sidebar 
+keywords: configure rest api security 
+summary: 您應該檢閱針對REST API實作的安全措施、並瞭解如何保護系統安全。 
+---
+= 設定REST API的安全性
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您應該檢閱針對REST API實作的安全措施、並瞭解如何保護系統安全。
+
+
+
+== 如何為REST API提供安全性StorageGRID
+
+您應該瞭解StorageGRID 什麼是讓此系統為REST API實作安全性、驗證和授權。
+
+使用下列安全措施。StorageGRID
+
+* 如果已針對負載平衡器端點設定HTTPS、則用戶端與負載平衡器服務的通訊會使用HTTPS。
++
+當您 link:../admin/configuring-load-balancer-endpoints.html["設定負載平衡器端點"]， HTTP 也可以選擇啟用。例如、您可能想要使用HTTP進行測試或其他非正式作業用途。
+
+* 根據預設、 StorageGRID 會使用 HTTPS 與儲存節點進行用戶端通訊。
++
+（可選） link:../admin/changing-network-options-object-encryption.html["為這些連線啟用 HTTP"]。例如、您可能想要使用HTTP進行測試或其他非正式作業用途。
+
+* 支援使用TLS加密支援不支援的客戶端與StorageGRID 之通訊。
+* 無論負載平衡器端點是設定為接受HTTP或HTTPS連線、網格內負載平衡器服務與儲存節點之間的通訊都會加密。
+* 用戶端必須提供HTTP驗證標頭StorageGRID 給才能執行REST API作業。
+
+
+
+
+=== 安全性憑證與用戶端應用程式
+
+用戶端可以直接連線至 Gateway 節點或管理節點上的負載平衡器服務、並直接連線至 Storage Node 。
+
+在任何情況下、用戶端應用程式都可以使用網格管理員上傳的自訂伺服器憑證或StorageGRID 由該系統產生的憑證來建立TLS連線：
+
+* 當用戶端應用程式連線至負載平衡器服務時、應用程式會使用針對用於建立連線的特定負載平衡器端點所設定的憑證來執行此作業。每個端點都有自己的憑證、可以是由網格管理員上傳的自訂伺服器憑證、也可以是網格管理員StorageGRID 在設定端點時產生的憑證。
+* 當用戶端應用程式直接連線至儲存節點時、它們會使用安裝 StorageGRID 系統（由系統憑證授權單位簽署）時為儲存節點產生的系統產生的伺服器憑證、 或是由網格管理員提供給網格的單一自訂伺服器憑證。
+
+
+用戶端應設定為信任已簽署其用於建立TLS連線之任何憑證的憑證授權單位。
+
+請參閱 link:../admin/configuring-load-balancer-endpoints.html["設定負載平衡器端點"] 和 link:../admin/configuring-custom-server-certificate-for-storage-node.html["新增單一自訂伺服器憑證"] 適用於直接連線至儲存節點的 TLS 連線。
+
+
+
+=== 摘要
+
+下表顯示S3和Swift REST API如何實作安全性問題：
+
+|===
+| 安全問題 | REST API的實作 
+
+
+ a| 
+連線安全性
+ a| 
+TLS
+
+
+
+ a| 
+伺服器驗證
+ a| 
+由系統CA或系統管理員提供的自訂伺服器憑證簽署的X．509伺服器憑證
+
+
+
+ a| 
+用戶端驗證
+ a| 
+* S3：S3帳戶（存取金鑰ID和秘密存取金鑰）
+* Swift：Swift帳戶（使用者名稱和密碼）
+
+
+
+
+ a| 
+用戶端授權
+ a| 
+* S3：貯體所有權及所有適用的存取控制原則
+* Swift：系統管理員角色存取
+
+
+|===
+
+
+== TLS程式庫支援的雜湊和加密演算法
+
+支援一套有限的加密套件、用戶端應用程式可在建立傳輸層安全性（TLS）工作階段時使用。StorageGRID要配置加密算法，請轉至 * 配置 * > * 安全性 * > * 安全性設置 * ，然後選擇 *TLS 和 SSH 策略 * 。
+
+
+
+=== 支援的TLS版本
+
+支援TLS 1.2和TLS 1.3。StorageGRID
+
+
+IMPORTANT: 不再支援SSLv3和TLS 1.1（或更早版本）。
+
+.相關資訊
+link:configuring-tenant-accounts-and-connections.html["設定租戶帳戶和連線"]

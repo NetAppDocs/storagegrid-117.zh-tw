@@ -1,0 +1,53 @@
+---
+permalink: admin/troubleshooting-autosupport-messages.html 
+sidebar: sidebar 
+keywords: troubleshoot autosupport, asup message 
+summary: 如果嘗試傳送AutoSupport 資訊不成功、StorageGRID 則根據AutoSupport 資訊類型、系統會採取不同的行動。您可以選取Support（支援）>> Tools（工具）\>支援 結果、以檢查AutoSupport 資訊的狀態AutoSupport 。 
+---
+= 疑難排解AutoSupport 資訊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果嘗試傳送AutoSupport 資訊不成功、StorageGRID 則根據AutoSupport 資訊類型、系統會採取不同的行動。您可以選取*支援*>*工具*>* Ses*>*結果*來檢查AutoSupport 資訊的狀態AutoSupport 。
+
+當無法傳送此資訊時、「'Failed'」會出現在*《*》頁面的「*結果*」索引標籤上。AutoSupport AutoSupport
+
+image::../media/autosupport_results_tab.png[AutoSupport 訊息傳送失敗]
+
+
+
+== 每週AutoSupport 更新訊息失敗
+
+如果每週AutoSupport 更新訊息無法傳送、StorageGRID 則無法執行下列動作：
+
+. 將最新的結果屬性更新為「Retrying（重新執行）」。
+. 每AutoSupport 四分鐘嘗試重新傳送一小時15次的消息。
+. 傳送失敗一小時後、將最近的「結果」屬性更新為「失敗」。
+. 嘗試AutoSupport 在下次排程時間再次傳送不二訊息。
+. 如果訊息因為NMS服務無法使用、而且訊息是在七天後傳送、則維持正常AutoSupport 的故障排程。
+. 當NMS服務再次可用時、AutoSupport 如果訊息在七天或更長時間內仍未傳送、就會立即傳送一個不實訊息。
+
+
+
+
+== 使用者觸發或事件觸發AutoSupport 的資訊不全訊息故障
+
+如果使用者觸發或事件觸發AutoSupport 的故障訊息無法傳送、StorageGRID 則無法執行下列動作：
+
+. 如果已知錯誤、則顯示錯誤訊息。例如、如果使用者選取的是未提供正確電子郵件組態設定的SMTP傳輸協定、則會顯示下列錯誤： `AutoSupport messages cannot be sent using SMTP protocol due to incorrect settings on the E-mail Server page.`
+. 不會再次嘗試傳送訊息。
+. 在中記錄錯誤 `nms.log`。
+
+
+如果發生故障且選擇了使用SMTP*、請確認StorageGRID 已正確設定支援系統的電子郵件伺服器、且您的電子郵件伺服器正在執行（*支援*>*警示（舊版）*>*>舊版電子郵件設定*）。下列錯誤訊息可能會出現在AutoSupport 「介紹」頁面上： `AutoSupport messages cannot be sent using SMTP protocol due to incorrect settings on the E-mail Server page.`
+
+瞭解操作方法 link:../monitor/email-alert-notifications.html["設定電子郵件伺服器設定"]。
+
+
+
+== 修正AutoSupport 資訊故障
+
+如果發生故障且選擇了使用SMTP,請確認StorageGRID 該系統的電子郵件伺服器已正確設定,而且您的電子郵件伺服器正在執行中。下列錯誤訊息可能會出現在AutoSupport 「介紹」頁面上： `AutoSupport messages cannot be sent using SMTP protocol due to incorrect settings on the E-mail Server page.`

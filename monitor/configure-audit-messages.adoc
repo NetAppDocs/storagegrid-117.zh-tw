@@ -1,0 +1,229 @@
+---
+permalink: monitor/configure-audit-messages.html 
+sidebar: sidebar 
+keywords: audit messages, configure syslog server, configure external syslog server. log destinations 
+summary: 所有StorageGRID 的節點都會產生稽核訊息來追蹤系統活動和事件。您可以調整稽核層級、以增加或減少所記錄的稽核訊息類型和數量。 
+---
+= 設定稽核訊息和記錄目的地
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+稽核訊息和記錄會記錄系統活動和安全事件、是監控和疑難排解的重要工具。您可以調整稽核層級、以增加或減少所記錄的稽核訊息類型和數量。或者、您可以定義任何要納入用戶端讀取和寫入稽核訊息的HTTP要求標頭。您也可以設定外部syslog伺服器、並變更稽核資訊的目的地。
+
+如需稽核訊息的詳細資訊、請參閱 link:../audit/index.html["檢閱稽核記錄"]。
+
+.開始之前
+* 您將使用登入Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您具有「維護」或「根」存取權限。
+
+
+.關於這項工作
+所有StorageGRID 的節點都會產生稽核訊息和記錄、以追蹤系統活動和事件。根據預設、稽核資訊會傳送至管理節點上的稽核記錄。您可以調整稽核層級、以增加或減少稽核日誌中記錄的稽核訊息類型和數量。您也可以設定稽核資訊、將其暫時儲存在來源節點上、以進行手動收集。
+
+
+IMPORTANT: 如果您有大型網格、請使用多種類型的 S3 應用程式、或是想要保留所有稽核資料、請設定外部 Syslog 伺服器、並遠端儲存稽核資訊。使用外部伺服器可將稽核訊息記錄的效能影響降至最低、而不會降低稽核資料的完整性。請參閱 link:../monitor/considerations-for-external-syslog-server.html["外部syslog伺服器的考量"] 以取得詳細資料。
+
+
+
+== 變更稽核日誌中的稽核訊息層級
+
+您可以在稽核日誌中針對下列每個類別的訊息設定不同的稽核層級：
+
+[cols="1a,3a"]
+|===
+| 稽核類別 | 說明 
+
+
+ a| 
+系統
+ a| 
+依預設、此層級設為「正常」。請參閱 link:../audit/system-audit-messages.html["系統稽核訊息"]。
+
+
+
+ a| 
+儲存設備
+ a| 
+依預設、此層級設為「錯誤」。請參閱 link:../audit/object-storage-audit-messages.html["物件儲存稽核訊息"]。
+
+
+
+ a| 
+管理
+ a| 
+依預設、此層級設為「正常」。請參閱 link:../audit/management-audit-message.html["管理稽核訊息"]。
+
+
+
+ a| 
+用戶端讀取
+ a| 
+依預設、此層級設為「正常」。請參閱 link:../audit/client-read-audit-messages.html["用戶端讀取稽核訊息"]。
+
+
+
+ a| 
+用戶端寫入
+ a| 
+依預設、此層級設為「正常」。請參閱 link:../audit/client-write-audit-messages.html["用戶端寫入稽核訊息"]。
+
+
+
+ a| 
+ILM 作業
+ a| 
+依預設、此層級設為「正常」。請參閱 link:../audit/ilm-audit-messages.html["ILM 作業稽核訊息"]。
+
+|===
+
+NOTE: 如果您最初使用StorageGRID 版本10.3或更新版本安裝了這些預設值、則適用這些預設值。如果您已從StorageGRID 舊版的更新版本進行升級、則所有類別的預設值都會設為「正常」。
+
+
+NOTE: 在升級期間、稽核層級的組態將無法立即生效。
+
+.步驟
+. 選擇*組態*>*監控*>*稽核與系統記錄伺服器*。
+. 針對每個稽核訊息類別、從下拉式清單中選取稽核層級：
++
+[cols="1a,3a"]
+|===
+| 稽核層級 | 說明 
+
+
+ a| 
+關
+ a| 
+不會記錄任何類別的稽核訊息。
+
+
+
+ a| 
+錯誤
+ a| 
+僅記錄錯誤訊息、稽核結果代碼「不成功」（SUCS）的訊息。
+
+
+
+ a| 
+正常
+ a| 
+記錄標準交易訊息：此類別的說明中所列訊息。
+
+
+
+ a| 
+偵錯
+ a| 
+已過時。此層級的行為與正常稽核層級相同。
+
+|===
++
+針對任何特定層級所包含的訊息、包括將記錄在較高層級的訊息。例如、「正常」層級包含所有的錯誤訊息。
+
++
+
+NOTE: 如果您不需要 S3 應用程式的用戶端讀取作業詳細記錄、請選擇性地將「 * 用戶端讀取 * 」設定變更為「 * 錯誤 * 」、以減少稽核記錄中記錄的稽核訊息數。
+
+. 您也可以在*稽核傳輸協定標頭*下、定義您要納入用戶端讀取和寫入稽核訊息的任何HTTP要求標頭。使用星號（\*）做為萬用字元、以符合零個或多個字元。使用轉義順序（\*）來符合文字星號。
++
+
+NOTE: 稽核傳輸協定標頭僅適用於S3和Swift要求。
+
+. 如有需要、請選取*新增其他標頭*以建立其他標頭。
++
+在要求中找到HTTP標頭時、這些標頭會包含在稽核訊息的「HTRh」欄位中。
+
++
+
+NOTE: 僅當*用戶端讀取*或*用戶端寫入*的稽核層級不是*關閉*時、才會記錄稽核傳輸協定要求標頭。
+
+. 選擇*保存*
++
+顯示綠色橫幅、表示您的組態已成功儲存。
+
+
+
+
+
+== 使用外部syslog伺服器
+
+如果您想要遠端儲存稽核資訊、可以設定外部syslog伺服器。
+
+* 若要將稽核資訊儲存至外部syslog伺服器、請前往 link:../monitor/configuring-syslog-server.html["設定外部syslog伺服器"]。
+* 如果您未使用外部 Syslog 伺服器、請前往 <<Select-audit-information-destinations,選取稽核資訊目的地>>。
+
+
+
+
+== 選取稽核資訊目的地
+
+您可以指定稽核記錄、安全性事件記錄和應用程式記錄的傳送位置。
+
+
+NOTE: 只有在使用外部syslog伺服器時、才能使用部分目的地。請參閱 link:../monitor/configuring-syslog-server.html["設定外部syslog伺服器"] 設定外部syslog伺服器。
+
+
+NOTE: 如需 StorageGRID 軟體記錄的詳細資訊、請參閱 link:../monitor/storagegrid-software-logs.html#["軟體記錄StorageGRID"]。
+
+. 在「稽核與syslog伺服器」頁面上、從列出的選項中選取稽核資訊的目的地：
++
+[cols="1a,2a"]
+|===
+| 選項 | 說明 
+
+
+ a| 
+預設（管理節點/本機節點）
+ a| 
+稽核訊息會傳送至稽核記錄 (`audit.log`）在管理節點上、安全性事件記錄和應用程式記錄會儲存在產生它們的節點上（也稱為「本機節點」）。
+
+
+
+ a| 
+外部syslog伺服器
+ a| 
+稽核資訊會傳送至外部syslog伺服器、並儲存在本機節點上。傳送的資訊類型取決於您設定外部syslog伺服器的方式。只有在設定外部syslog伺服器之後、才會啟用此選項。
+
+
+
+ a| 
+管理節點和外部syslog伺服器
+ a| 
+稽核訊息會傳送至稽核記錄 (`audit.log`）、稽核資訊會傳送至外部 Syslog 伺服器、並儲存在本機節點上。傳送的資訊類型取決於您設定外部syslog伺服器的方式。只有在設定外部syslog伺服器之後、才會啟用此選項。
+
+
+
+ a| 
+僅限本機節點
+ a| 
+不會將稽核資訊傳送至管理節點或遠端syslog伺服器。稽核資訊只會儲存在產生該資訊的節點上。
+
+*附註*：StorageGRID 此功能會定期移除這些本機記錄、以釋出空間。當節點的記錄檔達到1 GB時、會儲存現有檔案、並啟動新的記錄檔。記錄檔的旋轉限制為21個檔案。建立22版記錄檔時、會刪除最舊的記錄檔。每個節點平均儲存約20 GB的記錄資料。
+
+|===
++
+
+NOTE: 每個本機節點上產生的稽核資訊都儲存在中 `/var/local/log/localaudit.log`
+
+. 選擇*保存*。
++
+出現警告訊息。
+
+. 選取 * 確定 * 以確認您要變更稽核資訊的目的地。
++
+此時會出現綠色橫幅、通知您已儲存稽核組態。
+
++
+新記錄會傳送至您選取的目的地。現有記錄仍會保留在目前位置。
+
+
+
+.相關資訊
+link:../monitor/considerations-for-external-syslog-server.html["外部syslog伺服器的考量"]
+
+link:../admin/index.html["管理StorageGRID"]
+
+link:../troubleshoot/troubleshooting-syslog-server.html["排除外部syslog伺服器的故障"]

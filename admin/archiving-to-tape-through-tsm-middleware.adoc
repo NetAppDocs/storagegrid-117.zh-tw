@@ -1,0 +1,31 @@
+---
+permalink: admin/archiving-to-tape-through-tsm-middleware.html 
+sidebar: sidebar 
+keywords: tivoli storage manager, tsm server, archive node, tape 
+summary: 您可以將歸檔節點設定為目標Tivoli Storage Manager（TSM\）伺服器、該伺服器提供邏輯介面、可將物件資料儲存及擷取至隨機或連續存取儲存設備（包括磁帶庫）。 
+---
+= 透過TSM中介軟體歸檔至磁帶
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以將歸檔節點設定為目標Tivoli Storage Manager（TSM）伺服器、該伺服器提供邏輯介面、可將物件資料儲存及擷取至隨機或連續存取儲存設備、包括磁帶庫。
+
+歸檔節點的ARC服務可做為TSM伺服器的用戶端、使用Tivoli Storage Manager作為中介軟體、與歸檔儲存系統進行通訊。
+
+[CAUTION]
+====
+對歸檔節點的支援（使用 S3 API 歸檔至雲端、以及使用 TSM 中介軟體歸檔至磁帶）已過時、將於未來版本中移除。將物件從歸檔節點移至外部歸檔儲存系統已由 ILM Cloud Storage Pool 取代、提供更多功能。
+
+請參閱 link:../ilm/what-cloud-storage-pool-is.html["使用雲端儲存資源池"]。
+
+====
+
+
+== TSM管理類別
+
+由TSM中介軟體定義的管理類別、概述了TSMS廳 的備份與歸檔作業如何運作、並可用來指定TSM伺服器所套用內容的規則。此類規則獨立於StorageGRID 此等系統的ILM原則運作、且必須符合StorageGRID 此等系統的要求、即物件必須永久儲存、且永遠可供歸檔節點擷取。在歸檔節點將物件資料傳送至TSM伺服器之後、會套用TSM生命週期和保留規則、同時將物件資料儲存至由TSM伺服器管理的磁帶。
+
+TSM管理類別是由TSM伺服器在歸檔節點將物件傳送至TSM伺服器之後、用來套用資料位置或保留的規則。例如、識別為資料庫備份的物件（可以較新資料覆寫的暫用內容）、處理方式可能與應用程式資料不同（必須無限期保留的固定內容）。

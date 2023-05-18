@@ -1,0 +1,26 @@
+---
+permalink: installconfig/configuring-bmc-interface.html 
+sidebar: sidebar 
+keywords: BMC, baseboard management controller, configure, setup, set up 
+summary: SGF6112 、 SG6000 或服務應用裝置上的主機板管理控制器（ BMC ）使用者介面提供硬體的狀態資訊、並可讓您設定應用裝置的 SNMP 設定和其他選項。 
+---
+= BMC 介面：概觀（ SGF6112 、 SG6000 、 SG100 和 SG1000 ）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SGF6112 、 SG6000 或服務應用裝置上的主機板管理控制器（ BMC ）使用者介面、可提供硬體的狀態資訊、並可讓您設定應用裝置的 SNMP 設定和其他選項。
+
+安裝應用裝置時、請使用本節中的下列程序來設定 BMC ：
+
+* 變更BMC介面的root密碼
+* 設定BMC管理連接埠的IP位址
+* 存取BMC介面
+* 設定 SNMP 設定
+* 設定電子郵件通知和警示
+
+
+
+NOTE: 如果應用裝置已安裝到網格中、且正在執行 StorageGRID 軟體、請參閱下列程序以取得 BMC 組態的替代機制。

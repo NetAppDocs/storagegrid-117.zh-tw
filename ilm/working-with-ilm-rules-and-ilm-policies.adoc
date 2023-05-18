@@ -1,0 +1,165 @@
+---
+permalink: ilm/working-with-ilm-rules-and-ilm-policies.html 
+sidebar: sidebar 
+keywords: remove ilm rule, edit ilm rule, clone ilm rule, ilm queue 
+summary: 隨著儲存需求的變更、您可能需要設定不同的原則、或修改與原則相關的 ILM 規則。您可以檢視 ILM 指標來判斷系統效能。 
+---
+= 使用 ILM 原則和 ILM 規則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+隨著儲存需求的變更、您可能需要設定不同的原則、或修改與原則相關的 ILM 規則。您可以檢視 ILM 指標來判斷系統效能。
+
+.開始之前
+* 您將使用登入Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您擁有特定的存取權限。
+
+
+
+
+== 檢視 ILM 原則
+
+若要檢視作用中、提議及歷史 ILM 原則：
+
+. 選擇* ILM *>* Policies *。
+. 視需要選取 * 作用中原則 * 、 * 提議的原則 * 或 * 原則歷程記錄 * 來檢視每個原則的詳細資料。在每個標籤中、您可以選取 * 原則規則 * 和 * 保留圖表 * 。
+
+
+image::../media/ilm_policy_active_proposed_history_tabs.png[ILM 原則索引標籤]
+
+
+
+== 複製歷史 ILM 原則
+
+複製歷史 ILM 原則：
+
+. 選擇 *ILM* > * Policies * > * Policy history * 。
+. 如果存在建議的原則、請將其移除。
+. 選取您要複製之原則的選項按鈕、然後選取 * 複製歷史原則 * 。
+. 依照中的指示完成必要的詳細資料 link:creating-proposed-ilm-policy.html["建立建議的ILM原則"]。
+
+
+
+CAUTION: 如果ILM原則設定不正確、可能導致無法恢復的資料遺失。啟動ILM原則之前、請仔細檢閱ILM原則及其ILM規則、然後模擬ILM原則。請務必確認ILM原則是否正常運作。
+
+
+
+== 移除建議的 ILM 原則
+
+若要移除建議的原則：
+
+. 選擇 * ILM * > * 原則 * > * 建議的原則 * 。
+. 選擇*「Actions」（動作）*>*「Remove*」（移除
+
+
+建議的原則和建議的原則索引標籤都會移除。
+
+
+
+== 檢視 ILM 規則詳細資料
+
+若要檢視 ILM 規則的詳細資料、包括規則的保留圖表和放置指示：
+
+. 選擇* ILM *>* Rules *。
+. 選取您要檢視其詳細資料的規則。範例：
++
+image::../media/ilm_rule_details_page.png[ILM 規則詳細資料頁面]
+
+
+
+此外、您也可以使用詳細資料頁面來複製、編輯或移除規則。
+
+
+
+== 複製ILM規則
+
+如果規則用於建議的 ILM 原則或主動式 ILM 原則、則無法編輯規則。您可以複製規則、並對複製的複本進行必要的變更。然後、如果需要、您可以從建議的原則中移除原始規則、並以修改後的版本加以取代。如果 ILM 規則是使用 StorageGRID 10.2 版或更早版本所建立、則無法複製該規則。
+
+在將複製規則新增至作用中ILM原則之前、請注意、變更物件的放置指示可能會增加系統負載。
+
+.步驟
+. 選擇* ILM *>* Rules *。
+. 選中要克隆的規則的複選框，然後選擇 *Clone* 。或者、選取規則名稱、然後從規則詳細資料頁面中選取 * 完整複製 * 。
+. 請依照的步驟更新複製的規則 <<編輯ILM規則,編輯 ILM 規則>> 和 link:create-ilm-rule-enter-details.html#use-advanced-filters-in-ilm-rules["在 ILM 規則中使用進階篩選器"]。
++
+複製ILM規則時、您必須輸入新名稱。
+
+
+
+
+
+== 編輯ILM規則
+
+您可能需要編輯ILM規則、才能變更篩選或放置指示。
+
+如果規則用於主動式 ILM 原則或建議的 ILM 原則、則無法編輯規則。您可以複製這些規則、並對複製的複本進行任何必要的變更。您也無法編輯系統提供的規則、製作 2 份複本。
+
+
+NOTE: 在將已編輯的規則新增至作用中ILM原則之前、請注意、變更物件的放置指示可能會增加系統負載。
+
+.步驟
+. 選擇* ILM *>* Rules *。
+. 確認您要編輯的規則未用於主動式 ILM 原則或建議的 ILM 原則。
+. 如果您要編輯的規則未在使用中、請選取規則的核取方塊、然後選取 * 動作 * > * 編輯 * 。或者、選取規則名稱、然後在規則詳細資料頁面上選取 * 編輯 * 。
+. 完成編輯 ILM 規則精靈的頁面。如有必要、請依照的步驟進行 link:create-ilm-rule-enter-details.html["建立ILM規則"] 和 link:create-ilm-rule-enter-details.html#use-advanced-filters-in-ilm-rules["在 ILM 規則中使用進階篩選器"]。
++
+編輯 ILM 規則時、您無法變更其名稱。
+
++
+
+NOTE: 如果您編輯在歷史原則中使用的規則、請使用 image:../media/icon_ilm_rule_historical.png["圖示ILM規則歷史"] 當您檢視原則時、規則的圖示會出現、表示該規則已成為歷史規則。
+
+
+
+
+
+== 移除 ILM 規則
+
+若要讓目前的 ILM 規則清單保持可管理的狀態、請移除您不太可能使用的任何 ILM 規則。
+
+.步驟
+若要移除目前用於作用中原則或建議原則中的 ILM 規則：
+
+. 複製作用中原則或編輯建議的原則。
+. 從原則中移除ILM規則。
+. 儲存、模擬及啟動新原則、以確保物件受到預期的保護。
+
+
+移除目前未使用的 ILM 規則：
+
+. 選擇* ILM *>* Rules *。
+. 確認您要移除的規則未用於作用中原則或建議的原則。
+. 如果您要移除的規則未在使用中、請選取規則、然後選取 * 移除 * 。您可以選取多個規則、並同時移除所有規則。
+. 選取 * 是 * 以確認您要移除 ILM 規則。
++
+ILM 規則即會移除。
+
++
+
+NOTE: 如果您移除在歷史原則中使用的規則、則會移除 image:../media/icon_ilm_rule_historical.png["圖示ILM規則歷史"] 當您檢視原則時、規則的圖示會出現、表示該規則已成為歷史規則。
+
+
+
+
+
+== 檢視 ILM 指標
+
+您可以檢視 ILM 的度量、例如佇列中的物件數目和評估率。您可以監控這些指標來判斷系統效能。大量佇列或評估率可能表示系統無法跟上擷取速度、用戶端應用程式的負載過大、或存在一些異常狀況。
+
+.步驟
+. 選取 * 儀表板 * > * ILM * 。
++
+
+NOTE: 由於儀表板可以自訂、因此 ILM 索引標籤可能無法使用。
+
+. 監控 ILM 索引標籤上的度量。
++
+您可以選取問號 image:../media/icon_nms_question.png["問號圖示"] 以查看 ILM 索引標籤上項目的說明。
+
++
+image::../media/ilm_metrics_on_dashboard.png[Grid Manager 儀表板上的 ILM 計量]
+
+

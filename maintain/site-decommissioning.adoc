@@ -1,0 +1,18 @@
+---
+permalink: maintain/site-decommissioning.html 
+sidebar: sidebar 
+keywords: site decommission 
+summary: 您可能需要將資料中心站台從StorageGRID 這個系統移除。若要移除站台、您必須取消委任站台。 
+---
+= 站台取消委任：總覽
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可能需要將資料中心站台從StorageGRID 這個系統移除。若要移除站台、您必須取消委任站台。
+
+流程圖顯示停用站台的高階步驟。
+
+image::../media/overview_decommission_site.png[概述：取消委任站台]

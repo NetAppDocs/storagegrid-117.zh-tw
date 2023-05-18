@@ -1,0 +1,374 @@
+---
+permalink: installconfig/viewing-error-codes-for-sg1000-controller-sg100-and-sg1000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, error codes, errors, error, codes, bmc 
+summary: 如果設備開機時發生硬體錯誤、BMC會記錄錯誤代碼。視需要、您可以使用BMC介面檢視這些錯誤代碼、然後與技術支援部門合作以解決問題。 
+---
+= 檢視錯誤代碼（ SG100 和 SG1000 ）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果設備開機時發生硬體錯誤、BMC會記錄錯誤代碼。視需要、您可以使用BMC介面檢視這些錯誤代碼、然後與技術支援部門合作以解決問題。
+
+.開始之前
+* 您知道如何存取BMC儀表板。
+
+
+.步驟
+. 從BMC儀表板選取* BIOS POST Code*。
+. 檢閱顯示的目前代碼和先前代碼資訊。
++
+如果顯示下列任一錯誤代碼、請與技術支援部門合作以解決問題。
+
++
+[cols="1a,3a"]
+|===
+| 程式碼 | 表示 
+
+
+ a| 
+0E
+ a| 
+找不到微碼
+
+
+
+ a| 
+0x0F
+ a| 
+微碼未載入
+
+
+
+ a| 
+x50
+ a| 
+記憶體初始化錯誤。記憶體類型無效或記憶體速度不相容。
+
+
+
+ a| 
+051
+ a| 
+記憶體初始化錯誤。SPD讀取失敗。
+
+
+
+ a| 
+x52
+ a| 
+記憶體初始化錯誤。無效的記憶體大小或記憶體模組不符。
+
+
+
+ a| 
+x53
+ a| 
+記憶體初始化錯誤。未偵測到可用的記憶體。
+
+
+
+ a| 
+x54
+ a| 
+未指定的記憶體初始化錯誤
+
+
+
+ a| 
+x55
+ a| 
+未安裝記憶體
+
+
+
+ a| 
+x56
+ a| 
+無效的CPU類型或速度
+
+
+
+ a| 
+x57
+ a| 
+CPU不相符
+
+
+
+ a| 
+0658
+ a| 
+CPU自我測試失敗、或可能發生CPU快取錯誤
+
+
+
+ a| 
+x59
+ a| 
+找不到CPU微碼、或微碼更新失敗
+
+
+
+ a| 
+0125A
+ a| 
+內部CPU錯誤
+
+
+
+ a| 
+x5B
+ a| 
+無法使用重設PPI
+
+
+
+ a| 
+0x5C
+ a| 
+Pei階段BMC自我測試失敗
+
+
+
+ a| 
+xD0
+ a| 
+CPU初始化錯誤
+
+
+
+ a| 
+0xD1
+ a| 
+北橋初始化錯誤
+
+
+
+ a| 
+xD2
+ a| 
+South Bridge初始化錯誤
+
+
+
+ a| 
+xD3
+ a| 
+部分架構通訊協定無法使用
+
+
+
+ a| 
+xD4
+ a| 
+PCI資源配置錯誤。資源不足。
+
+
+
+ a| 
+xD5
+ a| 
+沒有空間可用於舊版選項ROM
+
+
+
+ a| 
+xD6
+ a| 
+找不到主控台輸出裝置
+
+
+
+ a| 
+xD7
+ a| 
+找不到主控台輸入裝置
+
+
+
+ a| 
+xD8
+ a| 
+密碼無效
+
+
+
+ a| 
+xD9
+ a| 
+載入開機選項時發生錯誤（LoadImage傳回錯誤）
+
+
+
+ a| 
+xDA
+ a| 
+開機選項失敗（StartImage傳回錯誤）
+
+
+
+ a| 
+xDB
+ a| 
+Flash更新失敗
+
+
+
+ a| 
+0xDC
+ a| 
+無法使用重設傳輸協定
+
+
+
+ a| 
+xDD
+ a| 
+DXE階段BMC自我測試失敗
+
+
+
+ a| 
+xE8
+ a| 
+MRC：ERR_no_memory
+
+
+
+ a| 
+0xE9
+ a| 
+MRC：ERR_LD_Lock
+
+
+
+ a| 
+xeA
+ a| 
+MRC：ERR_DDR_INIT
+
+
+
+ a| 
+xEB
+ a| 
+MRC：ERR_MEM_TEST
+
+
+
+ a| 
+xEC
+ a| 
+MRC：ERR_VENDO_SPECTRY
+
+
+
+ a| 
+xED
+ a| 
+MRC：ERR_DIMM_compat
+
+
+
+ a| 
+xEE
+ a| 
+MRC：ERR_MRC_相 容性
+
+
+
+ a| 
+xEF
+ a| 
+MRC：ERR_MRC_strstruct
+
+
+
+ a| 
+xF0
+ a| 
+MRC：ERR_SET_VDD
+
+
+
+ a| 
+0xF1
+ a| 
+MRC：ERR_IOT_MEM_緩 衝
+
+
+
+ a| 
+xF2
+ a| 
+MRC：ERR_RC_INERNERY
+
+
+
+ a| 
+xf3
+ a| 
+MRC：ERR_INVALID_RED_存取
+
+
+
+ a| 
+xf4
+ a| 
+MRC：ERR_SET_MC_Freq
+
+
+
+ a| 
+xf5
+ a| 
+MRC：ERR_Read_MC_Freq
+
+
+
+ a| 
+x70
+ a| 
+MRC：ERR_DIMM_channel
+
+
+
+ a| 
+x74
+ a| 
+MRC：ERR_BIST_Check
+
+
+
+ a| 
+xf6
+ a| 
+MRC：ERR_SMBUS
+
+
+
+ a| 
+xF7
+ a| 
+MRC：ERR_PCU
+
+
+
+ a| 
+xF8
+ a| 
+MRC：ERR_NGN
+
+
+
+ a| 
+xf9
+ a| 
+MRC：ERR_Interlet_ferress
+
+|===
+

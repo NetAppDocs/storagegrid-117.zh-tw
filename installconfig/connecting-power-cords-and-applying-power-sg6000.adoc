@@ -1,0 +1,55 @@
+---
+permalink: installconfig/connecting-power-cords-and-applying-power-sg6000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, wire, wiring, cabling, cable, Connecting, connect, power cords, power, applying power, apply power, turn on, power up, ac, ac power 
+summary: 連接網路纜線之後、您就準備好為SG6000-CN-控制器和兩個儲存控制器或選購的擴充櫃供電。 
+---
+= 連接電源線並接上電源（SG6000）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+連接網路纜線之後、您就準備好為SG6000-CN-控制器和兩個儲存控制器或選購的擴充櫃供電。
+
+.步驟
+. 確認儲存控制器櫃中的兩個控制器均已關閉。
++
+
+CAUTION: *電擊風險*：在連接電源線之前、請確定兩個儲存控制器的每個電源開關都已關閉。
+
+. 如果您有擴充櫃、請確認兩個IOM電源開關都已關閉。
++
+
+CAUTION: *電擊風險*：在連接電源線之前、請確定每個擴充櫃的兩個電源開關都已關閉。
+
+. 將電源線分別連接至SG6000-CN-控制器中的兩個電源供應器單元。
+. 將這兩條電源線連接至機櫃或機架中的兩個不同的電力分配單元（PDU）。
+. 將電源線分別連接至儲存控制器櫃中的兩個電源供應器單元。
+. 如果您有擴充櫃、請將電源線分別連接至每個擴充櫃中的兩個電源供應器單元。
+. 將每個儲存櫃（包括選購的擴充櫃）中的兩條電源線、連接至機櫃或機架中的兩個不同PDU。
+. 如果SG6000-CN-控制器正面的電源按鈕目前未亮起藍色、請按下按鈕開啟控制器的電源。
++
+請勿在開機程序期間再次按下電源按鈕。
+
+. 開啟儲存控制器機櫃背面的兩個電源開關。如果您有擴充櫃、請開啟每個機櫃的兩個電源開關。
++
+** 請勿在開機程序期間關閉電源開關。
+** 儲存控制器機櫃和選購的擴充機櫃中的風扇在初次啟動時可能會非常大聲。開機期間的大聲雜訊是正常現象。
+
+
+. 元件開機後、請檢查其狀態。
++
+** 檢查每個儲存控制器背面的七段顯示。如需詳細資訊、請參閱檢視開機狀態代碼的相關文章。
+** 驗證SG6000-CN-控制器正面的電源按鈕是否亮起。
+
+
+. 如果發生錯誤、請修正任何問題。
+. 將前擋板連接至SG6000-CN-控制器（如果已卸下）。
+
+
+.相關資訊
+* link:viewing-status-indicators.html["檢視狀態指標"]
+* link:../sg6000/reinstalling-sg6000-cn-controller-into-cabinet-or-rack.html["將SG6000-CN-控制器重新安裝到機櫃或機架中"]
+

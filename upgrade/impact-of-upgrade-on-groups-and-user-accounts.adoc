@@ -1,0 +1,35 @@
+---
+permalink: upgrade/impact-of-upgrade-on-groups-and-user-accounts.html 
+sidebar: sidebar 
+keywords: upgrade, permissions 
+summary: 您必須瞭解StorageGRID 升級過程的影響、才能在升級完成後適當地更新群組和使用者帳戶。 
+---
+= 升級對群組和使用者帳戶的影響
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須瞭解StorageGRID 升級過程的影響、才能在升級完成後適當地更新群組和使用者帳戶。
+
+
+
+== 群組權限和選項的變更
+
+升級至 StorageGRID 11.7 之後、可選擇性地將下列新權限指派給租戶使用者群組。
+
+[cols="1a,2a"]
+|===
+| 權限 | 說明 
+
+
+ a| 
+租戶管理程式 > 使用 S3 主控台管理物件
+ a| 
+當與「管理所有貯體」權限結合使用時、此權限可讓使用者存取 link:../tenant/use-s3-console.html["試驗性 S3 主控台"] 從「鏟斗」頁面。
+
+擁有此權限但沒有「管理所有儲存區」權限的使用者仍可直接瀏覽至實驗 S3 主控台。
+
+|===
+請參閱 link:../tenant/tenant-management-permissions.html["租戶管理權限"]。

@@ -1,0 +1,95 @@
+---
+permalink: upgrade/removed-or-deprecated-features.html 
+sidebar: sidebar 
+keywords: features, removed, deprecated 
+summary: 此版本已移除或過時部分功能。請檢閱這些項目、瞭解升級前是否需要更新用戶端應用程式或修改組態。 
+---
+= 已移除或已過時的功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此版本已移除或過時部分功能。請檢閱這些項目、瞭解升級前是否需要更新用戶端應用程式或修改組態。
+
+
+
+== 連線負載平衡器（ CLB ）服務已移除
+
+閘道節點上的連線負載平衡器（ CLB ）服務在 StorageGRID 11.4 中已過時、現在已從軟體中完全移除。若要將傳入的網路連線從用戶端應用程式發佈到儲存節點、您可以為負載平衡器服務設定負載平衡器端點（包含在所有管理節點和閘道節點上）、或是整合協力廠商負載平衡器。請參閱 link:../admin/managing-load-balancing.html["負載平衡考量"]。
+
+如果在現有 StorageGRID 版本中為 S3 或 Swift API 設定自訂憑證、則在升級至 StorageGRID 11.7 期間、 CLB 連接埠 8082 、 8083 、 8084 和 8085 將會自動轉換為負載平衡器端點。
+
+
+
+== SG5600 應用裝置已終止支援
+
+SG5600 應用裝置已達到支援終止。如需硬體更新選項、請聯絡您的 NetApp 銷售代表。
+
+如果您需要在 SG5600 硬體上執行維護程序、請使用 https://["StorageGRID 11.6 說明"^]。
+
+
+
+== Swift 支援已過時
+
+從 StorageGRID 11.7 版本開始、 Swift 用戶端應用程式的支援已被淘汰。支援 Swift 用戶端應用程式的使用者介面和 API 將在未來版本中移除。
+
+
+
+== 歸檔節點支援已過時
+
+對歸檔節點的支援（使用 S3 API 歸檔至雲端、以及使用 TSM 中介軟體歸檔至磁帶）已過時、將於未來版本中移除。將物件從歸檔節點移至外部歸檔儲存系統已由 ILM Cloud Storage Pool 取代、提供更多功能。
+
+請參閱：
+
+* link:../admin/migrating-objects-from-cloud-tiering-s3-to-cloud-storage-pool.html["將物件移轉至雲端儲存池"]
+* link:../ilm/what-cloud-storage-pool-is.html["使用雲端儲存資源池"]
+
+
+此外、您應該從 StorageGRID 11.7 或更早版本的主動式 ILM 原則中移除歸檔節點。移除儲存在保存節點上的物件資料、可簡化未來的升級作業。請參閱 link:../ilm/working-with-ilm-rules-and-ilm-policies.html["使用ILM規則和ILM原則"]。
+
+
+
+== 已移除透過 CIFS/Samba 進行匯出稽核
+
+StorageGRID Webscale 11.1 已淘汰透過 CIFS/Samba 進行稽核匯出、現在已移除。如有需要、您可以 link:../monitor/considerations-for-external-syslog-server.html["使用外部 Syslog 伺服器"] 或 link:../admin/configuring-audit-client-access.html["設定 NFS 的稽核用戶端存取"]。
+
+
+
+== 將儲存池指定為已移除的暫存位置的選項
+
+以前、當您建立內含單一儲存池的物件放置位置的 ILM 規則時、系統會提示您指定第二個儲存池作為暫存位置。從 StorageGRID 11.7 開始、此選項已移除。
+
+
+
+== Grid Manager 選項已移動或移除
+
+已移動或移除數個 Grid Manager 選項。
+
+* 。 link:../admin/configuring-stored-object-compression.html["壓縮儲存的物件"] 選項已移至 * 組態 * > * 系統 * > * 物件壓縮 * 。
+* * 網路傳輸加密 * 內部連線設定已移除、並由取代 link:../admin/manage-tls-ssh-policy.html["TLS 和 SSH 原則"] 新 * 組態 * > * 安全性 * > * 安全性設定 * 頁面上的索引標籤。
++
+
+NOTE: 在 StorageGRID 11.6 中、 AES256-SHA 選項為預設選項、是 StorageGRID 11.7 中唯一可用的設定。Grid Management API 會忽略 AES128/SHA 值。在 StorageGRID 11.7 升級期間、網路傳輸加密演算法會設為 AES256-SHA 。
+
+* 已將 * 儲存的物件加密 * 、 * 禁止用戶端修改 * 和 * 啟用儲存節點連線的 HTTP * 選項移至 link:../admin/changing-network-options-object-encryption.html["網路和物件索引標籤"] 在新的 * 組態 * > * 安全性 * > * 安全性設定 * 頁面上。
+* 。 link:../admin/changing-browser-session-timeout-interface.html["瀏覽器閒置逾時"] 選項已移至新的 * 組態 * > * 安全性 * > * 安全性設定 * 頁面。
+* 。 link:../admin/manage-link-costs.html["連結成本"] 選項已移至 * 支援 * > * 其他 * > * 連結成本 * 。
+* NMS 實體清單已移至 * 支援 * > * 其他 * > * NMS 實體 * 。
+* 已移除 * 儲存物件雜湊 * 選項。由於 *SHA-1* 和 *SHA-256* 設定需要透過 MD5 和封包 CRC32 檢查額外的 CPU 資源、因此不再用於內部背景驗證。
+* * 偏好的寄件者 * 選項已移除。如果您的 StorageGRID 部署包含多個管理節點、則主要管理節點是警示通知、 AutoSupport 訊息、 SNMP 設陷和通知、以及舊版警示通知的首選寄件者。如果主要管理節點無法使用、則其他管理節點會暫時傳送通知。請參閱 link:../admin/what-admin-node-is.html["什麼是管理節點？"]。
+* 。 link:../admin/configure-firewall-controls.html#untrusted-client-network["不受信任的用戶端網路設定"] 已移至 * 組態 * > * 防火牆控制 * 。
+
+
+
+
+== S3 端點網域名稱格式限制
+
+不支援使用 IP 位址做為端點網域名稱。未來的版本將會阻止組態。如果您需要使用 IP 位址做為端點網域名稱、請聯絡技術支援部門。請參閱 link:../admin/configuring-s3-api-endpoint-domain-names.html["S3 端點網域名稱"]。
+
+
+
+== 已移除使用者起始的 Volume lost 命令
+
+。 `proc/CMSI/Volume_Lost` 已移除。使用 `repair-data start-replicated-volume-repair` 用於還原磁碟區複寫資料的命令。

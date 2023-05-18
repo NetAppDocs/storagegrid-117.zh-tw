@@ -1,0 +1,195 @@
+---
+section: installconfig
+title: 安裝應用裝置硬體
+entries:
+- title: 快速入門
+  pdf-filename: 安裝 StorageGRID 應用裝置硬體
+  url: "/installconfig/index.html"
+- title: 硬體總覽
+  entries:
+  - title: SGF6112
+    url: "/installconfig/hardware-description-sg6100.html"
+  - title: SG6000
+    url: "/installconfig/hardware-description-sg6000.html"
+  - title: SG6000 控制器
+    url: "/installconfig/controllers-in-sg6000-appliances.html"
+  - title: SG5700
+    url: "/installconfig/hardware-description-sg5700.html"
+  - title: SG5700 控制器
+    url: "/installconfig/controllers-in-sg5700-appliances.html"
+  - title: SG100 與 SG1000
+    url: "/installconfig/hardware-description-sg100-and-1000.html"
+- title: 準備安裝
+  entries:
+  - title: 準備網站
+    url: "/installconfig/preparing-site.html"
+  - title: 打開包裝盒
+    url: "/installconfig/unpacking-boxes.html"
+  - title: 取得其他設備和工具
+    url: "/installconfig/obtaining-additional-equipment-and-tools.html"
+  - title: 網頁瀏覽器需求
+    url: "/installconfig/web-browser-requirements.html"
+  - title: 檢閱應用裝置網路連線
+    entries:
+    - title: 總覽
+      url: "/installconfig/reviewing-appliance-network-connections.html"
+    - title: 網路連線（ SG5700 ）
+      url: "/installconfig/sg5700-appliance-connections.html"
+    - title: 連接埠連結模式（ SGF6112 ）
+      url: "/installconfig/port-bond-modes-for-sgf6112.html"
+    - title: 連接埠連結模式（ SG6000-CN 控制器）
+      url: "/installconfig/port-bond-modes-for-sg6000-cn-controller.html"
+    - title: 連接埠連結模式（ E5700SG 控制器）
+      url: "/installconfig/port-bond-modes-for-e5700sg-controller-ports.html"
+    - title: 連接埠連結模式（ SG100 和 SG1000 ）
+      url: "/installconfig/port-bond-modes-for-sg100-and-sg1000.html"
+  - title: 收集安裝資訊
+    entries:
+    - title: 總覽
+      url: "/installconfig/gathering-installation-information-overview.html"
+    - title: SGF6112
+      url: "/installconfig/gathering-installation-information-sg6100.html"
+    - title: SG6000
+      url: "/installconfig/gathering-installation-information-sg6000.html"
+    - title: SG5700
+      url: "/installconfig/gathering-installation-information-sg5700.html"
+    - title: SG100 與 SG1000
+      url: "/installconfig/gathering-installation-information-sg100-and-sg1000.html"
+- title: 自動化應用裝置的安裝與組態
+  url: "/installconfig/automating-appliance-installation-and-configuration.html"
+- title: 自動化 StorageGRID 組態
+  url: "/installconfig/automating-configuration-of-storagegrid.html"
+- title: 安裝REST API總覽
+  url: "/installconfig/overview-of-installation-rest-apis.html"
+- title: 安裝硬體
+  entries:
+  - title: 註冊硬體
+    url: "/installconfig/registering-hardware.html"
+  - title: 安裝到機櫃或機架中
+    entries:
+    - title: SGF6112
+      url: "/installconfig/installing-appliance-in-cabinet-or-rack-sgf6112.html"
+    - title: SG6000
+      entries:
+      - title: 總覽
+        pdf-filename: 將 SG6000 安裝到機櫃或機架中
+        url: "/installconfig/installing-hardware-sg6000.html"
+      - title: 安裝 60 個磁碟機櫃（ SG6060 ）
+        url: "/installconfig/sg6060-installing-60-drive-shelves-into-cabinet-or-rack.html"
+      - title: 安裝磁碟機（ SG6060 ）
+        url: "/installconfig/sg6060-installing-drives.html"
+      - title: 安裝 24 個磁碟機櫃（ SGF6024 ）
+        url: "/installconfig/sgf6024-installing-24-drive-shelves-into-cabinet-or-rack.html"
+      - title: 安裝 SG6000-CN 控制器（ SG6060 和 SG6024 ）
+        url: "/installconfig/sg6000-cn-installing-into-cabinet-or-rack.html"
+    - title: SG5700
+      url: "/installconfig/installing-appliance-in-cabinet-or-rack-sg5700.html"
+    - title: SG100 與 SG1000
+      url: "/installconfig/installing-appliance-in-cabinet-or-rack-sg100-and-sg1000.html"
+  - title: 纜線應用裝置
+    entries:
+    - title: SGF6112
+      url: "/installconfig/cabling-appliance-sgf6112.html"
+    - title: SG6000
+      url: "/installconfig/cabling-appliance-sg6000.html"
+    - title: SG5700
+      url: "/installconfig/cabling-appliance-sg5700.html"
+    - title: SG100 與 SG1000
+      url: "/installconfig/cabling-appliance-sg100-and-sg1000.html"
+  - title: 連接電源線並接上電源
+    entries:
+    - title: SGF6112
+      url: "/installconfig/connecting-power-cords-and-applying-power-sgf6112.html"
+    - title: SG6000
+      url: "/installconfig/connecting-power-cords-and-applying-power-sg6000.html"
+    - title: SG5700
+      url: "/installconfig/connecting-power-cords-and-applying-power-sg5700.html"
+    - title: SG100 與 SG1000
+      url: "/installconfig/connecting-power-cords-and-applying-power-sg100-and-sg1000.html"
+  - title: 檢視狀態指示燈和代碼
+    url: "/installconfig/viewing-status-indicators.html"
+- title: 設定硬體
+  entries:
+  - title: 總覽
+    url: "/installconfig/configuring-hardware.html"
+  - title: 設定 StorageGRID 連線
+    entries:
+    - title: 存取StorageGRID 產品安裝程式
+      url: "/installconfig/accessing-storagegrid-appliance-installer.html"
+    - title: 驗StorageGRID 證並升級版本的應用程式
+      url: "/installconfig/verifying-and-upgrading-storagegrid-appliance-installer-version.html"
+    - title: 設定網路連結
+      url: "/installconfig/configuring-network-links.html"
+    - title: 設定StorageGRID 靜態IP位址
+      url: "/installconfig/setting-ip-configuration.html"
+    - title: 驗證網路連線
+      url: "/installconfig/verifying-network-connections.html"
+    - title: 驗證連接埠層級的網路連線
+      url: "/installconfig/verifying-port-level-network-connections.html"
+    - title: 設定 SANtricity 系統管理員（ SG6000 和 SG5700 ）
+      url: "/installconfig/accessing-and-configuring-santricity-system-manager.html"
+  - title: 設定 BMC 介面（ SGF6112 、 SG6000 、 SG100 和 SG1000 ）
+    entries:
+    - title: 總覽
+      url: "/installconfig/configuring-bmc-interface.html"
+    - title: 變更 root 密碼
+      url: "/installconfig/changing-root-password-for-bmc-interface.html"
+    - title: 設定BMC管理連接埠的IP位址
+      url: "/installconfig/setting-ip-address-for-bmc-management-port.html"
+    - title: 存取BMC介面
+      url: "/installconfig/accessing-bmc-interface.html"
+    - title: 設定 SNMP 設定
+      url: "/installconfig/configuring-snmp-settings-for-bmc.html"
+    - title: 設定電子郵件通知
+      url: "/installconfig/setting-up-email-notifications-for-alerts.html"
+  - title: 選用：啟用節點加密
+    url: "/installconfig/optional-enabling-node-encryption.html"
+  - title: 選用：變更 RAID 模式（ SG5760 和 SG6000 ）
+    url: "/installconfig/optional-changing-raid-mode.html"
+  - title: 選用：重新對應網路連接埠
+    url: "/installconfig/optional-remapping-network-ports-for-appliance.html"
+- title: 部署應用裝置節點
+  entries:
+  - title: 部署應用裝置儲存節點
+    url: "/installconfig/deploying-appliance-storage-node.html"
+  - title: 部署服務應用裝置節點
+    url: "/installconfig/deploying-services-appliance-node.html"
+  - title: 監控應用裝置安裝
+    url: "/installconfig/monitoring-appliance-installation.html"
+  - title: StorageGRID 應用裝置安裝程式正在執行時、請重新啟動應用裝置
+    url: "/installconfig/rebooting-appliance-while-sg-appliance-installer-is-running.html"
+  - title: 疑難排解安裝（ SGF6112 ）
+    url: "/installconfig/troubleshooting-hardware-installation-sg6100.html"
+    entries:
+    - title: 開機代碼（ SGF6112 ）
+      url: "/installconfig/viewing-boot-up-codes-for-sgf6112.html"
+    - title: 錯誤代碼（ SGF6112 ）
+      url: "/installconfig/viewing-error-codes-for-sgf6112.html"
+    - title: 硬體設定似乎當機（ SGF6112 ）
+      url: "/installconfig/hardware-setup-appears-to-hang-sgf6112.html"
+    - title: 連線問題（ SGF6112 ）
+      url: "/installconfig/troubleshooting-connection-issues-sgf6112.html"
+  - title: 疑難排解安裝（ SG6000 或 SG5700 ）
+    url: "/installconfig/troubleshooting-hardware-installation.html"
+    entries:
+    - title: 開機代碼（ SG6000-CN 控制器）
+      url: "/installconfig/viewing-boot-up-codes-for-sg6000-cn-controller.html"
+    - title: 錯誤代碼（ SG6000-CN 控制器）
+      url: "/installconfig/viewing-error-codes-for-sg6000-cn-controller.html"
+    - title: 硬體設定似乎當機（ SG6000 或 SG5700 ）
+      url: "/installconfig/hardware-setup-appears-to-hang.html"
+    - title: 連線問題（ SG6000 或 SG5700 ）
+      url: "/installconfig/troubleshooting-connection-issues.html"
+    - title: HE 錯誤：與 SANtricity OS 軟體同步時發生錯誤（ SG5700 ）
+      url: "/installconfig/he-error-error-synchronizing-with-santricity-os-software.html"
+  - title: 疑難排解安裝（ SG100 和 SG1000 ）
+    url: "/installconfig/troubleshooting-hardware-installation-sg100-and-sg1000.html"
+    entries:
+    - title: 開機代碼（ SG100 和 SG1000 ）
+      url: "/installconfig/viewing-boot-up-codes-for-appliance-sg100-and-sg1000.html"
+    - title: 錯誤代碼（ SG100 和 SG1000 ）
+      url: "/installconfig/viewing-error-codes-for-sg1000-controller-sg100-and-sg1000.html"
+    - title: 硬體設定似乎當機（SG100和SG1000）
+      url: "/installconfig/hardware-setup-appears-to-hang-sg100-and-sg1000.html"
+    - title: 連線問題（ SG100 和 SG1000 ）
+      url: "/installconfig/troubleshooting-connection-issues-sg100-and-sg1000.html"

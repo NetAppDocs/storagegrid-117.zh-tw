@@ -1,0 +1,6 @@
+= 
+:allow-uri-read: 
+
+
+
+NOTE: 您可以使用管理 API 私有端點（ Put /Private / bmc ）來啟用或停用包含 BMC 的所有應用裝置的遠端 IPMI 存取。

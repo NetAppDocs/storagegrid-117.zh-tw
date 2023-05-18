@@ -1,0 +1,51 @@
+---
+permalink: sg6000/verifying-fibre-channel-hba-to-replace.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, sg6000-cn, hba, host bus adapter, fibre channel, fiber channel, locate, identify, find, replace, replacing, replacement 
+summary: 如果您不確定要更換哪個Fibre Channel主機匯流排介面卡（HBA\）、請完成此程序以識別它。 
+---
+= 驗證要更換的Fibre Channel HBA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您不確定要更換哪個Fibre Channel主機匯流排介面卡（HBA）、請完成此程序以識別它。
+
+.開始之前
+* 您有需要更換光纖通道HBA的儲存設備或SG6000-CN.控制器序號。
++
+
+NOTE: 如果您要更換的儲存應用裝置的序號開頭為字母Q、則不會列在Grid Manager中。您必須檢查資料中心內每個SG6000-CN-控制器正面的標記、直到找到相符項目為止。
+
+* 您將使用登入Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+
+
+.步驟
+. 從Grid Manager中選取* nodes *。
+. 從「節點」頁面的表格中、選取應用裝置儲存節點。
+. 選取*硬體*索引標籤。
++
+請查看StorageGRID 「介紹應用程式」一節中的*儲存設備機箱序號*和*運算控制器序號*。請查看其中一個序號是否與您要更換光纖通道HBA的儲存設備序號相符。如果任一序號相符、表示您找到正確的應用裝置。
+
++
+image::../media/nodes_page_hardware_tab_for_appliance_verify_HBA.png[適用於Fibre Channel HCA的應用裝置區段]
+
++
+** 如果StorageGRID 「無法」顯示「畫面不顯示」區段、則所選的節點不是StorageGRID 「畫面不顯示」應用程式。從樹狀檢視中選取不同的節點。
+** 如果設備機型不是SG6060或SG6060X、請從樹狀檢視中選取不同的節點。
+** 如果序號不相符、請從樹狀檢視中選取不同的節點。
+
+
+. 找到需要更換光纖通道HBA的節點之後、請記下運算控制器BMC IP位址、並將「StorageGRID 《支援資源的需求」一節列出。
++
+您可以使用此IP位址來開啟運算控制器識別LED、協助您在資料中心找到應用裝置。
+
++
+link:turning-controller-identify-led-on-and-off.html["開啟和關閉控制器識別LED"]
+
+
+
+.相關資訊
+link:removing-fibre-channel-hba.html["移除Fibre Channel HBA"]

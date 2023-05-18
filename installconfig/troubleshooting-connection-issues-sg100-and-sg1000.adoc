@@ -1,0 +1,40 @@
+---
+permalink: installconfig/troubleshooting-connection-issues-sg100-and-sg1000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, troubleshoot, troubleshooting, connection 
+summary: 如果StorageGRID 在安裝過程中遇到連線問題、您應該執行列出的修正行動步驟。 
+---
+= 疑難排解連線問題（SG100和SG1000）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果StorageGRID 在安裝過程中遇到連線問題、您應該執行列出的修正行動步驟。
+
+
+
+== 無法連線至應用裝置
+
+如果您無法連線至服務應用裝置、可能是網路問題、或是硬體安裝可能未成功完成。
+
+.步驟
+. 嘗試使用應用裝置的IP位址ping應用裝置：+
+`*ping _services_appliance_IP_*`
+. 如果ping沒有回應、請確認您使用的是正確的IP位址。
++
+您可以在Grid Network、管理網路或用戶端網路上使用應用裝置的IP位址。
+
+. 如果IP位址正確、請檢查設備纜線、QSFP或SFP收發器、以及網路設定。
+. 如果可以實體存取應用裝置、您可以直接連線至永久性連結本機 IP `169.254.0.1` 檢查控制器網路組態、必要時進行更新。如需詳細指示、請參閱中的步驟2 link:accessing-storagegrid-appliance-installer.html["存取StorageGRID 產品安裝程式"]。
++
+如果仍無法解決問題、請聯絡技術支援部門。
+
+. 如果ping成功、請開啟網頁瀏覽器。
+. 輸入StorageGRID 「The URL for the URL for the不支援應用程式安裝程式：+」
+`*https://_appliances_controller_IP_:8443*`
++
+隨即顯示首頁。
+
+

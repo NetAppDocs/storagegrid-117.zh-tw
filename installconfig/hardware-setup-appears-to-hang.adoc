@@ -1,0 +1,80 @@
+---
+permalink: installconfig/hardware-setup-appears-to-hang.html 
+sidebar: sidebar 
+keywords: storage node, storage appliance, troubleshoot, troubleshooting, hardware, setup, hang, hangs, fails, failure, stop, terminate, terminates, stuck 
+summary: 如果硬體故障或纜線錯誤導致儲存控制器或應用裝置控制器無法完成開機處理、則 StorageGRID 應用裝置安裝程式可能無法使用。 
+---
+= 硬體設定似乎當機（ SG6000 或 SG5700 ）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果硬體故障或纜線錯誤導致儲存控制器或應用裝置控制器無法完成開機處理、則 StorageGRID 應用裝置安裝程式可能無法使用。
+
+.步驟
+[role="tabbed-block"]
+====
+.SG6000
+--
+. 對於儲存控制器、請查看七段顯示器上的代碼。
++
+當硬體在開機期間初始化時、兩個七段顯示會顯示一系列代碼。硬體成功開機時、會顯示兩個七區段 `99`。
+
+. 檢閱SG6000-CN-控制器上的LED、以及BMC中顯示的開機和錯誤代碼。
+. 如果您需要解決問題的協助、請聯絡技術支援部門。
+
+
+--
+.SG5700
+--
+. 觀看七段顯示器上的代碼。
++
+當硬體在開機期間初始化時、兩個七段顯示會顯示一系列代碼。硬體成功開機時、七段顯示器會針對每個控制器顯示不同的代碼。
+
+. 檢閱E5700SG控制器七段顯示器上的代碼。
++
+
+NOTE: 安裝和資源配置需要時間。某些安裝階段不會將更新報告給 StorageGRID 應用裝置安裝程式數分鐘。
+
++
+如果發生錯誤、七段顯示器會以連續畫面的形式閃亮、例如他。
+
+. 若要瞭解這些程式碼的意義、請參閱下列資源：
++
+[cols="1a,2a"]
+|===
+| 控制器 | 參考資料 
+
+
+ a| 
+E5700SG控制器
+ a| 
+** 「E5700SG控制器上的狀態指示燈」
+** 「'HE錯誤：與SANtricity 支援的作業系統軟體同步時發生錯誤」
+
+
+
+
+ a| 
+E2800控制器
+ a| 
+_E5700與E2800系統監控指南_
+
+* 附註： * E 系列 E5700 控制器所描述的代碼不適用於應用裝置中的 E5700SG 控制器。
+
+|===
+. 如果這無法解決問題、請聯絡技術支援部門。
+
+
+--
+====
+.相關資訊
+* link:viewing-status-indicators.html["檢視狀態指標"]
+* http://["NetApp E系列系統文件網站"^]
+* link:he-error-error-synchronizing-with-santricity-os-software.html["他錯誤：同步SANtricity 至作業系統軟體時發生錯誤"]
+* https://["E5700與E2800系統監控指南"^]
+* link:viewing-boot-up-codes-for-sg6000-cn-controller.html["檢視開機代碼（ SG6000-CN 控制器）"]
+* link:viewing-error-codes-for-sg6000-cn-controller.html["檢視錯誤代碼（ SG6000-CN 控制器）"]
+

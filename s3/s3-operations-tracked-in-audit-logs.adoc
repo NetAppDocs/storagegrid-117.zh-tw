@@ -1,0 +1,51 @@
+---
+permalink: s3/s3-operations-tracked-in-audit-logs.html 
+sidebar: sidebar 
+keywords: audit log actions tracked 
+summary: 在不完整的稽核記錄中、會追蹤多項庫位作業和物件作業StorageGRID 。 
+---
+= 稽核記錄中追蹤的S3作業
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在不完整的稽核記錄中、會追蹤多項庫位作業和物件作業StorageGRID 。
+
+
+
+== 稽核記錄中追蹤的庫位作業
+
+* 刪除時段
+* 刪除庫位標記
+* 刪除多個物件
+* Get Bucket（列出物件）
+* 取得Bucket物件版本
+* 取得庫位標記
+* 鏟斗
+* 放入鏟斗
+* 符合資源需求
+* 置入庫位標記
+* 放入資源桶版本管理
+
+
+
+
+== 稽核記錄中追蹤的物件作業
+
+* 完成多部份上傳
+* 上傳零件（當 ILM 規則使用平衡或嚴格的擷取行為時）
+* 上傳零件 - 複製（當 ILM 規則使用平衡或嚴格的擷取行為時）
+* 刪除物件
+* 取得物件
+* 標頭物件
+* POST物件還原
+* 放置物件
+* 放置物件-複製
+
+
+.相關資訊
+link:operations-on-buckets.html["在貯體上作業"]
+
+link:operations-on-objects.html["物件上的作業"]

@@ -1,0 +1,22 @@
+---
+permalink: maintain/grid-node-procedures.html 
+sidebar: sidebar 
+keywords: storagegrid, grid node procedure 
+summary: 您可能需要在特定的網格節點上執行程序。雖然您可以從 Grid Manager 執行其中一些程序、但大部分程序都需要您從命令列存取 Server Manager 。 
+---
+= 網格節點程序：總覽
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可能需要在特定的網格節點上執行程序。雖然您可以從Grid Manager執行其中幾項程序、但大部分的程序都需要從節點的命令列存取伺服器管理員。
+
+伺服器管理程式會在每個網格節點上執行、以監督服務的啟動和停止、並確保服務順利加入StorageGRID 並離開此系統。伺服器管理員也會監控每個網格節點上的服務、並自動嘗試重新啟動任何報告故障的服務。
+
+
+IMPORTANT: 只有在技術支援指示您存取伺服器管理程式時、您才應該存取伺服器管理程式。
+
+
+NOTE: 您必須關閉目前的命令Shell工作階段、並在伺服器管理程式完成後登出。輸入： `exit`

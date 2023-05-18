@@ -1,0 +1,36 @@
+---
+permalink: sg6100/removing-sgf6112-cover.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6100, sgf6112, storage node, storage appliance, cover, remove, removing, removal 
+summary: 取下產品外蓋、即可存取內部元件進行維護。 
+---
+= 卸下 SGF6112 護蓋
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+取下產品外蓋、即可存取內部元件進行維護。
+
+.開始之前
+從機櫃或機架中取出產品、以檢修頂蓋。
+
+link:reinstalling-sgf6112-into-cabinet-or-rack.html#remove-from-rack["從機櫃或機架上卸下 SGF6112"]
+
+.步驟
+. 確定 SGF6112 機箱蓋閂鎖未鎖定。如有必要、請將藍色的塑膠栓鎖鎖朝解除鎖定方向轉動四分之一圈、如鎖銷鎖上所示。
+. 將閂鎖朝 SGF6112 機箱背面向上旋轉、然後朝後旋轉、直到卡入定位為止；然後小心地將機箱蓋從機箱中提出、並將其放在一邊。
++
+image::../media/sg6060_cover_latch_open.jpg[SGF6112 機箱蓋閂鎖開啟]
+
++
+
+IMPORTANT: 將 ESD 腕帶的束帶端繞在手腕上、並將扣具端點固定在金屬接地上、以防止在 SGF6112 內部工作時發生靜電釋放。
+
+
+
+更換零件後、請將故障零件歸還給NetApp、如套件隨附的RMA指示所述。請參閱 https://["產品退貨安培；更換"^] 頁面以取得更多資訊。
+
+.相關資訊
+link:replace-nic-in-sgf6112.html["更換 NIC"]

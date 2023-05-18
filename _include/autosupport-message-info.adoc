@@ -1,0 +1,25 @@
+= 
+:allow-uri-read: 
+
+
+包含下列資訊的資訊：AutoSupport
+
+* 軟體版本StorageGRID
+* 作業系統版本
+* 系統層級和位置層級的屬性資訊
+* 最近的警示和警示（舊系統）
+* 所有網格工作（包括歷史資料）的目前狀態
+* 管理節點資料庫使用量
+* 遺失或遺失物件的數量
+* 網格組態設定
+* NMS實體
+* 作用中ILM原則
+* 已配置的網格規格檔案
+* 診斷指標
+
+
+您可以在AutoSupport 第一次安裝時啟用「支援」功能和個別AutoSupport 的「支援」選項StorageGRID 、也可以稍後啟用。如果未啟用 AutoSupport 、則會在 Grid Manager 儀表板上顯示訊息。此訊息包含AutoSupport 指向「資訊功能」組態頁面的連結。
+
+image::../media/autosupport_disabled_message.png[無法使用的訊息AutoSupport]
+
+如果您關閉訊息、它將不會再次出現、直到您的瀏覽器快取被清除為止、即使AutoSupport 停用的是停用的。

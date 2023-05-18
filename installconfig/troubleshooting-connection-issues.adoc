@@ -1,0 +1,142 @@
+---
+permalink: installconfig/troubleshooting-connection-issues.html 
+sidebar: sidebar 
+keywords: 'storage node, storage appliance, troubleshoot, troubleshooting, connection, unable to connect, no connection, Expansion, shelves, don"t appear, Appliance Installer, missing, not shown' 
+summary: 如果StorageGRID 在安裝過程中遇到連線問題、您應該執行列出的修正行動步驟。 
+---
+= 疑難排解連線問題（ SG6000 或 SG5700 ）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果StorageGRID 在安裝過程中遇到連線問題、您應該執行列出的修正行動步驟。
+
+
+
+== 無法連線至 SG6000 應用裝置
+
+如果您無法連線至應用裝置、可能是網路問題、或是硬體安裝可能未成功完成。
+
+.步驟
+. 如果您無法連線SANtricity 到《系統管理程式》：
++
+.. 請嘗試使用管理網路SANtricity 上任一儲存控制器的IP位址來ping應用裝置、以利執行《支援系統管理員》：+
+`*ping _Storage_Controller_IP_*`
+.. 如果ping沒有回應、請確認您使用的是正確的IP位址。
++
+在任一儲存控制器上使用管理連接埠1的IP位址。
+
+.. 如果IP位址正確、請檢查設備纜線和網路設定。
++
+如果仍無法解決問題、請聯絡技術支援部門。
+
+.. 如果ping成功、請開啟網頁瀏覽器。
+.. 輸入SANtricity URL for the URL for the URL for the NemeSystem Manager:+
+`*https://_Storage_Controller_IP_*`
++
+畫面會出現「登入SANtricity 頁面、以供使用。
+
+
+
+. 如果您無法連線至SG6000-CN-控制器：
++
+.. 嘗試使用SG6000-CN-控制器的IP位址來ping應用裝置：+
+`*ping _SG6000-CN_Controller_IP_*`
+.. 如果ping沒有回應、請確認您使用的是正確的IP位址。
++
+您可以在Grid Network、管理網路或用戶端網路上使用應用裝置的IP位址。
+
+.. 如果IP位址正確、請檢查設備纜線、SFP收發器和網路設定。
+.. 如果可以實體存取 SG6000-CN 、您可以使用直接連線至永久性連結本機 IP `169.254.0.1` 檢查控制器網路組態、必要時進行更新。如需詳細指示、請參閱中的步驟2 link:accessing-storagegrid-appliance-installer.html["存取StorageGRID 產品安裝程式"]。
++
+如果仍無法解決問題、請聯絡技術支援部門。
+
+.. 如果ping成功、請開啟網頁瀏覽器。
+.. 輸入StorageGRID 「The URL for the URL for the不支援應用程式安裝程式：+」
+`*https://_SG6000-CN_Controller_IP_:8443*`
++
+隨即顯示首頁。
+
+
+
+
+
+
+
+== SG6060 擴充機櫃不會出現在應用裝置安裝程式中
+
+如果您已安裝 SG6060 的擴充機櫃、但這些擴充機櫃並未出現在 StorageGRID 應用裝置安裝程式中、則應確認機櫃已完全安裝並開啟電源。
+
+.關於這項工作
+您可以在StorageGRID 《NetApp應用裝置安裝程式：
+
+* 「*首頁*」頁面包含擴充櫃的相關訊息。
++
+image::../media/expansion_shelf_home_page_msg.png[擴充櫃訊息]
+
+* 「*進階*>* RAID模式*」頁面會依磁碟機數量指出設備是否包含擴充櫃。例如、下列螢幕擷取畫面會顯示兩個SSD和178個HDD。SG6060配備兩個擴充櫃、總共可容納180個磁碟機。
+
+
+image::../media/expansion_shelves_shown_by_num_of_drives.png[磁碟機數量]
+
+如果 StorageGRID 應用裝置安裝程式頁面沒有顯示擴充機櫃、請遵循此程序。
+
+.步驟
+. 確認所有必要的纜線均已穩固連接。請參閱 link:cabling-appliance-sg6000.html["纜線應用裝置（SG6000）"]。
+. 確認您已開啟擴充櫃的電源。請參閱 link:connecting-power-cords-and-applying-power-sg6000.html["連接電源線並接上電源（SG6000）"]。
+. 如果您需要解決問題的協助、請聯絡技術支援部門。
+
+
+
+
+== 無法連線至 SG5700 應用裝置
+
+如果您無法連線至應用裝置、可能是網路問題、或是硬體安裝可能未成功完成。
+
+.步驟
+. 如果您無法連線SANtricity 到《系統管理程式》：
++
+.. 請嘗試使用管理網路上E2800控制器的IP位址ping應用裝置SANtricity 、以利執行《系統管理程式：+》（英文）
+`*ping _E2800_Controller_IP_*`
+.. 如果ping沒有回應、請確認您使用的是正確的IP位址。
++
+使用E2800控制器上管理連接埠1的IP位址。
+
+.. 如果IP位址正確、請檢查設備纜線和網路設定。
++
+如果仍無法解決問題、請聯絡技術支援部門。
+
+.. 如果ping成功、請開啟網頁瀏覽器。
+.. 輸入SANtricity URL for the URL for the URL for the NemeSystem Manager:+
+`*https://_E2800_Controller_IP_*`
++
+畫面會出現「登入SANtricity 頁面、以供使用。
+
+
+
+. 如果您無法連線至E5700SG控制器：
++
+.. 嘗試使用E5700SG控制器的IP位址來ping應用裝置：+
+`*ping _E5700SG_Controller_IP_*`
+.. 如果ping沒有回應、請確認您使用的是正確的IP位址。
++
+您可以在Grid Network、管理網路或用戶端網路上使用應用裝置的IP位址。
+
+.. 如果IP位址正確、請檢查設備纜線、SFP收發器和網路設定。
++
+如果仍無法解決問題、請聯絡技術支援部門。
+
+.. 如果ping成功、請開啟網頁瀏覽器。
+.. 輸入StorageGRID 「The URL for the URL for the不支援應用程式安裝程式：+」
+`*https://_E5700SG_Controller_IP_:8443*`
++
+隨即顯示首頁。
+
+
+
+
+
+.相關資訊
+link:../installconfig/viewing-status-indicators.html["檢視狀態指標"]

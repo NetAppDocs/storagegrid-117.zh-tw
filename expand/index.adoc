@@ -1,0 +1,37 @@
+---
+permalink: expand/index.html 
+sidebar: sidebar 
+keywords: expand grid 
+summary: 請使用這些指示來擴充StorageGRID 您的不中斷系統作業的功能或功能。 
+---
+= 擴充網格：總覽
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+請使用這些指示來擴充StorageGRID 您的不中斷系統作業的功能或功能。
+
+
+
+== 關於這些指示
+
+這些說明說明如何執行StorageGRID 功能性擴充、將儲存磁碟區新增至儲存節點、新的網格節點至現有站台或整個新站台。
+
+這些指示適用於負責設定StorageGRID 及支援安裝後的作業系統的技術人員。
+
+
+
+== 擴充工作流程
+
+您執行擴充的原因、決定您必須新增的每種類型新節點數量、以及這些新節點的位置。例如、如果您要執行擴充以增加儲存容量、新增中繼資料容量、或新增備援或新功能、則會有不同的節點需求。
+
+如工作流程所示、執行擴充的步驟取決於您是將儲存磁碟區新增至儲存節點、將新節點新增至現有站台、還是新增站台。在任何情況下、您都可以執行擴充、而不會中斷目前系統的運作。
+
+新增節點的步驟也取決於您要新增StorageGRID 的是哪些應用程式、或是執行VMware或Linux的主機。
+
+
+NOTE: 「Linux」是指Red Hat®Enterprise Linux®、Ubuntu®、CentOS或DEBIANR®部署。使用 https://["NetApp互通性對照表工具IMT （不含）"^] 以取得支援版本的清單。
+
+image::../media/expansion_workflow.png[顯示擴充程序總覽的流程圖]

@@ -1,0 +1,55 @@
+---
+permalink: sg6000/reinstalling-sg6000-cn-controller-into-cabinet-or-rack.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, install, installing, installation, cabinet, rack, controller, sg6000-cn 
+summary: 硬體維護完成後、將控制器重新安裝到機櫃或機架中。 
+---
+= 將SG6000-CN-控制器重新安裝到機櫃或機架中
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+硬體維護完成後、將控制器重新安裝到機櫃或機架中。
+
+.開始之前
+您已重新安裝控制器護蓋。
+
+link:reinstalling-sg6000-cn-controller-cover.html["重新安裝SG6000-CN-控制器護蓋"]
+
+.步驟
+. 同時按下藍色滑軌、將兩個機架滑軌同時釋放、並將SG6000-CN-控制器滑入機架、直到完全就位。
++
+如果您無法進一步移動控制器、請拉動機箱兩側的藍色閂鎖、將控制器完全滑入。
+
++
+image::../media/sg6000_cn_rails_blue_button.gif[SG6000滑軌]
+
++
+
+NOTE: 在您開啟控制器電源之前、請勿連接前擋板。
+
+. 鎖緊控制器前面板上的緊固螺絲、將控制器固定在機架中。
++
+image::../media/sg6060_rack_retaining_screws.png[SG6060機架固定螺絲]
+
+. 將防靜電腕帶的綁帶末端包覆在您的腕帶上、並將扣夾末端固定在金屬接地上、以避免產生靜電。
+. 重新連接控制器資料纜線和任何SFP+或SFP28收發器。
++
+
+IMPORTANT: 為避免效能降低、請勿在纜線上扭轉、摺疊、夾住或踩踏。
+
++
+link:../installconfig/cabling-appliance-sg6000.html["纜線應用裝置（SG6000）"]
+
+. 重新連接控制器電源線。
++
+link:../installconfig/connecting-power-cords-and-applying-power-sg6000.html["連接電源線並接上電源（SG6000）"]
+
+
+
+.完成後
+控制器可以重新啟動。
+
+link:powering-on-sg6000-cn-controller-and-verifying-operation.html["開啟SG6000-CN-控制器電源、並確認運作正常"]

@@ -1,0 +1,16 @@
+---
+permalink: release-notes/index.html 
+sidebar: sidebar 
+keywords: release notes 
+summary: 取得新功能、移除或過時功能、修正問題及已知問題的發行特定資訊。 
+---
+= 版本資訊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+取得新功能、移除或過時功能、修正問題及已知問題的發行特定資訊。
+
+登入 NetApp 支援網站以 https://["檢視或下載PDF檔案"^] 內含 StorageGRID 11.7 版本資訊。

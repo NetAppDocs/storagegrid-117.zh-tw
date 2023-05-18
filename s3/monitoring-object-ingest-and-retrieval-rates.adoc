@@ -1,0 +1,51 @@
+---
+permalink: s3/monitoring-object-ingest-and-retrieval-rates.html 
+sidebar: sidebar 
+keywords: monitor object ingest rates, view object ingest rates, monitor object retrieval rates, view object retrieval rates 
+summary: 您可以監控物件擷取和擷取速率、以及物件計數、查詢和驗證的度量。您可以檢視用戶端應用程式在StorageGRID 讀取、寫入及修改物件時、成功和失敗的嘗試次數。 
+---
+= 監控物件擷取和擷取速率
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以監控物件擷取和擷取速率、以及物件計數、查詢和驗證的度量。您可以檢視用戶端應用程式在StorageGRID 讀取、寫入及修改物件時、成功和失敗的嘗試次數。
+
+.步驟
+. 使用登入Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+. 在儀表板上、選取 * 效能 * > * S3 作業 * 或 * 效能 * > * Swift 作業 * 。
++
+本節概述StorageGRID 您的一套系統執行的用戶端作業數量。在過去兩分鐘內平均傳輸協定速率。
+
+. 選擇*節點*。
+. 在節點首頁（部署層級）中、按一下*負載平衡器*索引標籤。
++
+這些圖表顯示了導向至網格內負載平衡器端點的所有用戶端流量趨勢。您可以選擇以小時、天、週、月或年為單位的時間間隔、 您也可以套用自訂時間間隔。
+
+. 在節點首頁（部署層級）中、按一下*物件*索引標籤。
++
+此圖表以StorageGRID 每秒位元組數和總位元組數顯示整個系統的擷取和擷取速率。您可以選擇以小時、天、週、月或年為單位的時間間隔、 您也可以套用自訂時間間隔。
+
+. 若要查看特定儲存節點的資訊、請從左側清單中選取節點、然後按一下「*物件*」索引標籤。
++
+此圖表顯示此儲存節點的物件擷取和擷取速率。此索引標籤也包含物件計數、查詢和驗證的度量。您可以按一下標籤來查看這些度量的定義。
+
++
+image::../media/nodes_storage_node_objects_help.png[節點>_Storage Nod_>物件>屬性說明的快照]
+
+. 如果您想要更詳細的資料：
++
+.. 選取*支援*>*工具*>*網格拓撲*。
+.. 選擇*站台_*>*總覽*>*主選項*。
++
+「API作業」區段會顯示整個網格的摘要資訊。
+
+.. 選擇「*儲存節點_*」>「*最大*」>「*用戶端應用程式_*」>「*總覽*」>「*主要*」
++
+「作業」區段會顯示所選儲存節點的摘要資訊。
+
+
+
+

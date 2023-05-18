@@ -1,0 +1,48 @@
+---
+permalink: admin/kms-removing.html 
+sidebar: sidebar 
+keywords: remove kms, remove key management server 
+summary: 在某些情況下、您可能會想要移除金鑰管理伺服器。例如、如果您已停用站台、可能會想要移除站台專屬的KMS。 
+---
+= 移除金鑰管理伺服器（KMS）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在某些情況下、您可能會想要移除金鑰管理伺服器。例如、如果您已停用站台、可能會想要移除站台專屬的KMS。
+
+.開始之前
+* 您已檢閱 link:kms-considerations-and-requirements.html["使用金鑰管理伺服器的考量與要求"]。
+* 您將使用登入Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
+* 您擁有root存取權限。
+
+
+.關於這項工作
+在下列情況下、您可以移除KMS：
+
+* 如果站台已停用、或站台中沒有啟用節點加密的應用裝置節點、您可以移除站台專屬的KMS。
+* 如果每個已啟用節點加密功能的應用裝置節點已存在站台專屬KMS、您可以移除預設KMS。
+
+
+.步驟
+. 選擇*組態*>*安全性*>*金鑰管理伺服器*。
++
+此時會出現「金鑰管理伺服器」頁面、並顯示所有已設定的金鑰管理伺服器。
+
+. 選取您要移除的 KMS 、然後選取 * 動作 * > * 移除 * 。
++
+您也可以選取表格中的 KMS 名稱、然後從 KMS 詳細資料頁面中選取 * 移除 * 來移除 KMS 。
+
+. 請確認下列各項正確無誤：
++
+** 您正在移除網站專屬 KMS 、此網站沒有啟用節點加密的應用裝置節點。
+** 您正在移除預設的 KMS 、但每個具有節點加密的站台都已存在特定站台的 KMS 。
+
+
+. 選擇*是*。
++
+KMS組態隨即移除。
+
+

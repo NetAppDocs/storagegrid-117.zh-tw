@@ -1,0 +1,24 @@
+---
+permalink: installconfig/hardware-setup-appears-to-hang-sgf6112.html 
+sidebar: sidebar 
+keywords: storagegrid, sgf6112, sg6100, troubleshoot, troubleshooting, hardware, setup, hang, hangs, fails, failure, stop, terminate, terminates, stuck 
+summary: 如果硬體故障或纜線錯誤導致應用裝置無法完成開機處理、則可能無法使用《支援產品安裝程式」StorageGRID 。 
+---
+= 硬體設定似乎當機（ SGF6112 ）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果硬體故障或纜線錯誤導致應用裝置無法完成開機處理、則可能無法使用《支援產品安裝程式」StorageGRID 。
+
+.步驟
+. 檢閱應用裝置上的LED、以及BMC中顯示的開機和錯誤代碼。
+. 如果您需要解決問題的協助、請聯絡技術支援部門。
+
+
+.相關資訊
+* link:viewing-boot-up-codes-for-sgf6112.html["檢視開機代碼（ SGF6112 ）"]
+* link:viewing-error-codes-for-sgf6112.html["檢視錯誤代碼（ SGF6112 ）"]
+

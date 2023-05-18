@@ -1,0 +1,375 @@
+---
+permalink: installconfig/gathering-installation-information-sg5700.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5700, storage node, storage appliance, install, information, site, pre-install, preparing, prepare, preinstall, info, preparation 
+summary: 使用表格記錄您連線至應用裝置的每個網路所需的資訊。這些值是安裝和設定硬體所需的值。 
+---
+= 收集安裝資訊（SG5700）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用表格記錄您連線至應用裝置的每個網路所需的資訊。這些值是安裝和設定硬體所需的值。
+
+
+TIP: 請使用 ConfigBuilder 隨附的活頁簿、而非使用表格。使用 ConfigBuilder 活頁簿可讓您上傳系統資訊並產生 JSON 檔案、以自動完成 StorageGRID 應用裝置安裝程式中的某些組態步驟。請參閱 link:automating-appliance-installation-and-configuration.html["自動化應用裝置的安裝與組態"]。
+
+
+
+== 連接SANtricity 到E2800控制器上的《E2800系統管理程式》所需的資訊
+
+您可以將 E2800 系列控制器連接至 SANtricity 系統管理員所使用的管理網路。
+
+[cols="2a,1a"]
+|===
+| 所需資訊 | 您的價值 
+
+
+ a| 
+您將連接至管理連接埠1的乙太網路交換器連接埠
+ a| 
+
+
+
+ a| 
+管理連接埠1的Mac位址（印在連接埠P1附近的標籤上）
+ a| 
+
+
+
+ a| 
+DHCP指派的管理連接埠1 IP位址（如果在開機後可用）
+
+*附註：*如果您要連線至E2800控制器的網路包含DHCP伺服器、網路管理員可以使用MAC位址來判斷DHCP伺服器指派的IP位址。
+ a| 
+
+
+
+ a| 
+速度與雙工模式
+
+*附註：*您必須確定SANtricity 適用於「系統管理程式」管理網路的乙太網路交換器已設定為自動協調。
+ a| 
+必須：
+
+* 自動協商（預設）
+
+
+
+
+ a| 
+IP位址格式
+ a| 
+請選擇一項：
+
+* IPV4
+* IPv6
+
+
+
+
+ a| 
+您計畫用於管理網路上應用裝置的靜態IP位址
+ a| 
+對於IPV4：
+
+* IPV4位址：
+* 子網路遮罩：
+* 閘道：
+
+
+對於IPv6：
+
+* IPv6位址：
+* 可路由的IP位址：
+* E2800控制器路由器IP位址：
+
+
+|===
+
+
+== 將E5700SG控制器連接至管理網路所需的資訊
+
+管理員網路for支援功能是選用的網路、可用於系統管理和維護。StorageGRID應用裝置使用E5700SG控制器上的1-GbE管理連接埠來連線至管理網路。
+
+[cols="2a,1a"]
+|===
+| 所需資訊 | 您的價值 
+
+
+ a| 
+管理網路已啟用
+ a| 
+請選擇一項：
+
+* 否
+* 是（預設）
+
+
+
+
+ a| 
+網路連結模式
+ a| 
+請選擇一項：
+
+* 獨立
+* 主動備份
+
+
+
+
+ a| 
+連接埠1的交換器連接埠
+ a| 
+
+
+
+ a| 
+連接埠2的交換器連接埠（僅限主動備份網路連結模式）
+ a| 
+
+
+
+ a| 
+DHCP指派的管理連接埠1 IP位址（如果在開機後可用）
+
+*附註：*如果管理網路包含DHCP伺服器、E5700SG控制器會在開機後、在七段顯示器上顯示DHCP指派的IP位址。您也可以使用MAC位址來查詢指派的IP、藉此判斷DHCP指派的IP位址。
+ a| 
+* IPV4位址（CIDR）：
+* 閘道：
+
+
+
+
+ a| 
+您計畫用於管理網路上應用裝置儲存節點的靜態IP位址
+
+*注意：*如果您的網路沒有閘道、請為閘道指定相同的靜態IPv4位址。
+ a| 
+* IPV4位址（CIDR）：
+* 閘道：
+
+
+
+
+ a| 
+管理網路子網路（CIDR）
+ a| 
+
+|===
+
+
+== 在E5700SG控制器上連接及設定10/25-GbE連接埠所需的資訊
+
+E5700SG控制器上的四個10/25-GbE連接埠可連接StorageGRID 至「Se Grid Network and Client Network」（英文）。
+
+
+NOTE: 請參閱 link:port-bond-modes-for-e5700sg-controller-ports.html["連接埠連結模式（ E5700SG 控制器）"]。
+
+[cols="2a,1a"]
+|===
+| 所需資訊 | 您的價值 
+
+
+ a| 
+連結速度
+
+* 注意： * 如果您選擇 25 GbE 、請安裝 SPF28 收發器。不支援自動協商、因此您也必須將連接埠和連接的交換器設定為 25GbE 。
+ a| 
+請選擇一項：
+
+* 10 GbE（預設）
+* 25 GbE
+
+
+
+
+ a| 
+連接埠連結模式
+ a| 
+請選擇一項：
+
+* 固定（預設）
+* Aggregate
+
+
+
+
+ a| 
+連接埠1的交換器連接埠（用戶端網路）
+ a| 
+
+
+
+ a| 
+連接埠2的交換器連接埠（網格網路）
+ a| 
+
+
+
+ a| 
+連接埠3的交換器連接埠（用戶端網路）
+ a| 
+
+
+
+ a| 
+連接埠4的交換器連接埠（Grid Network）
+ a| 
+
+|===
+
+
+== 將E5700SG控制器連接至Grid Network所需的資訊
+
+Grid Network for StorageGRID 效能不只是一項必要的網路、可用於所有內部StorageGRID 的資訊流量。應用裝置使用E5700SG控制器上的10/25-GbE連接埠來連線至Grid Network。
+
+
+NOTE: 請參閱 link:port-bond-modes-for-e5700sg-controller-ports.html["連接埠連結模式（ E5700SG 控制器）"]。
+
+[cols="2a,1a"]
+|===
+| 所需資訊 | 您的價值 
+
+
+ a| 
+網路連結模式
+ a| 
+請選擇一項：
+
+* 雙主動備份（預設）
+* LACP（802.3ad）
+
+
+
+
+ a| 
+已啟用VLAN標記
+ a| 
+請選擇一項：
+
+* 否（預設）
+* 是的
+
+
+
+
+ a| 
+VLAN標記（如果已啟用VLAN標記）
+ a| 
+輸入介於0和4095之間的值：
+
+
+
+ a| 
+網格網路的DHCP指派IP位址（如果在開機後可用）
+
+*附註：*如果Grid Network包含DHCP伺服器、E5700SG控制器會在啟動後、在七段顯示器上顯示Grid Network的DHCP指派IP位址。
+ a| 
+* IPV4位址（CIDR）：
+* 閘道：
+
+
+
+
+ a| 
+您計畫在Grid Network上用於應用裝置儲存節點的靜態IP位址
+
+*注意：*如果您的網路沒有閘道、請為閘道指定相同的靜態IPv4位址。
+ a| 
+* IPV4位址（CIDR）：
+* 閘道：
+
+
+
+
+ a| 
+網格網路子網路（CIDR）
+
+*注意：*如果未啟用用戶端網路、則控制器上的預設路由將使用此處指定的閘道。
+ a| 
+
+|===
+
+
+== 將E5700SG控制器連接至用戶端網路所需的資訊
+
+Client Network for StorageGRID 推銷是選用的網路、通常用於提供用戶端傳輸協定存取網格。應用裝置會使用E5700SG控制器上的10/25-GbE連接埠來連線至用戶端網路。
+
+
+NOTE: 請參閱 link:port-bond-modes-for-e5700sg-controller-ports.html["連接埠連結模式（ E5700SG 控制器）"]。
+
+[cols="2a,1a"]
+|===
+| 所需資訊 | 您的價值 
+
+
+ a| 
+用戶端網路已啟用
+ a| 
+請選擇一項：
+
+* 否（預設）
+* 是的
+
+
+
+
+ a| 
+網路連結模式
+ a| 
+請選擇一項：
+
+* 雙主動備份（預設）
+* LACP（802.3ad）
+
+
+
+
+ a| 
+已啟用VLAN標記
+ a| 
+請選擇一項：
+
+* 否（預設）
+* 是的
+
+
+
+
+ a| 
+VLAN標記
+
+（如果已啟用VLAN標記）
+ a| 
+輸入介於0和4095之間的值：
+
+
+
+ a| 
+用戶端網路的DHCP指派IP位址（如果在開機後可用）
+ a| 
+* IPV4位址（CIDR）：
+* 閘道：
+
+
+
+
+ a| 
+您計畫用於用戶端網路上應用裝置儲存節點的靜態IP位址
+
+*附註：*如果已啟用用戶端網路、則控制器上的預設路由將使用此處指定的閘道。
+ a| 
+* IPV4位址（CIDR）：
+* 閘道：
+
+
+|===
+.相關資訊
+* link:sg5700-appliance-connections.html["網路連線（ SG5700 ）"]
+* link:port-bond-modes-for-e5700sg-controller-ports.html["連接埠連結模式（ E5700SG 控制器）"]
+* link:configuring-hardware.html["設定硬體（SG5700）"]
+

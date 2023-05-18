@@ -1,0 +1,22 @@
+---
+permalink: maintain/rebooting-grid-node.html 
+sidebar: sidebar 
+keywords: reboot grid node 
+summary: 您可以從Grid Manager或從節點的命令Shell重新開機網格節點。 
+---
+= 重新開機網格節點：概述
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從Grid Manager或從節點的命令Shell重新開機網格節點。
+
+當您重新開機網格節點時、節點會關閉並重新啟動。所有服務都會自動重新啟動。
+
+如果您打算重新開機儲存節點、請注意下列事項：
+
+* 如果 ILM 規則指定雙重認可或平衡的擷取行為、且無法立即建立所有必要的複本、 StorageGRID 會立即將任何新擷取的物件提交至同一站台上的兩個儲存節點、並於稍後評估 ILM 。如果您想要在特定站台重新開機兩個以上的儲存節點、在重新開機期間可能無法存取這些物件。
+* 為了確保您可以在儲存節點重新開機時存取所有物件、請先停止在站台上擷取物件約一小時、再重新啟動節點。
+

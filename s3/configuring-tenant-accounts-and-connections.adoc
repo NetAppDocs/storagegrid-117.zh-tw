@@ -1,0 +1,166 @@
+---
+permalink: s3/configuring-tenant-accounts-and-connections.html 
+sidebar: sidebar 
+keywords: configuring, tenant, connections 
+summary: 若要設定StorageGRID 從用戶端應用程式接受連線、需要建立一或多個租戶帳戶並設定連線。 
+---
+= 設定租戶帳戶和連線
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要設定StorageGRID 從用戶端應用程式接受連線、需要建立一或多個租戶帳戶並設定連線。
+
+
+
+== 建立及設定S3租戶帳戶
+
+S3 API用戶端必須先有S3租戶帳戶、才能將物件儲存及擷取StorageGRID 到支援區。每個租戶帳戶都有自己的帳戶 ID 、群組、使用者、貯體和物件。
+
+S3租戶帳戶是StorageGRID 由使用Grid Manager或Grid Management API的資訊網管理員所建立。請參閱 link:../admin/managing-tenants.html["管理租戶"] 以取得詳細資料。建立 S3 租戶帳戶後、租戶使用者即可存取租戶管理器、以管理群組、使用者、存取金鑰和貯體。請參閱 link:../tenant/index.html["使用租戶帳戶"] 以取得詳細資料。
+
+
+TIP: 雖然 S3 租戶使用者可以使用 Tenant Manager 來建立和管理 S3 存取金鑰和貯體、但他們必須使用 S3 用戶端應用程式來擷取和管理物件。請參閱 link:../s3/index.html["使用S3 REST API"] 以取得詳細資料。
+
+
+
+== 如何設定用戶端連線
+
+網格管理員會做出組態選擇、影響S3用戶端連線StorageGRID 至以儲存及擷取資料的方式。將 StorageGRID 連線至任何 S3 應用程式有四個基本步驟：
+
+* 根據用戶端應用程式與 StorageGRID 的連線方式、在 StorageGRID 中執行必要工作。
+* 使用 StorageGRID 取得應用程式連線至網格所需的值。您也可以 link:../admin/use-s3-setup-wizard.html["使用 S3 設定精靈"] 或手動設定每個 StorageGRID 實體。
+* 使用 S3 應用程式完成與 StorageGRID 的連線。建立 DNS 項目、將 IP 位址與您打算使用的任何網域名稱建立關聯。
+* 在應用程式和 StorageGRID 中執行持續的工作、以隨時間而管理和監控物件儲存。
+
+
+如需這些步驟的詳細資訊、請參閱 link:../admin/configuring-client-connections.html["設定用戶端連線"]。
+
+
+
+=== 用戶端連線所需的資訊
+
+若要儲存或擷取物件、 S3 用戶端應用程式會連線到負載平衡器服務（包含在所有管理節點和閘道節點上）、或是連接到所有儲存節點上的本機分配路由器（ LDR ）服務。
+
+用戶端應用程式可以使用網格節點的 IP 位址和該節點上服務的連接埠號碼、來連線至 StorageGRID 。您也可以建立高可用度（ HA ）負載平衡節點群組、以提供使用虛擬 IP （ VIP ）位址的高可用度連線。如果您想要使用完整網域名稱（ FQDN ）而非 IP 或 VIP 位址連線至 StorageGRID 、您可以設定 DNS 項目。
+
+請參閱 link:../admin/summary-ip-addresses-and-ports-for-client-connections.html["摘要：用於用戶端連線的IP位址和連接埠"] 以取得更多資訊。
+
+
+
+=== 決定使用HTTPS或HTTP連線
+
+使用負載平衡器端點進行用戶端連線時、必須使用為該端點指定的傳輸協定（HTTP或HTTPS）來建立連線。若要將 HTTP 用於用戶端連線至儲存節點、您必須啟用 HTTP 。
+
+根據預設、當用戶端應用程式連線至儲存節點時、它們必須使用加密的 HTTPS 進行所有連線。或者、您也可以在 Grid Manager 中選取 * 組態 * > * 安全性設定 * > * 網路和物件 * > * 啟用儲存節點連線的 HTTP * 、以啟用不安全的 HTTP 連線。例如、用戶端應用程式在非正式作業環境中測試與儲存節點的連線時、可能會使用HTTP。
+
+
+CAUTION: 為正式作業網格啟用 HTTP 時請務必小心、因為要求和回應將以未加密的方式傳送。
+
+.相關資訊
+link:../admin/index.html["管理StorageGRID"]
+
+link:benefits-of-active-idle-and-concurrent-http-connections.html["作用中、閒置及並行HTTP連線的優點"]
+
+
+
+== S3 要求的 S3 端點網域名稱
+
+StorageGRID 系統管理員必須先將系統設定為接受在 S3 路徑樣式和 S3 虛擬代管樣式要求中使用 S3 端點網域名稱的連線、才能將 S3 端點網域名稱用於用戶端要求。
+
+.關於這項工作
+若要使用S3虛擬託管樣式要求、網格管理員必須執行下列工作：
+
+* 使用Grid Manager將S3端點網域名稱新增StorageGRID 至整個系統。
+* 請確認用戶端用於HTTPS連線StorageGRID 的驗證書已針對用戶端所需的所有網域名稱簽署。
++
+例如、如果 S3 API 服務端點網域端點是 `s3.company.com`，網格管理員必須確保用於 HTTPS 連線的憑證具有 `s3.company.com` 做為主體一般名稱和主體替代名稱、以及 `*.s3.company.com` 在主旨替代名稱中。
+
+* link:../maintain/configuring-dns-servers.html["設定 DNS 伺服器"] 用戶端用來包含符合 S3 端點網域名稱的 DNS 記錄、包括任何必要的萬用字元記錄。
+
+
+如果用戶端使用負載平衡器服務連線、則網格管理員設定的憑證是用戶端使用的負載平衡器端點的憑證。
+
+
+NOTE: 每個負載平衡器端點都有自己的憑證、而且每個端點都可以設定為辨識不同的 S3 端點網域名稱。
+
+如果用戶端連線至儲存節點、則網格管理員所設定的憑證是用於網格的單一自訂伺服器憑證。
+
+請參閱的說明 link:../admin/index.html["管理StorageGRID"] 以取得更多資訊。
+
+完成這些步驟之後、您可以使用虛擬託管式要求。
+
+
+
+== 測試S3 REST API組態
+
+您可以使用Amazon Web Services命令列介面（AWS CLI）來測試您與系統的連線、並確認您可以讀取物件並將物件寫入系統。
+
+.開始之前
+* 您已從下載並安裝AWS CLI https://["aws.amazon.com/cli"^]。
+* 您已在StorageGRID 整個系統上建立S3租戶帳戶。
+* 您已在租戶帳戶中建立存取金鑰。
+
+
+.步驟
+. 設定 AWS CLI 設定以使用您在 StorageGRID 系統中建立的帳戶：
++
+.. 進入組態模式： `aws configure`
+.. 輸入您所建立帳戶的存取金鑰 ID 。
+.. 輸入您所建立帳戶的秘密存取金鑰。
+.. 輸入要使用的預設區域、例如us-east-1。
+.. 輸入要使用的預設輸出格式、或按* Enter *選取Json。
+
+
+. 建立儲存庫。
++
+本範例假設您已將負載平衡器端點設定為使用 IP 位址 10.96.101.17 和連接埠 10443 。
+
++
+[listing]
+----
+aws s3api --endpoint-url https://10.96.101.17:10443
+--no-verify-ssl create-bucket --bucket testbucket
+----
++
+如果成功建立了儲存區、則會傳回儲存區的位置、如下列範例所示：
+
++
+[listing]
+----
+"Location": "/testbucket"
+----
+. 上傳物件。
++
+[listing]
+----
+aws s3api --endpoint-url https://10.96.101.17:10443 --no-verify-ssl
+put-object --bucket testbucket --key s3.pdf --body C:\s3-test\upload\s3.pdf
+----
++
+如果物件上傳成功、則會傳回Etag、這是物件資料的雜湊。
+
+. 列出儲存區的內容、以驗證物件是否已上傳。
++
+[listing]
+----
+aws s3api --endpoint-url https://10.96.101.17:10443 --no-verify-ssl
+list-objects --bucket testbucket
+----
+. 刪除物件。
++
+[listing]
+----
+aws s3api --endpoint-url https://10.96.101.17:10443 --no-verify-ssl
+delete-object --bucket testbucket --key s3.pdf
+----
+. 刪除儲存庫。
++
+[listing]
+----
+aws s3api --endpoint-url https://10.96.101.17:10443 --no-verify-ssl
+delete-bucket --bucket testbucket
+----
+

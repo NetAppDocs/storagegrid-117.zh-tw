@@ -1,0 +1,28 @@
+---
+permalink: installconfig/connecting-power-cords-and-applying-power-sg100-and-sg1000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, gateway node, admin node, wiring, cabling, cable, Connecting, connect, power cords, power, applying power, apply power, turn on, power up, ac, ac power 
+summary: 連接網路纜線之後、您就可以開始為應用裝置供電了。 
+---
+= 連接電源線並接上電源（SG100和SG1000）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+連接網路纜線之後、您就可以開始為應用裝置供電了。
+
+.步驟
+. 將電源線分別連接至產品中的兩個電源供應器。
+. 將這兩條電源線連接至機櫃或機架中的兩個不同的電力分配單元（PDU）。
+. 如果產品正面的電源按鈕目前未亮起藍色、請按下按鈕開啟產品電源。
++
+請勿在開機程序期間再次按下電源按鈕。
+
+. 如果發生錯誤、請修正任何問題。
+. 如果已拆下、請將前擋板裝到產品上。
+
+
+.相關資訊
+link:viewing-status-indicators.html["檢視狀態指標"]

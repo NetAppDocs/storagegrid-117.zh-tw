@@ -1,0 +1,29 @@
+---
+section: sg100-1000
+title: 維護 SG100 和 SG1000 硬體
+entries:
+- title: 總覽
+  pdf-filename: SG100 和 SG1000 硬體維護
+  url: "/sg100-1000/index.html"
+- title: 維護組態程序
+  pdf-filename: 維護組態程序： SG100 和 SG1000
+  entries:
+  - title: 開啟和關閉控制器識別LED
+    url: "/sg100-1000/turning-controller-identify-led-on-and-off.html"
+  - title: 在資料中心找到控制器
+    url: "/sg100-1000/locating-controller-in-data-center.html"
+  - title: 關閉產品電源
+    url: "/sg100-1000/shut-down-sg100-and-sg1000.html"
+  - title: 變更服務應用裝置的連結組態
+    url: "/sg100-1000/changing-link-configuration-of-services-appliance.html"
+- title: 硬體程序
+  pdf-filename: 硬體程序： SG100 和 SG1000
+  entries:
+  - title: 更換服務應用裝置中的一個或兩個電源供應器
+    url: "/sg100-1000/replacing-one-or-more-power-supplies-in-services-appliance.html"
+  - title: 更換服務應用裝置中的風扇
+    url: "/sg100-1000/replacing-fan-in-services-appliance.html"
+  - title: 更換服務應用裝置中的磁碟機
+    url: "/sg100-1000/replacing-drive-in-services-appliance.html"
+  - title: 更換服務應用裝置
+    url: "/sg100-1000/replacing-services-appliance.html"
