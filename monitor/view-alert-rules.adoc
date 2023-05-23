@@ -18,7 +18,7 @@ summary: 警示規則定義觸發特定警示的條件。包含一組預設警�
 .開始之前
 * 您將使用登入Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
 * 您擁有「管理警示」或「根目錄」存取權限。
-* 您也可以選擇觀看影片： https://["影片： StorageGRID 11.7 警示綜覽"^]
+* 您也可以選擇觀看影片： https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=18df5a3d-bf19-4a9e-8922-afbd009b141b["影片： StorageGRID 11.7 警示綜覽"^]
 +
 [link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=18df5a3d-bf19-4a9e-8922-afbd009b141b]
 image::../media/video-screenshot-alert-overview-117.png[影片： StorageGRID 11.7 警示綜覽]

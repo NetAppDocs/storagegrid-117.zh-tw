@@ -14,7 +14,7 @@ summary: 您必須下載StorageGRID 安裝檔案庫、並擷取所需的檔案�
 您必須下載StorageGRID 安裝檔案庫、並擷取所需的檔案。
 
 .步驟
-. 前往 https://["NetApp下載頁StorageGRID 面"^]。
+. 前往 https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp下載頁StorageGRID 面"^]。
 . 選取下載最新版本的按鈕、或從下拉式功能表中選取其他版本、然後選取*執行*。
 . 以您NetApp帳戶的使用者名稱和密碼登入。
 . 如果出現「 Caution/MustRead 」說明、請閱讀並選取核取方塊。

@@ -173,7 +173,7 @@ arn:aws:iam::account_id:federated-group/group_name
 * 您可以使用星號（*）做為萬用字元、以比對物件金鑰內的零個或多個字元。
 * 可以在物件金鑰中指定的國際字元、應使用Json utf-8或Json \u轉義序列進行編碼。不支援百分比編碼。
 +
-https://["RFC 2141 URN語法"^]
+https://www.ietf.org/rfc/rfc2141.txt["RFC 2141 URN語法"^]
 
 +
 PPUT Bucket原則作業的HTTP要求本文必須以charset=utf-8進行編碼。

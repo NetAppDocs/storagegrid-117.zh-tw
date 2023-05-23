@@ -14,7 +14,7 @@ summary: 瞭解如何在StorageGRID 您的不實環境中測試及啟用應用�
 
 
 [role="lead"]
-前往 https://["如何在StorageGRID 您的環境中啟用支援功能"^] 以瞭解如何在 StorageGRID 環境中測試及啟用應用程式。
+前往 https://docs.netapp.com/us-en/storagegrid-enable/index.html["如何在StorageGRID 您的環境中啟用支援功能"^] 以瞭解如何在 StorageGRID 環境中測試及啟用應用程式。
 
 「 *storagegRID 啟用 * 」文件網站提供範例與指南、可在本網站的產品文件中加以擴充、並說明評估與整合 StorageGRID 的後續步驟。
 

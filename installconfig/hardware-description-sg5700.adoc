@@ -284,4 +284,4 @@ E5700SG控制器（運算控制器）
 
 |===
 .相關資訊
-http://["NetApp E系列系統文件網站"^]
+http://mysupport.netapp.com/info/web/ECMP1658252.html["NetApp E系列系統文件網站"^]

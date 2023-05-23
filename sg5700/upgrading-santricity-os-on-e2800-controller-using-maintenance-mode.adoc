@@ -14,7 +14,7 @@ summary: 若儲存控制器目前使用SANtricity 的是08.42.20.00之前的版�
 若儲存控制器目前使用SANtricity 的是08.42.20.00（11.42）之前版本的作業系統、您必須使用維護模式程序來套用升級。
 
 .開始之前
-* 您已諮詢 https://["NetApp互通性對照表工具IMT （不含）"^] 確認您用於升級的 SANtricity 作業系統版本與您的應用裝置相容。
+* 您已諮詢 https://imt.netapp.com/matrix/#welcome["NetApp互通性對照表工具IMT （不含）"^] 確認您用於升級的 SANtricity 作業系統版本與您的應用裝置相容。
 * 您必須將E5700SG控制器放入 link:../maintain/placing-appliance-into-maintenance-mode.html["維護模式"]中斷與E2800控制器的連線。
 +
 

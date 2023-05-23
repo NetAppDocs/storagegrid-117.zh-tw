@@ -17,7 +17,7 @@ summary: 這個系統最多可為每個S3租戶帳戶支援1、000個貯體。St
 
 如需詳細資訊、請參閱下列內容：
 
-* https://["Amazon Web Services（AWS）文件：儲存區限制與限制"^]
+* https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html["Amazon Web Services（AWS）文件：儲存區限制與限制"^]
 * link:../admin/configuring-s3-api-endpoint-domain-names.html["設定 S3 端點網域名稱"]
 
 
@@ -332,7 +332,7 @@ Get Bucket（列出物件）和Get Bucket版本作業支援StorageGRID 一致性
  a| 
 此作業會進行設定 link:../tenant/understanding-cloudmirror-replication-service.html["StorageGRID CloudMirror 複寫"] 適用於要求主體中所提供的複寫組態 XML 的貯體。對於CloudMirror複寫、您應該瞭解下列實作詳細資料：
 
-* 僅支援複寫組態的V1。StorageGRID這表示StorageGRID 、不支援使用 `Filter` 規則元素、並遵循刪除物件版本的V1慣例。如需詳細資訊、請參閱 https://["有關複寫組態的Amazon S3文件"^]。
+* 僅支援複寫組態的V1。StorageGRID這表示StorageGRID 、不支援使用 `Filter` 規則元素、並遵循刪除物件版本的V1慣例。如需詳細資訊、請參閱 https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-add-config.html["有關複寫組態的Amazon S3文件"^]。
 * 儲存區複寫可在版本控制或未版本控制的儲存區上進行設定。
 * 您可以在複寫組態XML的每個規則中指定不同的目的地儲存區。來源儲存區可複寫至多個目的地儲存區。
 * 目的地貯體必須指定為StorageGRID 租戶管理程式或租戶管理API中指定的非功能性端點的URN。請參閱 link:../tenant/configuring-cloudmirror-replication.html["設定CloudMirror複寫"]。

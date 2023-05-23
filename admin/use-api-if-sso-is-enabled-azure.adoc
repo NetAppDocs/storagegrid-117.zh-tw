@@ -42,7 +42,7 @@ SSO作業可以使用一系列API要求執行、但這樣做並不直接。Puppe
 .步驟
 . 安裝所需的相依性、如下所示：
 +
-.. 安裝Node.js（請參閱 https://["https://nodejs.org/en/download/"^]）。
+.. 安裝Node.js（請參閱 https://nodejs.org/en/download/["https://nodejs.org/en/download/"^]）。
 .. 安裝所需的Node.js模組（puppeteer和jsdom）：
 +
 `npm install -g <module>`

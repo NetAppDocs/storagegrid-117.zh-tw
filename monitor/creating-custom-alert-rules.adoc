@@ -17,8 +17,8 @@ summary: 您可以建立自訂警示規則、以定義自己觸發警示的條�
 * 您將使用登入Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]
 * 您擁有「管理警示」或「根目錄」存取權限
 * 您已經熟悉 link:commonly-used-prometheus-metrics.html["常用的Prometheus指標"]
-* 您瞭解 https://["Prometheus查詢的語法"^]
-* 您也可以選擇觀看影片： https://["影片：使用度量在 StorageGRID 11.7 中建立自訂警示"^]
+* 您瞭解 https://prometheus.io/docs/querying/basics/["Prometheus查詢的語法"^]
+* 您也可以選擇觀看影片： https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=61acb7ba-7683-488a-a689-afb7010088f3["影片：使用度量在 StorageGRID 11.7 中建立自訂警示"^]
 +
 [link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=61acb7ba-7683-488a-a689-afb7010088f3]
 image::../media/video-screenshot-alert-create-custom-117.png[影片：使用度量在 StorageGRID 11.7 中建立自訂警示]

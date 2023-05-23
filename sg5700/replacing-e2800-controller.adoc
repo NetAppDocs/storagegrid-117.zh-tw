@@ -391,7 +391,7 @@ image::../media/nodes_menu.png[應用裝置節點重新加入網格]
 . 從「支援系統管理程式」中、確認新的控制器是最佳的、並收集支援資料。SANtricity
 
 
-更換零件後、請將故障零件歸還給NetApp、如套件隨附的RMA指示所述。請參閱 https://["產品退貨安培；更換"^] 頁面以取得更多資訊。
+更換零件後、請將故障零件歸還給NetApp、如套件隨附的RMA指示所述。請參閱 https://mysupport.netapp.com/site/info/rma["產品退貨安培；更換"^] 頁面以取得更多資訊。
 
 .相關資訊
-http://["NetApp E系列系統文件網站"^]
+http://mysupport.netapp.com/info/web/ECMP1658252.html["NetApp E系列系統文件網站"^]

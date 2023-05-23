@@ -27,7 +27,7 @@ summary: 應用裝置上的《產品安裝程式版本」必須與安裝在您�
 +
 兩個版本中的第二個數字應該相符。例如StorageGRID 、如果您的Sf2系統執行的是11.*6*._x_._y_版、StorageGRID 則該版本的《EzAppliance Installer》應該是3.*6*。_z_。
 
-. 如果應用裝置的StorageGRID 版本低於此版本、請前往 https://["NetApp下載：StorageGRID NetApp產品"^]。
+. 如果應用裝置的StorageGRID 版本低於此版本、請前往 https://mysupport.netapp.com/site/products/all/details/storagegrid-appliance/downloads-tab["NetApp下載：StorageGRID NetApp產品"^]。
 +
 以您NetApp帳戶的使用者名稱和密碼登入。
 

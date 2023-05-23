@@ -13,7 +13,7 @@ summary: 您可以SANtricity 透過「e系統管理節點」（AutoSupport 而�
 [role="lead"]
 您可以SANtricity 透過「e系統管理節點」（AutoSupport 而非儲存應用裝置管理連接埠）、將E系列的《系統管理程式》（E-系列）功能資訊傳送給技術支援部門StorageGRID 。
 
-請參閱 https://["E 系列硬體 AutoSupport"^] 如需搭配 E 系列應用裝置使用 AutoSupport 的詳細資訊、請參閱。
+請參閱 https://docs.netapp.com/us-en/e-series-santricity/sm-support/autosupport-feature-overview.html["E 系列硬體 AutoSupport"^] 如需搭配 E 系列應用裝置使用 AutoSupport 的詳細資訊、請參閱。
 
 .開始之前
 * 您將使用登入Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
@@ -34,7 +34,7 @@ E系列AutoSupport 的資訊包含儲存硬體的詳細資料、比AutoSupport �
 您可以在 SANtricity 系統管理員中設定特殊的 Proxy 伺服器位址、以透過 StorageGRID 管理節點傳輸 AutoSupport 訊息、而無需使用應用裝置的管理連接埠。以這種方式傳輸的 AutoSupport 訊息會由傳送 link:../admin/what-admin-node-is.html["偏好的寄件者管理節點"]、而且他們使用任何 link:../admin/configuring-admin-proxy-settings.html["管理 Proxy 設定"] 已在 Grid Manager 中設定的。
 
 
-NOTE: 此程序僅適用於設定StorageGRID 適用於E系列AutoSupport 的支援服務器。如需E系列AutoSupport 的進一步資訊、請參閱 https://["NetApp E系列與SANtricity VMware文檔"^]。
+NOTE: 此程序僅適用於設定StorageGRID 適用於E系列AutoSupport 的支援服務器。如需E系列AutoSupport 的進一步資訊、請參閱 https://mysupport.netapp.com/info/web/ECMP1658252.html["NetApp E系列與SANtricity VMware文檔"^]。
 
 .步驟
 . 在Grid Manager中、選取* nodes *。

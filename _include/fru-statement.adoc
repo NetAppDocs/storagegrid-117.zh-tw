@@ -2,4 +2,4 @@
 :allow-uri-read: 
 
 
-更換零件後、請將故障零件歸還給NetApp、如套件隨附的RMA指示所述。請參閱 https://["產品退貨安培；更換"^] 頁面以取得更多資訊。
+更換零件後、請將故障零件歸還給NetApp、如套件隨附的RMA指示所述。請參閱 https://mysupport.netapp.com/site/info/rma["產品退貨安培；更換"^] 頁面以取得更多資訊。

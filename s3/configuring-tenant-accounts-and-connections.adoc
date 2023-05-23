@@ -99,7 +99,7 @@ NOTE: 每個負載平衡器端點都有自己的憑證、而且每個端點都�
 您可以使用Amazon Web Services命令列介面（AWS CLI）來測試您與系統的連線、並確認您可以讀取物件並將物件寫入系統。
 
 .開始之前
-* 您已從下載並安裝AWS CLI https://["aws.amazon.com/cli"^]。
+* 您已從下載並安裝AWS CLI https://aws.amazon.com/cli["aws.amazon.com/cli"^]。
 * 您已在StorageGRID 整個系統上建立S3租戶帳戶。
 * 您已在租戶帳戶中建立存取金鑰。
 

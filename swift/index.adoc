@@ -38,4 +38,4 @@ HTTP
 
 |===
 .相關資訊
-http://["OpenStack：物件儲存API"^]
+http://docs.openstack.org/developer/swift/api/object_api_v1_overview.html["OpenStack：物件儲存API"^]

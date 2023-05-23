@@ -78,4 +78,4 @@ IMPORTANT: 如果已設定任何磁碟區、或StorageGRID 先前安裝了支援
 --
 ====
 .相關資訊
-http://["NetApp E系列系統文件網站"^]
+http://mysupport.netapp.com/info/web/ECMP1658252.html["NetApp E系列系統文件網站"^]

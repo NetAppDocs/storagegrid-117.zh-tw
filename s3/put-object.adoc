@@ -227,7 +227,7 @@ NOTE: 如果物件是以SSE或SSE-C加密、則會忽略任何儲存區層級或
 
 IMPORTANT: 一般最佳實務做法是一律將這些標頭包含在內 `CanonicalHeaders` 為了確保這些標頭已通過驗證、但如果您排除這些標頭、 StorageGRID 不會傳回錯誤。
 
-如需詳細資訊、請參閱 https://["授權標頭的簽名計算：在單一區塊中傳輸有效負載（ AWS 簽名版本 4 ）"^]。
+如需詳細資訊、請參閱 https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html["授權標頭的簽名計算：在單一區塊中傳輸有效負載（ AWS 簽名版本 4 ）"^]。
 
 .相關資訊
 link:../ilm/index.html["使用ILM管理物件"]

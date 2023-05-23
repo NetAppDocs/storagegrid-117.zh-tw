@@ -22,7 +22,7 @@ summary: 如果在安裝StorageGRID 您的作業系統時發生任何問題、�
 .相關資訊
 若要瞭解如何存取記錄檔、請參閱 link:../monitor/logs-files-reference.html["記錄檔參考"]。
 
-如果您需要其他協助、請聯絡 https://["NetApp支援"^]。
+如果您需要其他協助、請聯絡 https://mysupport.netapp.com/site/global/dashboard["NetApp支援"^]。
 
 
 

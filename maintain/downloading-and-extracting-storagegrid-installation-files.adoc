@@ -19,7 +19,7 @@ summary: 您StorageGRID 必須先下載軟體並擷取檔案、才能恢復使�
 . 判斷目前安裝的軟體版本。從Grid Manager頂端、選取說明圖示、然後選取*關於*。
 . 請前往NetApp下載頁StorageGRID 面以瞭解決此問題。
 +
-https://["NetApp下載StorageGRID"^]
+https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp下載StorageGRID"^]
 
 . 選取StorageGRID 目前在網格上執行的版本的功能。
 +

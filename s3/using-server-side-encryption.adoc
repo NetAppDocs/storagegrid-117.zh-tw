@@ -110,4 +110,4 @@ IMPORTANT: 您提供的加密金鑰永遠不會儲存。如果您遺失加密金
 
 
 .相關資訊
-https://["Amazon S3開發人員指南：使用客戶提供的加密金鑰（SSE-C）、使用伺服器端加密來保護資料"^]
+https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html["Amazon S3開發人員指南：使用客戶提供的加密金鑰（SSE-C）、使用伺服器端加密來保護資料"^]

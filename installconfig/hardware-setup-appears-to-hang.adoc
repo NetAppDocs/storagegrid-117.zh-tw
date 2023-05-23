@@ -72,9 +72,9 @@ _E5700與E2800系統監控指南_
 ====
 .相關資訊
 * link:viewing-status-indicators.html["檢視狀態指標"]
-* http://["NetApp E系列系統文件網站"^]
+* http://mysupport.netapp.com/info/web/ECMP1658252.html["NetApp E系列系統文件網站"^]
 * link:he-error-error-synchronizing-with-santricity-os-software.html["他錯誤：同步SANtricity 至作業系統軟體時發生錯誤"]
-* https://["E5700與E2800系統監控指南"^]
+* https://library.netapp.com/ecmdocs/ECMLP2588751/html/frameset.html["E5700與E2800系統監控指南"^]
 * link:viewing-boot-up-codes-for-sg6000-cn-controller.html["檢視開機代碼（ SG6000-CN 控制器）"]
 * link:viewing-error-codes-for-sg6000-cn-controller.html["檢視錯誤代碼（ SG6000-CN 控制器）"]
 

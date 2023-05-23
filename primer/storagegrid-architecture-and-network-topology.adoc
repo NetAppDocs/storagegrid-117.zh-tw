@@ -104,7 +104,7 @@ S3和Swift用戶端可連線至閘道節點或管理節點、以使用儲存節�
 * link:../ubuntu/index.html["安裝Ubuntu或DEBIAN"]
 
 
-使用 https://["NetApp互通性對照表工具IMT （不含）"^] 以取得支援版本的清單。
+使用 https://imt.netapp.com/matrix/#welcome["NetApp互通性對照表工具IMT （不含）"^] 以取得支援版本的清單。
 
 
 
@@ -132,7 +132,7 @@ S3和Swift用戶端可連線至閘道節點或管理節點、以使用儲存節�
 
 如需詳細資訊、請參閱下列內容：
 
-* https://["NetApp Hardware Universe"^]
+* https://hwu.netapp.com["NetApp Hardware Universe"^]
 * link:../installconfig/hardware-description-sg6100.html["SGF6112 儲存設備"]
 * link:../installconfig/hardware-description-sg100-and-1000.html["SG100與SG1000服務應用裝置"]
 * link:../installconfig/hardware-description-sg6000.html["SG6000儲存設備"]

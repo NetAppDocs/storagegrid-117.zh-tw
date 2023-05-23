@@ -13,7 +13,7 @@ summary: 安裝StorageGRID 支援功能軟體之前、請先確認並設定硬�
 [role="lead"]
 安裝StorageGRID 支援功能軟體之前、請先確認並設定硬體、使其準備好支援StorageGRID 該系統。
 
-如需支援伺服器的相關資訊、請參閱 https://["NetApp 互通性對照表工具"^]。
+如需支援伺服器的相關資訊、請參閱 https://imt.netapp.com/matrix/#welcome["NetApp 互通性對照表工具"^]。
 
 每StorageGRID 個支援節點都需要下列最低資源：
 

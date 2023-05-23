@@ -49,7 +49,7 @@ summary: 您可以將服務應用裝置部署為主要管理節點、非主要�
 +
 .. 下載安裝歸檔：
 +
-https://["NetApp下載：StorageGRID NetApp產品"^]
+https://mysupport.netapp.com/site/products/all/details/storagegrid-appliance/downloads-tab["NetApp下載：StorageGRID NetApp產品"^]
 
 .. 擷取歸檔。
 .. 從《Sile Appliance Installer》StorageGRID （英文）中、選取*進階*>*上傳StorageGRID 《Some Software*》（英文）。
@@ -162,7 +162,7 @@ NOTE: 如果您需要一次部署多個應用裝置節點、您可以將安裝�
 +
 .. 下載安裝歸檔：
 +
-https://["NetApp下載：StorageGRID NetApp產品"^]
+https://mysupport.netapp.com/site/products/all/details/storagegrid-appliance/downloads-tab["NetApp下載：StorageGRID NetApp產品"^]
 
 .. 擷取歸檔。
 .. 從《Sile Appliance Installer》StorageGRID （英文）中、選取*進階*>*上傳StorageGRID 《Some Software*》（英文）。

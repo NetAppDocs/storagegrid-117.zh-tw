@@ -94,7 +94,7 @@ FabricPool 精靈會引導您完成建立單一 StorageGRID 雲端層的程序�
 NetApp 不建議將單一雲端層附加到多個叢集中的本機層。
 
 
-NOTE: 如需搭配 NetApp MetroCluster ™和 FabricPool 鏡射使用 StorageGRID 的最佳實務做法、請參閱 https://["TR-4598 ： ONTAP 中的 FabricPool 最佳實務做法"^]。
+NOTE: 如需搭配 NetApp MetroCluster ™和 FabricPool 鏡射使用 StorageGRID 的最佳實務做法、請參閱 https://www.netapp.com/pdf.html?item=/media/17239-tr4598pdf.pdf["TR-4598 ： ONTAP 中的 FabricPool 最佳實務做法"^]。
 
 
 

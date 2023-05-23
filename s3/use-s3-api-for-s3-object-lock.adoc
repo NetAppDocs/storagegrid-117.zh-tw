@@ -264,5 +264,5 @@ NOTE: 如果您指定 `x-amz-object-lock-mode`，您也必須指定 `x-amz-objec
 .相關資訊
 * link:../ilm/managing-objects-with-s3-object-lock.html["使用S3物件鎖定來管理物件"]
 * link:../tenant/using-s3-object-lock.html["使用 S3 物件鎖定來保留物件"]
-* https://["Amazon簡易儲存服務使用者指南：使用S3物件鎖定"^]
+* https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html["Amazon簡易儲存服務使用者指南：使用S3物件鎖定"^]
 

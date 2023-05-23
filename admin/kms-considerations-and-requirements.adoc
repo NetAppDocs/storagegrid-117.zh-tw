@@ -19,7 +19,7 @@ summary: 在設定外部金鑰管理伺服器（KMS）之前、您必須先瞭�
 
 支援KMIP 1.4版。StorageGRID
 
-http://["關鍵管理互通性傳輸協定規格1.4版"^]
+http://docs.oasis-open.org/kmip/spec/v1.4/os/kmip-spec-v1.4-os.html["關鍵管理互通性傳輸協定規格1.4版"^]
 
 應用裝置節點與設定的KMS之間的通訊使用安全的TLS連線。支援下列TLS v1.2加密算法的KMIP：StorageGRID
 

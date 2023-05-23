@@ -56,6 +56,6 @@ CAUTION: 如果用於保護 ONTAP 與 StorageGRID 之間連線的憑證過期、
 * 使用公開簽署的 CA 憑證。如果您使用 CA 簽署的憑證、則可以使用 Grid Management API 來自動化憑證輪換。這可讓您在不中斷營運的情況下、更換即將到期的憑證。
 * 如果您已產生自我簽署的 StorageGRID 憑證、且該憑證即將過期、則必須在現有憑證過期之前、手動在 StorageGRID 和 ONTAP 中置換憑證。如果自我簽署的憑證已經過期、請在 ONTAP 中關閉憑證驗證、以防止存取遺失。
 +
-請參閱 https://["NetApp 知識庫：如何在現有的 ONTAP FabricPool 部署上設定新的 StorageGRID 自我簽署伺服器憑證"^] 以取得相關指示。
+請參閱 https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_configure_a_new_StorageGRID_self-signed_server_certificate_on_an_existing_ONTAP_FabricPool_deployment["NetApp 知識庫：如何在現有的 ONTAP FabricPool 部署上設定新的 StorageGRID 自我簽署伺服器憑證"^] 以取得相關指示。
 
 

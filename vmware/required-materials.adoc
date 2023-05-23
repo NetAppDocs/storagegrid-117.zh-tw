@@ -37,7 +37,7 @@ NetApp StorageGRID 產品授權
  a| 
 VMware軟體與文件
  a| 
-在安裝期間、您可以使用VMware vSphere Web Client在虛擬機器上部署虛擬網格節點。如需支援的版本、請參閱 https://["NetApp 互通性對照表工具"^]。
+在安裝期間、您可以使用VMware vSphere Web Client在虛擬機器上部署虛擬網格節點。如需支援的版本、請參閱 https://imt.netapp.com/matrix/#welcome["NetApp 互通性對照表工具"^]。
 
 
 

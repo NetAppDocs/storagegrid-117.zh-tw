@@ -40,6 +40,6 @@ CAUTION: 您必須在每個ESX主機上正確設定網路時間傳輸協定（NT
 
 您必須先安裝並設定VMware vSphere和vCenter、才能部署StorageGRID 架構節點。
 
-如需支援版本的 VMware vSphere Hypervisor 和 VMware vCenter Server 軟體、請參閱 https://["NetApp 互通性對照表工具"^]。
+如需支援版本的 VMware vSphere Hypervisor 和 VMware vCenter Server 軟體、請參閱 https://imt.netapp.com/matrix/#welcome["NetApp 互通性對照表工具"^]。
 
 如需安裝這些VMware產品所需的步驟、請參閱VMware文件。

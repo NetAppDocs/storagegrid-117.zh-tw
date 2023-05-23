@@ -41,7 +41,7 @@ TIP: 如果沒有顯示更新路徑、您的瀏覽器可能無法存取 NetApp �
 . 如需 * 選取檔案 * 步驟、請檢閱更新路徑。
 . 從「下載檔案」區段中、選取每個 * 下載 * 連結、即可從 NetApp 支援網站 下載所需的檔案。
 +
-如果沒有顯示更新路徑、請前往 https://["NetApp下載StorageGRID"^] 判斷是否有新版本或 Hotfix 可用、並下載您需要的檔案。
+如果沒有顯示更新路徑、請前往 https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp下載StorageGRID"^] 判斷是否有新版本或 Hotfix 可用、並下載您需要的檔案。
 
 +
 
@@ -74,7 +74,7 @@ NOTE: 如果您需要在所有 Linux 主機上下載並安裝 RPM 或 Deb 套件
 IMPORTANT: 必須保護恢復套件檔案、因為其中包含可用於從StorageGRID 該系統取得資料的加密金鑰和密碼。
 
 . 選取 * 執行預先檢查 * 、然後等待預先檢查完成。
-. 檢閱每個報告的預先檢查詳細資料、並解決任何回報的錯誤。請參閱 https://["StorageGRID 軟體升級解決方案指南"^] 適用於 StorageGRID 11.7 版本。
+. 檢閱每個報告的預先檢查詳細資料、並解決任何回報的錯誤。請參閱 https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/StorageGRID_software_upgrade_resolution_guide["StorageGRID 軟體升級解決方案指南"^] 適用於 StorageGRID 11.7 版本。
 +
 您必須先解決所有預先檢查錯誤 _ 、才能升級系統。不過、您不需要在升級前先處理預先檢查 _ 警告 _ 。
 

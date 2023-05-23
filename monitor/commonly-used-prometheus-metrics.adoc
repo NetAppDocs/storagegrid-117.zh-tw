@@ -15,7 +15,7 @@ summary: 請參閱這份常用的 Prometheus 指標清單、以更深入瞭解�
 
 您也可以 <<obtain-all-metrics,取得所有指標的完整清單>>。
 
-如需 Prometheus 查詢語法的詳細資訊、請參閱 https://["查詢 Prometheus"^]。
+如需 Prometheus 查詢語法的詳細資訊、請參閱 https://prometheus.io/docs/prometheus/latest/querying/basics/["查詢 Prometheus"^]。
 
 
 

@@ -31,9 +31,9 @@ NOTE: 您必須為StorageGRID 您的系統中的每個管理節點建立企業�
 == 存取Azure AD
 
 .步驟
-. 登入 https://["Azure Portal"^]。
-. 瀏覽至 https://["Azure Active Directory"^]。
-. 選取 https://["企業應用程式"^]。
+. 登入 https://portal.azure.com["Azure Portal"^]。
+. 瀏覽至 https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade["Azure Active Directory"^]。
+. 選取 https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/Overview/menuId/["企業應用程式"^]。
 
 
 

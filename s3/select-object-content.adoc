@@ -13,7 +13,7 @@ summary: 您可以使用S3 SelectObjectContent要求、根據簡單的SQL陳述�
 [role="lead"]
 您可以使用S3 SelectObjectContent要求、根據簡單的SQL陳述來篩選S3物件的內容。
 
-如需詳細資訊、請參閱 https://["SelectObjectContent的AWS文件"^]。
+如需詳細資訊、請參閱 https://docs.aws.amazon.com/AmazonS3/latest/API/API_SelectObjectContent.html["SelectObjectContent的AWS文件"^]。
 
 .開始之前
 * 租戶帳戶具有S3 Select權限。

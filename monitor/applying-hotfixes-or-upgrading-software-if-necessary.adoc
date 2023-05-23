@@ -17,7 +17,7 @@ summary: 如果有可用的修補程式或StorageGRID 更新版本的更新、�
 不含功能或修補程式版本、而可在其中進行軟體變更。StorageGRID未來版本也會包含相同的變更。
 
 .步驟
-. 前往https://["NetApp下載StorageGRID"^]。
+. 前往https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp下載StorageGRID"^]。
 . 選取「*類型/選取版本*」欄位的向下箭頭、即可查看可供下載的更新清單：
 +
 ** *《*》軟體版本*：StorageGRID 11._x.y_

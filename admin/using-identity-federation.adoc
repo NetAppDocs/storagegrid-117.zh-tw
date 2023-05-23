@@ -215,7 +215,7 @@ CAUTION: 對於非 ActiveDirectory 或 Azure 的身分識別來源、 StorageGRI
 
 === memberOf和refert覆疊
 
-應啟用memberof和refert覆疊。如需詳細資訊、請參閱中的反轉群組成員資格維護指示http://["OpenLDAP文件：2.4版管理員指南"^]。
+應啟用memberof和refert覆疊。如需詳細資訊、請參閱中的反轉群組成員資格維護指示http://www.openldap.org/doc/admin24/index.html["OpenLDAP文件：2.4版管理員指南"^]。
 
 
 
@@ -231,4 +231,4 @@ CAUTION: 對於非 ActiveDirectory 或 Azure 的身分識別來源、 StorageGRI
 
 此外、請確定使用者名稱說明中所述的欄位已建立索引、以獲得最佳效能。
 
-請參閱中有關反轉群組成員資格維護的資訊http://["OpenLDAP文件：2.4版管理員指南"^]。
+請參閱中有關反轉群組成員資格維護的資訊http://www.openldap.org/doc/admin24/index.html["OpenLDAP文件：2.4版管理員指南"^]。

@@ -53,4 +53,4 @@ image::../media/sg6060_fc_hba_location.jpg[SG6060 Fibre Channel HBA（位於提�
 .完成後
 link:reinstalling-fibre-channel-hba.html["安裝替換的 Fibre Channel HBA"]。
 
-更換零件後、請將故障零件歸還給NetApp、如套件隨附的RMA指示所述。請參閱 https://["產品退貨安培；更換"^] 頁面以取得更多資訊。
+更換零件後、請將故障零件歸還給NetApp、如套件隨附的RMA指示所述。請參閱 https://mysupport.netapp.com/site/info/rma["產品退貨安培；更換"^] 頁面以取得更多資訊。

@@ -105,7 +105,7 @@ IMPORTANT: 為避免效能降低、請勿在纜線上扭轉、摺疊、夾住或
 . 確認應用裝置節點出現在Grid Manager中、且未顯示任何警示。
 
 
-更換零件後、請將故障零件歸還給NetApp、如套件隨附的RMA指示所述。請參閱 https://["產品退貨安培；更換"^] 頁面以取得更多資訊。
+更換零件後、請將故障零件歸還給NetApp、如套件隨附的RMA指示所述。請參閱 https://mysupport.netapp.com/site/info/rma["產品退貨安培；更換"^] 頁面以取得更多資訊。
 
 .相關資訊
 link:../installconfig/sg6000-cn-installing-into-cabinet-or-rack.html["將 SG6000-CN 安裝到機櫃或機架中"]

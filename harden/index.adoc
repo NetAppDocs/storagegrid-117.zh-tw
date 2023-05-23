@@ -17,7 +17,7 @@ summary: 系統強化是消除StorageGRID 儘可能多的安全風險的程序�
 
 安裝和設定StorageGRID 功能時、您可以使用這些準則來協助您達成任何規定的資訊系統機密性、完整性和可用度安全目標。
 
-StorageGRID 遵循 https://["NetApp 弱點處理原則"^]。報告的弱點會根據產品安全性事件回應程序進行驗證和解決。
+StorageGRID 遵循 https://security.netapp.com/policy/["NetApp 弱點處理原則"^]。報告的弱點會根據產品安全性事件回應程序進行驗證和解決。
 
 
 

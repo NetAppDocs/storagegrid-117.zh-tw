@@ -56,7 +56,7 @@ NOTE: 可以授予設定或修改區段或物件之S3物件鎖定內容的權限
 ** 不應在虛擬託管樣式要求中使用期間。期間會導致伺服器萬用字元憑證驗證發生問題。
 
 
-如需詳細資訊、請參閱 https://["Amazon Web Services（AWS）儲存區命名規則文件"^]。
+如需詳細資訊、請參閱 https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html["Amazon Web Services（AWS）儲存區命名規則文件"^]。
 
 * 附註 * ：建立貯體後、您無法變更貯體名稱。
 

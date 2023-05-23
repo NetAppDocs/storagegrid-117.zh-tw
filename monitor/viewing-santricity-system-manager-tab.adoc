@@ -44,7 +44,7 @@ NOTE: 您可以使用SANtricity 「更新系統管理程式」連結、在SANtri
 
 若要查看儲存陣列層級效能和容量使用量的詳細資料、請將游標放在每個圖表上方。
 
-如需更多有關檢視SANtricity 可從「還原系統管理程式」索引標籤存取資訊的詳細資訊、請參閱 https://["NetApp E系列與SANtricity 不完整的文件"^]。
+如需更多有關檢視SANtricity 可從「還原系統管理程式」索引標籤存取資訊的詳細資訊、請參閱 https://mysupport.netapp.com/info/web/ECMP1658252.html["NetApp E系列與SANtricity 不完整的文件"^]。
 
 .相關資訊
 * link:../sg6000/index.html["維護SG6000應用裝置"]

@@ -84,4 +84,4 @@ summary: 您可能需要更換StorageGRID 處理器內的控制器電池、磁�
 .相關資訊
 link:replacing-e2800-controller.html["更換E2800控制器"]
 
-http://["NetApp E系列系統文件網站"^]
+http://mysupport.netapp.com/info/web/ECMP1658252.html["NetApp E系列系統文件網站"^]

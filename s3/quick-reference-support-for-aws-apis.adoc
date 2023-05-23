@@ -42,12 +42,12 @@ NOTE: 若要查看每項作業的 AWS 文件、請選取標題中的連結。
 
 .相關資訊
 * link:../s3/s3-rest-api-supported-operations-and-limitations.html["S3 REST API 實作詳細資料"]
-* https://["Amazon Simple Storage Service API 參考：一般要求標頭"^]
+* https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html["Amazon Simple Storage Service API 參考：一般要求標頭"^]
 
 
 
 
-== https://["AbortMultiPart上 傳"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html["AbortMultiPart上 傳"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求、加上此額外的 URI 查詢參數：
@@ -63,7 +63,7 @@ link:operations-for-multipart-uploads.html["多部份上傳作業"]
 
 
 
-== https://["完成多個部分上傳"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html["完成多個部分上傳"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求、加上此額外的 URI 查詢參數：
@@ -85,7 +85,7 @@ link:complete-multipart-upload.html["完成多部份上傳"]
 
 
 
-== https://["CopyObject"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html["CopyObject"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求、加上下列額外標頭：
@@ -120,7 +120,7 @@ link:put-object-copy.html["放置物件複本"]
 
 
 
-== https://["建立庫位"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html["建立庫位"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求、加上下列額外標頭：
@@ -136,7 +136,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
-== https://["建立多個部分上傳"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html["建立多個部分上傳"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求、加上下列額外標頭：
@@ -166,7 +166,7 @@ link:initiate-multipart-upload.html["啟動多部份上傳"]
 
 
 
-== https://["刪除Bucket"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html["刪除Bucket"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -176,20 +176,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
-== https://["刪除 BucketCors"^]
-
-.URI 查詢參數和要求標頭
-StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
-
-.申請本文
-無
-
-.本文檔StorageGRID
-link:operations-on-buckets.html["在貯體上作業"]
-
-
-
-== https://["刪除 BucketEncryption"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html["刪除 BucketCors"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -202,7 +189,20 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
-== https://["刪除 BucketLifecycle"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketEncryption.html["刪除 BucketEncryption"^]
+
+.URI 查詢參數和要求標頭
+StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
+
+.申請本文
+無
+
+.本文檔StorageGRID
+link:operations-on-buckets.html["在貯體上作業"]
+
+
+
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html["刪除 BucketLifecycle"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -217,7 +217,7 @@ StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此
 
 
 
-== https://["刪除BucketPolicy"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html["刪除BucketPolicy"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -230,7 +230,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
-== https://["刪除 BucketReplication"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketReplication.html["刪除 BucketReplication"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -243,7 +243,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
-== https://["刪除 Bucketagging"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html["刪除 Bucketagging"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -256,7 +256,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
-== https://["刪除物件"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html["刪除物件"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求、加上此額外的要求標頭：
@@ -272,7 +272,7 @@ link:operations-on-objects.html["物件上的作業"]
 
 
 
-== https://["刪除物件"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html["刪除物件"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求、加上此額外的要求標頭：
@@ -288,7 +288,7 @@ link:operations-on-objects.html["物件上的作業"] （刪除多個物件）
 
 
 
-== https://["刪除ObjectTagging"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html["刪除ObjectTagging"^]
 
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
 
@@ -300,7 +300,7 @@ link:operations-on-objects.html["物件上的作業"]
 
 
 
-== https://["GetBucketAcl"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html["GetBucketAcl"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -313,7 +313,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
-== https://["GetBucketCors"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketCors.html["GetBucketCors"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -326,7 +326,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
-== https://["GetBucketEncryption"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html["GetBucketEncryption"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -339,7 +339,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
-== https://["GetBucketLifecycleConfiguration"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html["GetBucketLifecycleConfiguration"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -354,7 +354,7 @@ StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此
 
 
 
-== https://["GetBucketLocation"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLocation.html["GetBucketLocation"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -367,7 +367,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
-== https://["GetBucketNotificationConfiguration"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html["GetBucketNotificationConfiguration"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -380,7 +380,7 @@ link:operations-on-buckets.html["在貯體上作業"] （取得庫存箱通知�
 
 
 
-== https://["GetBucketPolicy"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html["GetBucketPolicy"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -393,7 +393,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
-== https://["GetBucketReplication"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html["GetBucketReplication"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -406,7 +406,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
-== https://["GetBucketTagging"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html["GetBucketTagging"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -419,7 +419,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
-== https://["GetBucketVersion"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html["GetBucketVersion"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -432,7 +432,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
-== https://["GetObject"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html["GetObject"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求、加上下列其他 URI 查詢參數：
@@ -466,7 +466,7 @@ link:get-object.html["取得物件"]
 
 
 
-== https://["GetObjectAcl"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html["GetObjectAcl"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -479,7 +479,7 @@ link:operations-on-objects.html["物件上的作業"]
 
 
 
-== https://["GetObjectLegalHold"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLegalHold.html["GetObjectLegalHold"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -492,7 +492,7 @@ link:../s3/use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 �
 
 
 
-== https://["GetObjectLockConfiguration"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLockConfiguration.html["GetObjectLockConfiguration"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -505,7 +505,7 @@ link:../s3/use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 �
 
 
 
-== https://["GetObjectRetention"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectRetention.html["GetObjectRetention"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -518,7 +518,7 @@ link:../s3/use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 �
 
 
 
-== https://["GetObjectTagging"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html["GetObjectTagging"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -531,7 +531,7 @@ link:operations-on-objects.html["物件上的作業"]
 
 
 
-== https://["標題庫"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html["標題庫"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -544,7 +544,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
-== https://["標題物件"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html["標題物件"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求、加上下列額外標頭：
@@ -567,7 +567,7 @@ link:head-object.html["標頭物件"]
 
 
 
-== https://["列表桶"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html["列表桶"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -580,7 +580,7 @@ link:operations-on-the-service.html["服務的作業 gt; 取得服務"]
 
 
 
-== https://["ListMultipartUploads"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html["ListMultipartUploads"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求、加上下列額外參數：
@@ -601,7 +601,7 @@ link:list-multipart-uploads.html["列出多個部分上傳"]
 
 
 
-== https://["清單物件"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html["清單物件"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求、加上下列額外參數：
@@ -621,7 +621,7 @@ link:operations-on-buckets.html["在貯體上作業"] （ Get Bucket ）
 
 
 
-== https://["清單對象V2."^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html["清單對象V2."^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求、加上下列額外參數：
@@ -643,7 +643,7 @@ link:operations-on-buckets.html["在貯體上作業"] （ Get Bucket ）
 
 
 
-== https://["ListObjectVerions"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectVersions.html["ListObjectVerions"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求、加上下列額外參數：
@@ -664,7 +664,7 @@ link:operations-on-buckets.html["在貯體上作業"] （ Get Bucket 物件版�
 
 
 
-== https://["清單零件"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html["清單零件"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求、加上下列額外參數：
@@ -682,7 +682,7 @@ link:list-multipart-uploads.html["列出多個部分上傳"]
 
 
 
-== https://["PuttBucketCors"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html["PuttBucketCors"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -695,7 +695,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
-== https://["PuttBucketEncryption"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html["PuttBucketEncryption"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -714,7 +714,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
-== https://["PuttBucketLifecycleConfiguration"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html["PuttBucketLifecycleConfiguration"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -751,7 +751,7 @@ StorageGRID 支援這些要求本文 XML 標記：
 
 
 
-== https://["PutBucketNotificationConfiguration"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotificationConfiguration.html["PutBucketNotificationConfiguration"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -778,7 +778,7 @@ link:operations-on-buckets.html["在貯體上作業"] （ Put Bucket 通知）
 
 
 
-== https://["PuttBucketPolicy"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html["PuttBucketPolicy"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -788,7 +788,7 @@ StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此
 
 
 
-== https://["PutBucketReplication"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketReplication.html["PutBucketReplication"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -808,7 +808,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
-== https://["PuttBucketTagging"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html["PuttBucketTagging"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -821,7 +821,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
-== https://["PuttBucketVersion"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html["PuttBucketVersion"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -838,7 +838,7 @@ link:operations-on-buckets.html["在貯體上作業"]
 
 
 
-== https://["PuttObject"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html["PuttObject"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求、加上下列額外標頭：
@@ -868,7 +868,7 @@ link:put-object.html["放置物件"]
 
 
 
-== https://["PutObjectLegalHold"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLegalHold.html["PutObjectLegalHold"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -881,7 +881,7 @@ link:use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 物件�
 
 
 
-== https://["PutObjectLockConfiguration"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLockConfiguration.html["PutObjectLockConfiguration"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -894,7 +894,7 @@ link:use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 物件�
 
 
 
-== https://["PutObjectRetention"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectRetention.html["PutObjectRetention"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求、加上此額外標頭：
@@ -910,7 +910,7 @@ link:use-s3-api-for-s3-object-lock.html["使用 S3 REST API 來設定 S3 物件�
 
 
 
-== https://["PuttObjectTagging"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html["PuttObjectTagging"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -923,7 +923,7 @@ link:operations-on-objects.html["物件上的作業"]
 
 
 
-== https://["選取物件內容"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_SelectObjectContent.html["選取物件內容"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求。
@@ -937,7 +937,7 @@ StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此
 
 
 
-== https://["上傳零件"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html["上傳零件"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求、加上下列其他 URI 查詢參數：
@@ -962,7 +962,7 @@ link:upload-part.html["上傳零件"]
 
 
 
-== https://["上傳PartCopy"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html["上傳PartCopy"^]
 
 .URI 查詢參數和要求標頭
 StorageGRID 支援所有功能 <<common-params,通用參數和標頭>> 針對此要求、加上下列其他 URI 查詢參數：

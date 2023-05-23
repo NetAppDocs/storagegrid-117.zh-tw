@@ -13,9 +13,9 @@ summary: 為了確保儲存控制器發揮最佳功能、您必須升級SANtrici
 [role="lead"]
 為了確保儲存控制器發揮最佳功能、您必須升級SANtricity 至符合StorageGRID 您的不合格產品資格的最新版作業系統維護版本。
 
-請參閱 https://["NetApp互通性對照表工具IMT （不含）"^] 判斷您應該使用的版本。
+請參閱 https://imt.netapp.com/matrix/#welcome["NetApp互通性對照表工具IMT （不含）"^] 判斷您應該使用的版本。
 
-從下載新的 SANtricity OS 軟體檔案 https://["NetApp下載：StorageGRID NetApp產品"^]。
+從下載新的 SANtricity OS 軟體檔案 https://mysupport.netapp.com/site/products/all/details/storagegrid-appliance/downloads-tab["NetApp下載：StorageGRID NetApp產品"^]。
 
 根據SANtricity 目前安裝的版本、使用下列其中一個程序：
 

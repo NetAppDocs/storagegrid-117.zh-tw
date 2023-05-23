@@ -27,7 +27,7 @@ S3 REST API的支援僅支援有效的HTTP日期格式。StorageGRID
 
 == 一般要求標頭
 
-StorageGRID 系統支援定義的一般要求標頭 https://["Amazon Simple Storage Service API 參考：一般要求標頭"^]、但有一項例外。
+StorageGRID 系統支援定義的一般要求標頭 https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html["Amazon Simple Storage Service API 參考：一般要求標頭"^]、但有一項例外。
 
 [cols="1a,2a"]
 |===

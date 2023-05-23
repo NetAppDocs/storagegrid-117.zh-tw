@@ -74,7 +74,7 @@ summary: 在執行擴充作業之前、請先收集相關資料、然後安裝�
  a| 
 您平台的最新文件
  a| 
-如需支援的版本、請參閱 https://["互通性對照表工具IMT （不含）"^]。
+如需支援的版本、請參閱 https://imt.netapp.com/matrix/#welcome["互通性對照表工具IMT （不含）"^]。
 
 |===
 
@@ -88,7 +88,7 @@ summary: 在執行擴充作業之前、請先收集相關資料、然後安裝�
 您必須使用StorageGRID 目前在網格上執行的版本的功能表來執行擴充作業。
 
 .步驟
-. 前往 https://["NetApp下載StorageGRID"^]。
+. 前往 https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp下載StorageGRID"^]。
 . 選取StorageGRID 目前在網格上執行的版本的功能。
 . 以您NetApp帳戶的使用者名稱和密碼登入。
 . 閱讀終端使用者授權合約、選取核取方塊、然後選取 * 接受並繼續 * 。

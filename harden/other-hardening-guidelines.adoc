@@ -53,4 +53,4 @@ StorageGRID 的 AutoSupport 功能可讓您主動監控系統的健全狀況、�
 
 == 勒索軟體緩解
 
-請遵循中的建議、協助保護物件資料免遭勒索軟體攻擊 https://["使用 StorageGRID 進行勒索軟體防禦"^]。
+請遵循中的建議、協助保護物件資料免遭勒索軟體攻擊 https://www.netapp.com/media/69498-tr-4921.pdf["使用 StorageGRID 進行勒索軟體防禦"^]。

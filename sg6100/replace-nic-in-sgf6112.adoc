@@ -184,4 +184,4 @@ image::../media/sgf6112_one-slot-riser_system-pin.png[SGF6112 上的導引插腳
 .完成後
 如果您沒有其他維護程序可以在產品中執行、請重新安裝產品護蓋、將產品放回機架、連接纜線並接上電源。
 
-更換零件後、請將故障零件歸還給NetApp、如套件隨附的RMA指示所述。請參閱 https://["產品退貨安培；更換"^] 頁面以取得更多資訊。
+更換零件後、請將故障零件歸還給NetApp、如套件隨附的RMA指示所述。請參閱 https://mysupport.netapp.com/site/info/rma["產品退貨安培；更換"^] 頁面以取得更多資訊。

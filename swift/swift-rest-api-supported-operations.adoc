@@ -31,4 +31,4 @@ summary: 此系統支援OpenStack Swift API的大部分作業。StorageGRID在�
 根據OpenStack Swift Object Storage API v1的定義、此系統可實作所有支援作業的通用標頭。StorageGRID
 
 .相關資訊
-http://["OpenStack：物件儲存API"^]
+http://docs.openstack.org/developer/swift/api/object_api_v1_overview.html["OpenStack：物件儲存API"^]

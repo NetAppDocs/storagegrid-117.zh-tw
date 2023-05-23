@@ -48,7 +48,7 @@ image::../media/sg6060_rack_retaining_screws.png[SG6060機架固定螺絲]
 . 選用：如果您要從機櫃或機架中完全移除控制器、請依照滑軌套件的指示、將控制器從滑軌中移除。
 
 
-更換零件後、請將故障零件歸還給NetApp、如套件隨附的RMA指示所述。請參閱 https://["產品退貨安培；更換"^] 頁面以取得更多資訊。
+更換零件後、請將故障零件歸還給NetApp、如套件隨附的RMA指示所述。請參閱 https://mysupport.netapp.com/site/info/rma["產品退貨安培；更換"^] 頁面以取得更多資訊。
 
 .相關資訊
 link:removing-sg6000-cn-controller-cover.html["取下SG6000-CN-控制器護蓋"]

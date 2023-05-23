@@ -14,7 +14,7 @@ summary: 您必須先下載此修復程式檔案、才能套用此修復程式�
 您必須先下載此修復程式檔案、才能套用此修復程式。
 
 .步驟
-. 前往 https://["NetApp下載StorageGRID"^]。
+. 前往 https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp下載StorageGRID"^]。
 . 選取*可用軟體*下的向下箭號、即可查看可供下載的修補程式清單。
 +
 

@@ -59,7 +59,7 @@ Azure
 
 
 
-NOTE: Windows Server 2016應該使用 https://["KB3201845更新"^]或更高版本。
+NOTE: Windows Server 2016應該使用 https://support.microsoft.com/en-us/help/3201845/cumulative-update-for-windows-10-version-1607-and-windows-server-2016["KB3201845更新"^]或更高版本。
 
 * Windows Server 2012 R2更新或更新版本隨附的AD FS 3.0。
 

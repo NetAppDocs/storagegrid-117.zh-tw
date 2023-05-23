@@ -174,7 +174,7 @@ IMPORTANT: 為正式作業網格啟用 HTTP 時請務必小心、因為要求和
 .開始之前
 * 您必須下載並安裝python swiftClient、Swift命令列用戶端。
 +
-https://["SwiftStack：Python-swiftClient"^]
+https://platform.swiftstack.com/docs/integration/python-swiftclient.html["SwiftStack：Python-swiftClient"^]
 
 * 您必須在StorageGRID 整個作業系統中擁有Swift租戶帳戶。
 

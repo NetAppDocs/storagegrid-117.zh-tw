@@ -27,7 +27,7 @@ summary: 此版本已移除或過時部分功能。請檢閱這些項目、瞭�
 
 SG5600 應用裝置已達到支援終止。如需硬體更新選項、請聯絡您的 NetApp 銷售代表。
 
-如果您需要在 SG5600 硬體上執行維護程序、請使用 https://["StorageGRID 11.6 說明"^]。
+如果您需要在 SG5600 硬體上執行維護程序、請使用 https://docs.netapp.com/us-en/storagegrid-116/sg5600/maintaining-sg5600-appliance.html["StorageGRID 11.6 說明"^]。
 
 
 

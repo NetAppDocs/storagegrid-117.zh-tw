@@ -117,7 +117,7 @@ link:../s3/using-server-side-encryption.html["使用伺服器端加密"]
 
 外部加密方法可更嚴密地控制加密演算法和金鑰。可與其他列出的方法結合使用。
 
-https://["Amazon Simple Storage Service -開發人員指南：使用用戶端加密來保護資料"^]
+https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html["Amazon Simple Storage Service -開發人員指南：使用用戶端加密來保護資料"^]
 
 |===
 

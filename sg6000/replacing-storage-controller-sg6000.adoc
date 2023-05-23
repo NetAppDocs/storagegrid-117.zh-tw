@@ -392,7 +392,7 @@ NOTE: 如果原始控制器未將DHCP用於IP位址、則新控制器會採用�
 . 確認新的控制器處於最佳狀態、並收集支援資料。
 
 
-更換零件後、請將故障零件歸還給NetApp、如套件隨附的RMA指示所述。請參閱 https://["產品退貨安培；更換"^] 頁面以取得更多資訊。
+更換零件後、請將故障零件歸還給NetApp、如套件隨附的RMA指示所述。請參閱 https://mysupport.netapp.com/site/info/rma["產品退貨安培；更換"^] 頁面以取得更多資訊。
 
 .相關資訊
-http://["NetApp E系列系統文件網站"^]
+http://mysupport.netapp.com/info/web/ECMP1658252.html["NetApp E系列系統文件網站"^]

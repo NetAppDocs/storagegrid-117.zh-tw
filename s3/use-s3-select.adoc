@@ -16,7 +16,7 @@ StorageGRID 支援下列的 Amazon S3 Select 子句、資料類型和運算子 l
 
 NOTE: 不支援任何未列出的項目。
 
-如需語法、請參閱 link:select-object-content.html["選取物件內容"]。如需S3 Select的詳細資訊、請參閱 https://["S3 Select的AWS文件"^]。
+如需語法、請參閱 link:select-object-content.html["選取物件內容"]。如需S3 Select的詳細資訊、請參閱 https://docs.aws.amazon.com/AmazonS3/latest/userguide/selecting-content-from-objects.html["S3 Select的AWS文件"^]。
 
 只有啟用S3 Select的租戶帳戶才能發出SelectObjectContent查詢。請參閱 link:../admin/manage-s3-select-for-tenant-accounts.html["使用S3 Select的考量與要求"]。
 

@@ -20,7 +20,7 @@ summary: 請依照下列指示維護 StorageGRID 系統。
 這些指示說明所有節點的通用程序、例如如何套用軟體 Hotfix 、恢復網格節點、恢復故障站台、取消委任網格節點或整個站台、執行網路維護、執行主機層級和中介軟體維護程序、以及執行網格節點程序。
 
 
-NOTE: 在這些說明中、「Linux」是指Red Hat®Enterprise Linux®、Ubuntu®、CentOS或DEBIANR部署。使用 https://["NetApp互通性對照表工具IMT （不含）"^] 以取得支援版本的清單。
+NOTE: 在這些說明中、「Linux」是指Red Hat®Enterprise Linux®、Ubuntu®、CentOS或DEBIANR部署。使用 https://imt.netapp.com/matrix/#welcome["NetApp互通性對照表工具IMT （不含）"^] 以取得支援版本的清單。
 
 
 

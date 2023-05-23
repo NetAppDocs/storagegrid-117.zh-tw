@@ -13,7 +13,7 @@ summary: 您可以建立S3生命週期組態、以控制何時從StorageGRID 作
 [role="lead"]
 您可以建立S3生命週期組態、以控制何時從StorageGRID 作業系統刪除特定物件。
 
-本節的簡單範例說明S3生命週期組態如何控制從特定S3儲存區刪除（過期）特定物件的時間。本節範例僅供說明用途。如需建立S3生命週期組態的完整詳細資料、請參閱 https://["Amazon Simple Storage Service開發人員指南：物件生命週期管理"^]。請注意StorageGRID 、僅支援過期行動、不支援轉換行動。
+本節的簡單範例說明S3生命週期組態如何控制從特定S3儲存區刪除（過期）特定物件的時間。本節範例僅供說明用途。如需建立S3生命週期組態的完整詳細資料、請參閱 https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html["Amazon Simple Storage Service開發人員指南：物件生命週期管理"^]。請注意StorageGRID 、僅支援過期行動、不支援轉換行動。
 
 
 

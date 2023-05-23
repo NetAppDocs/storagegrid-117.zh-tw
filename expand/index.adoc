@@ -32,6 +32,6 @@ summary: 請使用這些指示來擴充StorageGRID 您的不中斷系統作業�
 新增節點的步驟也取決於您要新增StorageGRID 的是哪些應用程式、或是執行VMware或Linux的主機。
 
 
-NOTE: 「Linux」是指Red Hat®Enterprise Linux®、Ubuntu®、CentOS或DEBIANR®部署。使用 https://["NetApp互通性對照表工具IMT （不含）"^] 以取得支援版本的清單。
+NOTE: 「Linux」是指Red Hat®Enterprise Linux®、Ubuntu®、CentOS或DEBIANR®部署。使用 https://imt.netapp.com/matrix/#welcome["NetApp互通性對照表工具IMT （不含）"^] 以取得支援版本的清單。
 
 image::../media/expansion_workflow.png[顯示擴充程序總覽的流程圖]

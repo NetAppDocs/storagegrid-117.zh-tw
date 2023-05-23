@@ -72,7 +72,7 @@ summary: 在執行維護程序之前、您必須確保擁有必要的資料來�
  a| 
 如需文件、請前往平台廠商的網站。
 
-如需目前支援的平台版本、請參閱 https://["NetApp 互通性對照表工具"^]。
+如需目前支援的平台版本、請參閱 https://imt.netapp.com/matrix/#welcome["NetApp 互通性對照表工具"^]。
 
 |===
 
@@ -86,7 +86,7 @@ summary: 在執行維護程序之前、您必須確保擁有必要的資料來�
 
 .步驟
 . 判斷目前安裝的軟體版本。從Grid Manager頂端、選取說明圖示、然後選取*關於*。
-. 前往 https://["NetApp下載頁StorageGRID 面"^]。
+. 前往 https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp下載頁StorageGRID 面"^]。
 . 選取StorageGRID 目前在網格上執行的版本的功能。
 +
 StorageGRID 軟體版本的格式如下： `11.x.y`。

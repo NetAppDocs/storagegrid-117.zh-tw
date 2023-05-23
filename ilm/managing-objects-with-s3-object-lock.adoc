@@ -88,7 +88,7 @@ NOTE: 如果物件處於合法保留狀態、則無論物件的保留模式為�
 S3物件鎖定取代舊StorageGRID 版的Compliance功能。由於S3物件鎖定功能符合Amazon S3的要求、因此它取代了專屬StorageGRID 的「不符合要求」功能、這項功能現在稱為「舊有法規遵循」。
 
 
-NOTE: 全域規範設定已過時。如果您使用舊版 StorageGRID 啟用此設定、 S3 物件鎖定設定會自動啟用。您可以繼續使用 StorageGRID 來管理現有相容貯體的設定、但您無法建立新的相容貯體。如需詳細資訊、請參閱 https://["NetApp知識庫：如何管理StorageGRID 支援老舊的知識庫、請參閱《知識庫文章"^]。
+NOTE: 全域規範設定已過時。如果您使用舊版 StorageGRID 啟用此設定、 S3 物件鎖定設定會自動啟用。您可以繼續使用 StorageGRID 來管理現有相容貯體的設定、但您無法建立新的相容貯體。如需詳細資訊、請參閱 https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["NetApp知識庫：如何管理StorageGRID 支援老舊的知識庫、請參閱《知識庫文章"^]。
 
 如果您使用StorageGRID 舊版的更新版本的支援功能、請參閱下表、瞭解其與StorageGRID 更新版本中S3物件鎖定功能的比較。
 

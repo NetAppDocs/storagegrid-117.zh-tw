@@ -35,7 +35,7 @@ NOTE: 針對標記和使用者中繼資料StorageGRID 、將日期和數字以�
 * 對儲存庫中已有的所有物件執行動作、以觸發將中繼資料通知訊息傳送至目的地。
 
 
-支援以Elasticsearch叢集作為目的地的支援。StorageGRID如同其他平台服務、目的地是在端點中指定、而其URN則用於服務的組態XML中。使用 https://["NetApp 互通性對照表工具"^] 以判斷受支援版本的Elasticsearch。
+支援以Elasticsearch叢集作為目的地的支援。StorageGRID如同其他平台服務、目的地是在端點中指定、而其URN則用於服務的組態XML中。使用 https://imt.netapp.com/matrix/#welcome["NetApp 互通性對照表工具"^] 以判斷受支援版本的Elasticsearch。
 
 .相關資訊
 link:configuration-xml-for-search-configuration.html["搜尋整合的組態XML"]

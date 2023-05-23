@@ -20,7 +20,7 @@ summary: 如果StorageGRID 在Linux主機上部署任何的任何節點、則在
 當您從 Grid Manager 執行 StorageGRID 升級時、系統會提示您下載升級歸檔和任何必要的 Hotfix 作為第一步。不過、如果您需要下載檔案來升級 Linux 主機、您可以事先下載所有必要的檔案、以節省時間。
 
 .步驟
-. 前往 https://["NetApp下載StorageGRID"^]。
+. 前往 https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp下載StorageGRID"^]。
 . 選取下載最新版本的按鈕、或從下拉式功能表中選取其他版本、然後選取*執行*。
 +
 下列格式的軟件版本：11._x.y_。StorageGRID下列格式的更新程式為：11._x.y.z_。StorageGRID
@@ -48,7 +48,7 @@ summary: 如果StorageGRID 在Linux主機上部署任何的任何節點、則在
 
 . 如果您因為需要 Hotfix 而需要同意「注意」 / 「 MustRead 」通知、請下載 Hotfix ：
 +
-.. 返回 https://["NetApp下載StorageGRID"^]。
+.. 返回 https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp下載StorageGRID"^]。
 .. 從下拉式清單中選取 Hotfix 編號。
 .. 再次同意「注意」通知和 EULA 。
 .. 下載並儲存 Hotfix 及其 README 。

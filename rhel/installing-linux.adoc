@@ -11,7 +11,7 @@ summary: 您必須在所有網格主機上安裝Red Hat Enterprise Linux或CentO
 
 
 [role="lead"]
-您必須在所有網格主機上安裝Linux。使用 https://["NetApp 互通性對照表工具"^] 以取得支援版本的清單。
+您必須在所有網格主機上安裝Linux。使用 https://imt.netapp.com/matrix/#welcome["NetApp 互通性對照表工具"^] 以取得支援版本的清單。
 
 
 IMPORTANT: 請確定您的作業系統已升級至 Linux 核心 4.15 或更新版本。

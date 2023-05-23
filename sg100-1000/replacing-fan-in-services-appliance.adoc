@@ -82,4 +82,4 @@ image::../media/fan_connector_check.png[風扇連接器檢查]
 . 確認應用裝置節點出現在Grid Manager中、且未顯示任何警示。
 
 
-更換零件後、請將故障零件歸還給NetApp、如套件隨附的RMA指示所述。請參閱 https://["產品退貨安培；更換"^] 頁面以取得更多資訊。
+更換零件後、請將故障零件歸還給NetApp、如套件隨附的RMA指示所述。請參閱 https://mysupport.netapp.com/site/info/rma["產品退貨安培；更換"^] 頁面以取得更多資訊。
