@@ -4,7 +4,7 @@ permalink: earlier-versions.html
 keywords: storagegrid, earlier version, documentation, doc site, 11.5, 11.4, 11.3 
 summary: 您可以在此處找到 NetApp StorageGRID 軟體其他版本的文件。 
 ---
-= 早期版本的NetApp StorageGRID 解決方案文件
+= 其他版本的 NetApp StorageGRID 文件
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

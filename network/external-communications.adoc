@@ -38,7 +38,7 @@ summary: 用戶端需要與網格節點通訊、才能擷取和擷取內容。�
 下表顯示用於流量進入節點的連接埠。
 
 
-NOTE: 此清單不包含可能設定為的連接埠 link:../admin/configuring-load-balancer-endpoints.html["負載平衡器端點"]。
+NOTE: 此清單不包含可能設定為的連接埠 link:../admin/configuring-load-balancer-endpoints.html["負載平衡器端點"] 或用於 link:../monitor/configuring-syslog-server.html["Syslog 伺服器"]。
 
 [cols="1a,1a,1a,1a,1a,4a"]
 |===

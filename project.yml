@@ -56,7 +56,7 @@ sidebar:
     - section: sg100-1000
   - title: 啟用StorageGRID 功能
     url: "/storagegrid-enable.html"
-  - title: 舊版
+  - title: 其他版本
     url: "/earlier-versions.html"
   - title: 法律聲明
     url: "/legal-notices.html"
@@ -140,7 +140,7 @@ homepage:
       url: https://netapp.com/blog/
     - title: NetApp社群
       url: https://community.netapp.com/
-  - title: 舊版
+  - title: 其他版本
     links:
     - title: StorageGRID 11.6 文件
       url: https://docs.netapp.com/us-en/storagegrid-116/index.html
