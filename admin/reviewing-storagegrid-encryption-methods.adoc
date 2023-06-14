@@ -25,7 +25,10 @@ Grid Manager中的金鑰管理伺服器（KMS）
  a| 
 您 link:kms-configuring.html["設定金鑰管理伺服器"] 適用於 StorageGRID 網站和 link:../installconfig/optional-enabling-node-encryption.html["啟用應用裝置的節點加密"]。然後、應用裝置節點會連線至KMS、以要求金鑰加密金鑰（KEK）。此金鑰會加密及解密每個Volume上的資料加密金鑰（DEK）。
  a| 
-安裝期間啟用*節點加密*的應用裝置節點。應用裝置上的所有資料都能受到保護、避免資料中心的實體遺失或移除。可搭配StorageGRID 部分不含資料的儲存設備和服務設備使用。
+安裝期間啟用*節點加密*的應用裝置節點。應用裝置上的所有資料都能受到保護、避免資料中心的實體遺失或移除。
+
+
+NOTE: 使用 KMS 管理加密金鑰僅支援儲存節點和服務應用裝置。
 
 
 
