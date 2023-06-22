@@ -18,6 +18,9 @@ summary: 您可以使用這個簡單的範例原則做為自己 ILM 規則和原
 
 CAUTION: 下列ILM規則和原則僅為範例。有許多方法可以設定ILM規則。在啟動新原則之前、請先模擬建議的原則、確認其運作方式符合保護內容免於遺失的目的。若要深入瞭解、請參閱 link:../ilm/index.html["使用ILM管理物件"]。
 
+
+CAUTION: 為了避免資料遺失、請勿使用會過期或刪除 FabricPool 雲端層資料的 ILM 規則。將保留期間設為 * 永遠 * 、以確保 FabricPool 物件不會被 StorageGRID ILM 刪除。
+
 .開始之前
 * 您已檢閱 link:best-practices-ilm.html["搭配 FabricPool 資料使用 ILM 的最佳實務做法"]。
 * 您將使用登入Grid Manager link:../admin/web-browser-requirements.html["支援的網頁瀏覽器"]。
@@ -74,7 +77,10 @@ FabricPool 資料的 2+1 銷毀編碼
  a| 
 從第 0 天起、永遠儲存
 
-在丹佛使用 2+1 EC 方案進行銷毀編碼以儲存物件。
+在丹佛使用 2+1 EC 配置來銷毀編碼來儲存物件、並將這些物件永遠保留在 StorageGRID 中。
+
+
+CAUTION: 為了避免資料遺失、請勿使用會過期或刪除 FabricPool 雲端層資料的 ILM 規則。
 
 
 
@@ -144,5 +150,5 @@ _無_
 
 * 資料階層來自FabricPool 於不完整的資料 `fabricpool-bucket` 將使用2+1銷毀編碼方案進行銷毀編碼。兩個資料片段和一個同位元檢查片段將放置在三個不同的儲存節點上。
 * 所有其他儲存區中的所有物件都會複寫。將會建立兩個複本、並放置在兩個不同的儲存節點上。
-* 在 ONTAP 中刪除之前、抹除編碼和複寫的複本將會保留在 StorageGRID 中。ILM永遠不會刪除這些項目。StorageGRID
+* 這些複本將永遠保留在 StorageGRID 中。StorageGRID ILM 不會刪除這些物件。
 

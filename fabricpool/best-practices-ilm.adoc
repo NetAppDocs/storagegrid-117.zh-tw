@@ -33,7 +33,11 @@ CAUTION: 不知道什麼是無法理解的ILM規則或原則。FabricPool Storag
 
 CAUTION: ILM規則只會在任何時間段建立一個複寫複本、使資料有永久遺失的風險。如果只有一個物件複寫複本存在、則當儲存節點故障或發生重大錯誤時、該物件就會遺失。在升級等維護程序期間、您也會暫時失去物件的存取權。
 
-* 請勿使用會過期或刪除 FabricPool 雲端層資料的 ILM 規則。將每個 ILM 規則中的保留期間設為「 'forever 」、以確保 StorageGRID ILM 不會刪除 FabricPool 物件。
+* 如果您需要 link:remove-fabricpool-data.html["從 StorageGRID 移除 FabricPool 資料"]、使用 ONTAP 擷取 FabricPool Volume 的所有資料、並將其提升至效能層級。
++
+
+CAUTION: 為了避免資料遺失、請勿使用會過期或刪除 FabricPool 雲端層資料的 ILM 規則。將每個 ILM 規則的保留期間設定為 * 永遠 * 、以確保 FabricPool 物件不會被 StorageGRID ILM 刪除。
+
 * 請勿建立將 FabricPool 雲端層資料從儲存庫移出至其他位置的規則。您無法使用雲端儲存池將 FabricPool 資料移至其他物件存放區。同樣地、您無法使用歸檔節點將 FabricPool 資料歸檔至磁帶。
 +
 
