@@ -3318,6 +3318,8 @@
   
 
 
+
+
         </li>
       </ul>
     
@@ -10573,7 +10575,14 @@
       class=" "
     ><a class="na-navbar-padding" href="/zh-tw/storagegrid-117/fabricpool/other-best-practices-for-storagegrid-and-fabricpool.html">
         其他最佳實務做法
-      </a></li></ul></li></ul></li></ul></li><li 
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="從 StorageGRID 移除 FabricPool 資料"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/storagegrid-117/fabricpool/remove-fabricpool-data.html">
+        從 StorageGRID 移除 FabricPool 資料
+      </a></li></ul></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="使用StorageGRID"
       data-li-level="1" 
@@ -15005,7 +15014,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-18 18:54:37 +0000">05/18/2023</time>
+    <time datetime="2023-06-22 22:04:44 +0000">06/22/2023</time>
     
   
 
@@ -15880,7 +15889,7 @@
 <p>放置指示</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>2+1 銷毀編碼</p>
+<p>從第 0 天到永遠使用 2+1 銷毀編碼</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -15891,7 +15900,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>規則的 * 時段 * 是 * 天 0 - 永遠 * 。* 第 0 天 * 表示當資料從 ONTAP 分層時會套用規則。* Forever * 表示 StorageGRID 不會刪除已從 ONTAP 分層的資料、除非收到 ONTAP 的刪除要求。</p>
+<p>規則的 * 時段 * 是 * 天 0 - 永遠 * 。* 第 0 天 * 表示當資料從 ONTAP 分層時會套用規則。* Forever * 表示 StorageGRID ILM 不會刪除已從 ONTAP 分層的資料。</p>
 </li>
 <li>
 <p>規則的 * 儲存池 * 是您選取的儲存池。* EC 2+1 * 表示資料將使用 2+1 銷毀編碼來儲存。每個物件都會儲存為兩個資料片段和一個同位元檢查片段。每個物件的三個片段將儲存至單一站台的不同儲存節點。</p>
@@ -15923,6 +15932,18 @@
 </td>
 <td class="content">
 當您啟動新的 ILM 原則時、 StorageGRID 會使用該原則來管理網格中所有物件（包括現有物件和新擷取的物件）的放置、持續時間和資料保護。在某些情況下、啟動新原則可能會導致現有物件移至新位置。
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/storagegrid-117/images/caution.svg" alt="注意">
+</td>
+<td class="content">
+為了避免資料遺失、請勿使用會過期或刪除 FabricPool 雲端層資料的 ILM 規則。將保留期間設為 * 永遠 * 、以確保 FabricPool 物件不會被 StorageGRID ILM 刪除。
 </td>
 </tr>
 </table>
@@ -16031,7 +16052,7 @@
 <p>選取 * 全部展開 * 以查看建議原則中每個規則的保留圖表。</p>
 </li>
 <li>
-<p>選取 * 時段 * 和 * 儲存池 * 以檢閱保留圖表。</p>
+<p>選取 * 時段 * 和 * 儲存池 * 以檢閱保留圖表。確認適用於 FabricPool 貯體或租戶的任何規則都會保留物件 * 永遠 * 。</p>
 </li>
 </ol>
 </div>

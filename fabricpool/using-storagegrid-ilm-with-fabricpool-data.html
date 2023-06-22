@@ -3318,6 +3318,8 @@
   
 
 
+
+
         </li>
       </ul>
     
@@ -10573,7 +10575,14 @@
       class=" "
     ><a class="na-navbar-padding" href="/zh-tw/storagegrid-117/fabricpool/other-best-practices-for-storagegrid-and-fabricpool.html">
         其他最佳實務做法
-      </a></li></ul></li></ul></li></ul></li><li 
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="從 StorageGRID 移除 FabricPool 資料"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/storagegrid-117/fabricpool/remove-fabricpool-data.html">
+        從 StorageGRID 移除 FabricPool 資料
+      </a></li></ul></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="使用StorageGRID"
       data-li-level="1" 
@@ -15005,7 +15014,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-18 18:54:37 +0000">05/18/2023</time>
+    <time datetime="2023-06-22 22:04:44 +0000">06/22/2023</time>
     
   
 
@@ -15029,6 +15038,18 @@
 </td>
 <td class="content">
 下列ILM規則和原則僅為範例。有許多方法可以設定ILM規則。在啟動新原則之前、請先模擬建議的原則、確認其運作方式符合保護內容免於遺失的目的。若要深入瞭解、請參閱 <a href="../ilm/index.html">"使用ILM管理物件"</a>。
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/storagegrid-117/images/caution.svg" alt="注意">
+</td>
+<td class="content">
+為了避免資料遺失、請勿使用會過期或刪除 FabricPool 雲端層資料的 ILM 規則。將保留期間設為 * 永遠 * 、以確保 FabricPool 物件不會被 StorageGRID ILM 刪除。
 </td>
 </tr>
 </table>
@@ -15129,7 +15150,19 @@
 <p>從第 0 天起、永遠儲存</p>
 </div>
 <div class="paragraph">
-<p>在丹佛使用 2+1 EC 方案進行銷毀編碼以儲存物件。</p>
+<p>在丹佛使用 2+1 EC 配置來銷毀編碼來儲存物件、並將這些物件永遠保留在 StorageGRID 中。</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/storagegrid-117/images/caution.svg" alt="注意">
+</td>
+<td class="content">
+為了避免資料遺失、請勿使用會過期或刪除 FabricPool 雲端層資料的 ILM 規則。
+</td>
+</tr>
+</table>
 </div></div></td>
 </tr>
 <tr>
@@ -15237,7 +15270,7 @@
 <p>所有其他儲存區中的所有物件都會複寫。將會建立兩個複本、並放置在兩個不同的儲存節點上。</p>
 </li>
 <li>
-<p>在 ONTAP 中刪除之前、抹除編碼和複寫的複本將會保留在 StorageGRID 中。ILM永遠不會刪除這些項目。StorageGRID</p>
+<p>這些複本將永遠保留在 StorageGRID 中。StorageGRID ILM 不會刪除這些物件。</p>
 </li>
 </ul>
 </div>
