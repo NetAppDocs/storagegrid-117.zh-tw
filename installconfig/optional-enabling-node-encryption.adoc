@@ -28,7 +28,7 @@ KMS可在應用StorageGRID 程式安裝於原地之前或之後、在Grid Manage
 
 
 
-IMPORTANT: 在啟用節點加密的應用裝置連線至金鑰管理系統（ KMS ）之前、應用裝置的資料會使用不安全的暫存金鑰進行加密。除非金鑰設定為KMS所提供的值、否則產品不會受到移除或遭竊的保護。
+IMPORTANT: 當裝置安裝時啟用節點加密時、會指派一個暫存金鑰。在應用裝置連線至金鑰管理系統（ KMS ）並設定 KMS 安全金鑰之前、應用裝置上的資料不會受到保護。請參閱 https://docs.netapp.com/us-en/storagegrid-117/admin/kms-overview-of-kms-and-appliance-configuration.html["KMS 應用裝置組態總覽"^] 以取得更多資訊。
 
 如果沒有解密磁碟所需的 KMS 金鑰、設備上的資料就無法擷取、而且會有效遺失。當解密金鑰無法從 KMS 擷取時、就會發生這種情況。如果客戶清除KMS組態、KMS金鑰過期、與KMS的連線中斷、或是設備從StorageGRID 安裝KMS金鑰的作業系統中移除、金鑰就無法存取。
 
