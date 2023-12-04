@@ -606,17 +606,17 @@ link:../ubuntu/configuring-host-network.html#considerations-and-recommendations-
 
 
  a| 
-介面_target
+interface_target_nnnn
  a| 
 O
  a| 
 要新增至此節點的額外介面名稱和選用說明。您可以為每個節點新增多個額外介面。
 
-對於_nstim_、請為您要新增的每個介面目標項目指定一個唯一的編號。
+對於 _nnn_ 、請為您要新增的每個 interface_target 項目指定唯一的編號。
 
 針對該值、指定裸機主機上實體介面的名稱。接著、您可以選擇性地新增一個逗號、並提供介面說明、該介面會顯示在「VLAN介面」頁面和「HA群組」頁面上。
 
-例如： `INTERFACES_TARGET_01=ens256, Trunk`
+例如： `INTERFACE_TARGET_0001=ens256, Trunk`
 
 如果您新增主幹介面、則必須在StorageGRID 功能鏈路的資訊鏈路中設定VLAN介面。如果您新增存取介面、可以直接將介面新增至 HA 群組、而不需要設定 VLAN 介面。
 

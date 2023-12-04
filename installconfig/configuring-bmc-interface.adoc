@@ -15,12 +15,19 @@ SGF6112 、 SG6000 或服務應用裝置上的主機板管理控制器（ BMC �
 
 安裝應用裝置時、請使用本節中的下列程序來設定 BMC ：
 
-* 變更BMC介面的root密碼
-* 設定BMC管理連接埠的IP位址
-* 存取BMC介面
-* 設定 SNMP 設定
-* 設定電子郵件通知和警示
+* link:../installconfig/changing-root-password-for-bmc-interface.html["變更BMC介面的root密碼"]
+* link:../installconfig/setting-ip-address-for-bmc-management-port.html["設定BMC管理連接埠的IP位址"]
+* link:../installconfig/accessing-bmc-interface.html["存取BMC介面"]
+* link:../installconfig/configuring-snmp-settings-for-bmc.html["設定 SNMP 設定"]
+* link:../installconfig/setting-up-email-notifications-for-alerts.html["設定 BMC 警示的電子郵件通知"]
 
 
+[NOTE]
+====
+如果應用裝置已安裝至網格、且正在執行 StorageGRID 軟體、請使用下列程序：
 
-NOTE: 如果應用裝置已安裝到網格中、且正在執行 StorageGRID 軟體、請參閱下列程序以取得 BMC 組態的替代機制。
+* link:../commonhardware/placing-appliance-into-maintenance-mode.html["將設備置於維護模式"] 存取 StorageGRID 應用裝置安裝程式。
+* 請參閱 link:../installconfig/setting-ip-address-for-bmc-management-port.html["設定BMC管理連接埠的IP位址"] 如需使用 StorageGRID 應用裝置安裝程式存取 BMC 介面的相關資訊、
+
+
+====

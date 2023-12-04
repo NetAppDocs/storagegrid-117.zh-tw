@@ -42,10 +42,10 @@ IMPORTANT: 當軟體升級、還原程序或擴充程序作用中時、請勿嘗
 
 . 將項目新增至檔案、以指定您要新增至節點的每個額外介面名稱及說明（可選）。請使用此格式。
 +
-`INTERFACES_TARGET_nnnn=_value_`
+`INTERFACE_TARGET_nnnn=_value_`
 
 +
-針對 _nnnn 、為每個指定唯一的數字 `INTERFACES_TARGET` 您要新增的項目。
+針對 _nnnn 、為每個指定唯一的數字 `INTERFACE_TARGET` 您要新增的項目。
 
 +
 針對_value_、指定裸機主機上實體介面的名稱。接著、您可以選擇性地新增一個逗號、並提供介面說明、該介面會顯示在「VLAN介面」頁面和「HA群組」頁面上。
@@ -54,7 +54,7 @@ IMPORTANT: 當軟體升級、還原程序或擴充程序作用中時、請勿嘗
 例如：
 
 +
-`INTERFACES_TARGET_01=ens256, Trunk`
+`INTERFACE_TARGET_0001=ens256, Trunk`
 
 +
 
