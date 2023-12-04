@@ -1,0 +1,8 @@
+---
+permalink: tenant/considerations-for-using-platform-services.html 
+redirect: storagegrid-117/tenant/considerations-for-platform-services.html 
+---
+= 
+:allow-uri-read: 
+
+
