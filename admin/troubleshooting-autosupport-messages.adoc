@@ -18,6 +18,9 @@ summary: 如果嘗試傳送AutoSupport 資訊不成功、StorageGRID 則根據Au
 image::../media/autosupport_results_tab.png[AutoSupport 訊息傳送失敗]
 
 
+NOTE: 如果您將 Proxy 伺服器設定為將 AutoSupport 訊息轉寄至 NetApp 、則應該如此 link:configuring-admin-proxy-settings.html["確認 Proxy 伺服器組態設定正確無誤"]。
+
+
 
 == 每週AutoSupport 更新訊息失敗
 
