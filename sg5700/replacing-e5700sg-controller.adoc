@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, sg5700, storage node, storage appliance, Replacing, replace, E5700sg, controller, remove, removing, removal, install, installing, installation 
 summary: 如果E5700SG控制器無法正常運作或故障、您可能需要更換它。 
 ---
-= 更換E5700SG控制器
+= 更換 E5700SG 運算控制器
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

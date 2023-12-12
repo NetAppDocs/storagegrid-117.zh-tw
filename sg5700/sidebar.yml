@@ -22,9 +22,9 @@ entries:
 - title: 硬體程序
   pdf-filename: 硬體程序 - SG5700
   entries:
-  - title: 更換E2800控制器
+  - title: 更換 E2800 儲存控制器
     url: "/sg5700/replacing-e2800-controller.html"
-  - title: 更換E5700SG控制器
+  - title: 更換 E5700SG 運算控制器
     url: "/sg5700/replacing-e5700sg-controller.html"
   - title: 更換其他硬體元件
     url: "/sg5700/replacing-other-hardware-components-sg5700.html"
