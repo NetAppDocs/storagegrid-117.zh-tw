@@ -21,6 +21,7 @@ summary: 如果您打算使用雲端儲存資源池將物件移出StorageGRID �
 * 請勿將 Cloud Storage Pool 用於 Swift 用戶端擷取的物件。Swift不支援物件後還原要求、StorageGRID 因此無法擷取任何已轉換為S3 Glacier儲存設備或Azure Blob儲存歸檔層的Swift物件。發出Swift Get物件要求以擷取這些物件將會失敗（「403 Forbidbid禁 用」）。
 * 由於從雲端儲存資源池目標擷取物件的延遲增加、因此不支援使用FabricPool 含有支援功能的雲端儲存資源池。
 * 啟用 S3 物件鎖定的物件無法放置在雲端儲存資源池中。
+* 如果雲端儲存池的目的地 S3 儲存區已啟用 S3 物件鎖定、則設定儲存區複寫（ PuttBucketReplication ）的嘗試將會失敗、並出現 AccessDenied 錯誤。
 
 
 
