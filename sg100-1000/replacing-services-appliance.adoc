@@ -86,6 +86,9 @@ HDD02 或 HDD2 指的是上插槽中的磁碟機、 HDD03 或 HDD3 指的是下�
 +
 ... 若要還原 BMC 組態以使用靜態 IP 、網路遮罩和閘道、請輸入下列命令：
 +
+`*run-host-command ipmitool lan set 1 ipsrc static*`
+
++
 `*run-host-command ipmitool lan set 1 ipaddr _Appliance_IP_*`
 
 +
