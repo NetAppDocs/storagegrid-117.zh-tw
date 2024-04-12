@@ -15,7 +15,7 @@ SGF6112 、 SG6000 或服務應用裝置上的主機板管理控制器（ BMC �
 
 安裝應用裝置時、請使用本節中的下列程序來設定 BMC ：
 
-* link:../installconfig/changing-root-password-for-bmc-interface.html["變更BMC介面的root密碼"]
+* link:../installconfig/changing-root-password-for-bmc-interface.html["變更 BMC 介面的管理或根密碼"]
 * link:../installconfig/setting-ip-address-for-bmc-management-port.html["設定BMC管理連接埠的IP位址"]
 * link:../installconfig/accessing-bmc-interface.html["存取BMC介面"]
 * link:../installconfig/configuring-snmp-settings-for-bmc.html["設定 SNMP 設定"]
