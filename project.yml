@@ -1,6 +1,8 @@
 ---
 settings:
   name: StorageGRID 11.7
+  search: storagegrid-enable,storagegrid-117
+  downlevel: true
   internal:
     pdf_enabled: false
     termcheck_enabled: false
@@ -8,7 +10,7 @@ settings:
     pdf_enabled: true
     harmony_enabled: false
     hide_language_selector: false
-  langs: zh-tw,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-cn
+  langs: zh-tw,us-en,ja-jp,ko-kr,zh-cn,de-de,es-es,fr-fr,it-it
 sidebar:
   entries:
   - title: StorageGRID 11.7 文件
