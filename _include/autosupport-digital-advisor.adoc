@@ -1,0 +1,9 @@
+= 
+:allow-uri-read: 
+
+
+數位顧問是雲端型的，運用 NetApp 安裝基礎的預測分析和社群智慧。其持續風險評估、預測性警示、說明性指引及自動化行動、可協助您在問題發生之前預防問題發生、進而改善系統健全狀況並提高系統可用度。
+
+如果您想要使用 NetApp 支援網站上的數位顧問儀表板和功能，則必須啟用 AutoSupport 。
+
+https://docs.netapp.com/us-en/active-iq/index.html["數位顧問文件"^]
