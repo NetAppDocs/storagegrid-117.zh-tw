@@ -283,6 +283,8 @@ entries:
       url: "/admin/what-storage-volume-watermarks-are.html"
   - title: 管理物件中繼資料儲存
     url: "/admin/managing-object-metadata-storage.html"
+  - title: 增加元資料保留空間設置
+    url: "/admin/increasing-metadata-reserved-space-setting.html"
   - title: 壓縮儲存的物件
     url: "/admin/configuring-stored-object-compression.html"
   - title: 儲存節點組態設定
